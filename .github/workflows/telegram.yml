@@ -1,0 +1,57 @@
+name: Telegram notifications
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/feeds/cycle.json'
+      - 'data/feeds/overview.json'
+      - 'data/feeds/signals.json'
+      - 'scripts/telegram_notify.py'
+      - '.github/workflows/telegram.yml'
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: telegram-notifications
+  cancel-in-progress: false
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test notification logic
+        run: python -m unittest discover -s tests -p 'test_telegram.py'
+      - name: Check connection settings
+        id: config
+        shell: bash
+        run: |
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+            python -c 'import hashlib,os; print("scope="+hashlib.sha256((os.environ["TELEGRAM_BOT_TOKEN"]+":"+os.environ["TELEGRAM_CHAT_ID"]).encode()).hexdigest()[:24])' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Waiting for TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID repository secrets.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/cache/restore@v4
+        if: steps.config.outputs.ready == 'true'
+        with:
+          path: .telegram-state
+          key: telegram-v1-${{ steps.config.outputs.scope }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: telegram-v1-${{ steps.config.outputs.scope }}-
+      - name: Notify configured private chat
+        if: steps.config.outputs.ready == 'true'
+        run: python scripts/telegram_notify.py
+      - uses: actions/cache/save@v4
+        if: always() && steps.config.outputs.ready == 'true'
+        with:
+          path: .telegram-state
+          key: telegram-v1-${{ steps.config.outputs.scope }}-${{ github.run_id }}-${{ github.run_attempt }}
