@@ -1,4 +1,4 @@
-import {eventDate,originalPrice,actualResult,forecastResult} from './presentation.js';
+import {eventDate,originalPrice,actualResult,forecastResult,outcomeKey} from './presentation.js?v=outcomes-20261015';
 import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
 const fmt=v=>v?new Intl.DateTimeFormat('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(v)):'Ожидается';
@@ -17,14 +17,17 @@ document.querySelectorAll('[data-sport]').forEach(b=>{b.classList.toggle('active
 function cell(row,value){const c=document.createElement('td');c.textContent=value??'Нет данных';row.append(c);return c;}
 function render(){
 const query=$('search').value.trim().toLocaleLowerCase('ru'),task=$('task').value;
-const events=data.events.filter(e=>(!selectedDate||dateKey(e)===selectedDate)&&(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
+const matching=data.events.filter(e=>(!selectedDate||dateKey(e)===selectedDate)&&(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
+for(const key of ['won','lost','unsettled'])$(key+'-count').textContent=matching.filter(e=>outcomeKey(e)===key).length;
+const outcome=$('outcome').value;document.querySelectorAll('[data-outcome]').forEach(b=>{b.classList.toggle('active',b.dataset.outcome===outcome);b.setAttribute('aria-pressed',String(b.dataset.outcome===outcome));});
+const events=matching.filter(e=>!outcome||outcomeKey(e)===outcome);
 const numericPrice=e=>{const n=e.original_odds??parseFloat(String(e.historical_quote||'').replace('≈',''));return Number.isFinite(n)?n:-1;};const key=$('sort').value;events.sort((a,b)=>key==='odds'?numericPrice(b)-numericPrice(a):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at||a.event_date?Date.parse(a.start_at||a.event_date):Infinity)-(b.start_at||b.event_date?Date.parse(b.start_at||b.event_date):Infinity));
 $('rows').replaceChildren();renderCalendar();
 function detail(row,value){const c=cell(row,value.text);if(value.basis){const s=document.createElement('small');s.textContent=value.basis;c.append(s);}return c;}
 for(const e of events){
  const r=document.createElement('tr');detail(r,eventDate(e));
  const title=cell(r,e.event),sub=document.createElement('small');sub.textContent=[e.sport,e.competition,e.task_name,e.history_group].filter(Boolean).join(' · ');title.append(sub);
- detail(r,originalPrice(e));cell(r,e.market);detail(r,actualResult(e));detail(r,forecastResult(e));cell(r,e.status);
+ detail(r,originalPrice(e));cell(r,e.market);detail(r,actualResult(e));detail(r,forecastResult(e)).classList.add('result-'+outcomeKey(e));cell(r,e.status);
  const analysis=cell(r,e.analysis);if(e.audit_status){const badge=document.createElement('small');badge.textContent=e.audit_status;analysis.prepend(badge);}
  const c=cell(r,e.source_url?'':e.source_name||'Нет источника');if(e.discussed_on){const p=document.createElement('small');p.textContent='Обсуждалось: '+e.discussed_on;c.append(p);}
  if(e.source_url){try{const u=new URL(e.source_url);if(['https:','http:'].includes(u.protocol)){const a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=e.source_name||u.hostname;c.append(a);}}catch{c.textContent='Ошибка ссылки';}}
@@ -47,5 +50,6 @@ $('prev-month').addEventListener('click',()=>{calendarMonth=new Date(calendarMon
 $('next-month').addEventListener('click',()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderCalendar();});
 $('clear-date').addEventListener('click',()=>{selectedDate='';render();});
 document.querySelectorAll('[data-sport]').forEach(b=>b.addEventListener('click',()=>{$('sport').value=b.dataset.sport;render();}));
-$('reset-filters').addEventListener('click',()=>{for(const id of ['search','task','sport','status','audit'])$(id).value='';$('sort').value='start';selectedDate='';render();});
-for(const id of ['search','task','sport','status','audit','sort'])$(id).addEventListener('input',render);$('report').addEventListener('change',load);$('refresh').addEventListener('click',async()=>{await load();await archive();});await load();await archive();setInterval(async()=>{if(!document.hidden){await load();await archive();}},60000);
+document.querySelectorAll('[data-outcome]').forEach(b=>b.addEventListener('click',()=>{$('outcome').value=$('outcome').value===b.dataset.outcome?'':b.dataset.outcome;render();}));
+$('reset-filters').addEventListener('click',()=>{for(const id of ['search','task','sport','status','audit','outcome'])$(id).value='';$('sort').value='start';selectedDate='';render();});
+for(const id of ['search','task','sport','status','audit','sort','outcome'])$(id).addEventListener('input',render);$('report').addEventListener('change',load);$('refresh').addEventListener('click',async()=>{await load();await archive();});await load();await archive();setInterval(async()=>{if(!document.hidden){await load();await archive();}},60000);

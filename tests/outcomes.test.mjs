@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {outcomeKey} from '../presentation.js';
+assert.equal(outcomeKey({market:'П1',forecast_result:'✅ Сбылся'}),'won');
+assert.equal(outcomeKey({market:'П1',forecast_result:'❌ Не сбылся'}),'lost');
+assert.equal(outcomeKey({market:'ТБ 2.5',reported_forecast_result:'✅ Сбылся'}),'won');
+assert.equal(outcomeKey({market:'ТБ 2.5',score:'1:0',analysis:'Не прошёл'}),'lost');
+assert.equal(outcomeKey({market:'Линия П1 / Х / П2',forecast_result:'✅ Сбылся'}),'unsettled');
+assert.equal(outcomeKey({market:'П1',status:'Ожидается'}),'unsettled');
+assert.equal(outcomeKey({market:'П1',forecast_result:'Возврат'}),'unsettled');
+console.log('Outcome classification passed: losses, wins, archived reports and unresolved records.');

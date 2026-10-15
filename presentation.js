@@ -20,3 +20,10 @@ export function forecastResult(e){
  if(e.score&&/Прошёл/.test(e.analysis))return {text:'✅ Сбылся',basis:'По подтверждённому результату'};
  return {text:'Не рассчитан',basis:'Не хватает результата или условий рынка'};
 }
+
+export function outcomeKey(e){
+ const text=forecastResult(e).text.toLocaleLowerCase('ru').replaceAll('ё','е');
+ if(/не сбылся|не прошел/.test(text))return 'lost';
+ if(/сбылся|прошел/.test(text))return 'won';
+ return 'unsettled';
+}
