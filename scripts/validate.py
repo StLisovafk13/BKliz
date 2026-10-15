@@ -19,7 +19,7 @@ def validate(path):
     assert isinstance(report['title'], str) and isinstance(report['summary'], str)
     assert isinstance(report['events'], list)
     if report['generated_at'] is None:
-        assert path.name == 'latest.json' and not report['events'] and report['run_id'] is None
+        assert not report['events'] and report['run_id'] is None
     else:
         timestamp(report['generated_at'])
         assert re.fullmatch(r'[a-z0-9-]+', report['run_id'])
@@ -48,11 +48,15 @@ def validate(path):
 
 if __name__ == '__main__':
     latest = validate(ROOT / 'data/latest.json')
+    for feed in (ROOT / 'data/feeds').glob('*.json'):
+        snapshot = validate(feed)
+        assert snapshot['feed_id'] == feed.stem
+        assert isinstance(snapshot['task_name'], str) and snapshot['task_name']
     reports = []
     for path in sorted((ROOT / 'data/reports').glob('*.json')):
         assert re.fullmatch(r'\d{8}T\d{6}Z-[a-z0-9-]+\.json', path.name)
         report = validate(path)
-        reports.append({'file': path.name, 'generated_at': report['generated_at'], 'title': report['title']})
+        reports.append({'file': path.name, 'generated_at': report['generated_at'], 'title': report['title'], 'task_name': report.get('task_name')})
     reports.sort(key=lambda r: timestamp(r['generated_at']), reverse=True)
     (ROOT / 'data/index.json').write_text(json.dumps({'reports': reports}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Validated {len(latest["events"])} current events and {len(reports)} archived reports.')

@@ -1,3 +1,10 @@
 {
-  "reports": []
+  "reports": [
+    {
+      "file": "20261015T152746Z-overview-initial-events.json",
+      "generated_at": "2026-10-15T15:27:46.126Z",
+      "title": "Ежедневный обзор матчей",
+      "task_name": "Ежедневный обзор матчей"
+    }
+  ]
 }
