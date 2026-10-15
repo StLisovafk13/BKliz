@@ -1,3 +1,4 @@
+import {eventDate,originalPrice,actualResult,forecastResult} from './presentation.js';
 import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
 const fmt=v=>v?new Intl.DateTimeFormat('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(v)):'Ожидается';
@@ -6,8 +7,18 @@ function cell(row,value){const c=document.createElement('td');c.textContent=valu
 function render(){
 const query=$('search').value.trim().toLocaleLowerCase('ru'),task=$('task').value;
 const events=data.events.filter(e=>(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
-const key=$('sort').value;events.sort((a,b)=>key==='odds'?(b.odds??-1)-(a.odds??-1):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at?Date.parse(a.start_at):Infinity)-(b.start_at?Date.parse(b.start_at):Infinity));
-$('rows').replaceChildren();for(const e of events){const r=document.createElement('tr');cell(r,e.start_at?fmt(e.start_at):e.calendar_date?`${e.calendar_date}\nВремя уточняется`:'Нет данных');const title=cell(r,e.event),sub=document.createElement('small');sub.textContent=[e.sport,e.competition,e.task_name,e.history_group].filter(Boolean).join(' · ');title.append(sub);cell(r,e.market);const price=cell(r,e.odds==null?(e.historical_quote||'Нет данных'):e.odds.toFixed(2));if(e.historical_quote&&e.odds==null){const label=document.createElement('small');label.textContent='Архив · не текущая цена';price.append(label);}const state=cell(r,e.status);if(e.score){const score=document.createElement('small');score.textContent='Счёт: '+e.score;state.append(score);}const analysis=cell(r,e.analysis);if(e.audit_status){const badge=document.createElement('small');badge.textContent=e.audit_status;analysis.prepend(badge);}const c=cell(r,e.source_url?'':e.source_name||'Нет источника');if(e.discussed_on){const provenance=document.createElement('small');provenance.textContent='Обсуждалось: '+e.discussed_on;c.append(provenance);}if(e.source_url){try{const u=new URL(e.source_url);if(['https:','http:'].includes(u.protocol)){const a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=e.source_name||u.hostname;c.append(a);}}catch{c.textContent='Ошибка ссылки';}}const t=document.createElement('small');t.textContent=(e.feed_id==='history'?'Разбор: ':'')+fmt(e.checked_at);c.append(t);$('rows').append(r);}
+const numericPrice=e=>{const n=e.original_odds??parseFloat(String(e.historical_quote||'').replace('≈',''));return Number.isFinite(n)?n:-1;};const key=$('sort').value;events.sort((a,b)=>key==='odds'?numericPrice(b)-numericPrice(a):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at||a.event_date?Date.parse(a.start_at||a.event_date):Infinity)-(b.start_at||b.event_date?Date.parse(b.start_at||b.event_date):Infinity));
+$('rows').replaceChildren();
+function detail(row,value){const c=cell(row,value.text);if(value.basis){const s=document.createElement('small');s.textContent=value.basis;c.append(s);}return c;}
+for(const e of events){
+ const r=document.createElement('tr');detail(r,eventDate(e));
+ const title=cell(r,e.event),sub=document.createElement('small');sub.textContent=[e.sport,e.competition,e.task_name,e.history_group].filter(Boolean).join(' · ');title.append(sub);
+ detail(r,originalPrice(e));cell(r,e.market);detail(r,actualResult(e));detail(r,forecastResult(e));cell(r,e.status);
+ const analysis=cell(r,e.analysis);if(e.audit_status){const badge=document.createElement('small');badge.textContent=e.audit_status;analysis.prepend(badge);}
+ const c=cell(r,e.source_url?'':e.source_name||'Нет источника');if(e.discussed_on){const p=document.createElement('small');p.textContent='Обсуждалось: '+e.discussed_on;c.append(p);}
+ if(e.source_url){try{const u=new URL(e.source_url);if(['https:','http:'].includes(u.protocol)){const a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=e.source_name||u.hostname;c.append(a);}}catch{c.textContent='Ошибка ссылки';}}
+ const t=document.createElement('small');t.textContent=(e.feed_id==='history'?'Разбор: ':'')+fmt(e.checked_at);c.append(t);$('rows').append(r);
+}
 $('empty').hidden=events.length>0;$('count').textContent=`${events.length} / ${data.events.length}`;$('updated').textContent=fmt(data.generated_at);
 const selected=task?data.feeds.filter(f=>f.feed_id===task):data.feeds;$('notes').textContent=selected.length?selected.map(f=>`${f.task_name}\n${f.summary}`).join('\n\n'):data.summary||'Нет комментария.';
 $('health').textContent=$('report').value!=='latest'?'Архивный отчёт':!data.generated_at?'Ожидается отчёт':Date.now()-Date.parse(data.generated_at)>3*3600000?'Есть устаревшие данные':'Данные загружены';

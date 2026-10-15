@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {eventDate,originalPrice,actualResult,forecastResult} from '../presentation.js';
+assert.equal(eventDate({discussed_on:'2026-10-05'}).text,'Дата не восстановлена');
+assert.equal(eventDate({event_date:'2026-10-13'}).text,'13.10.2026');
+assert.equal(originalPrice({historical_quote:'1.73',odds:1.90}).text,'1.73');
+assert.equal(originalPrice({odds:1.90}).text,'Не восстановлен');
+const overtime={event:'Торпедо — Металлург',score:'2:3 ОТ',regulation_score:'2:2',winner:'Металлург',forecast_result:'❌ Не сбылся'};
+assert.match(actualResult(overtime).text,/Металлург/);
+assert.match(actualResult(overtime).basis,/2:2/);
+assert.equal(forecastResult(overtime).text,'❌ Не сбылся');
+assert.match(actualResult({event:'A — B',reported_score:'1:2'}).basis,/не перепроверено/);
+assert.equal(forecastResult({market:'Линия П1 / Х / П2'}).text,'Исход не выбран');
+console.log('Presentation passed: event dates, original prices, winner and forecast result remain distinct.');
