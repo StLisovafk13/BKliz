@@ -1,10 +1,14 @@
 import sys
 import unittest
+import io
+import os
+import urllib.error
+from unittest.mock import patch
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from telegram_notify import pending_notifications, result_key, event_key, event_day, message
+from telegram_notify import pending_notifications, result_key, event_key, event_day, message, api, credentials
 
 
 class NotificationsTest(unittest.TestCase):
@@ -41,6 +45,27 @@ class NotificationsTest(unittest.TestCase):
         text = message(dict(self.event, reported_forecast_result='Сбылся'), 'reminder')
         self.assertNotIn('Итог прогноза: Сбылся', text)
         self.assertIn('17:45 ЕКБ', text)
+
+    def test_chat_not_found_has_actionable_diagnostic(self):
+        error = urllib.error.HTTPError('https://example.test/secret', 400, 'Bad Request', {}, io.BytesIO(b'{"description":"Bad Request: chat not found"}'))
+        with patch('urllib.request.urlopen', side_effect=error):
+            with self.assertRaisesRegex(RuntimeError, 'Telegram getChat: HTTP 400.*TELEGRAM_CHAT_ID'):
+                api('123:secret', 'getChat', {'chat_id': '12345'})
+
+    def test_unknown_description_cannot_leak_secrets(self):
+        error = urllib.error.HTTPError('https://example.test/secret', 400, 'Bad Request', {}, io.BytesIO(b'{"description":"token=123:secret chat=12345"}'))
+        with patch('urllib.request.urlopen', side_effect=error):
+            with self.assertRaises(RuntimeError) as caught:
+                api('123:secret', 'getChat', {'chat_id': '12345'})
+        self.assertNotIn('123:secret', str(caught.exception))
+        self.assertNotIn('12345', str(caught.exception))
+
+    def test_credentials_trim_and_reject_username(self):
+        with patch.dict(os.environ, TELEGRAM_BOT_TOKEN=' 123:abc_DEF-9\n', TELEGRAM_CHAT_ID=' 456\n'):
+            self.assertEqual(credentials(), ('123:abc_DEF-9', '456'))
+        with patch.dict(os.environ, TELEGRAM_BOT_TOKEN='123:abc_DEF-9', TELEGRAM_CHAT_ID='@some_bot'):
+            with self.assertRaisesRegex(RuntimeError, 'TELEGRAM_CHAT_ID'):
+                credentials()
 
 
 if __name__ == '__main__':

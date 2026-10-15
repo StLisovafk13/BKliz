@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -15,6 +16,33 @@ STATE = ROOT / '.telegram-state/state.json'
 EKB = timezone(timedelta(hours=5))
 
 
+def api_error(method, code, description=''):
+    # Only fixed, known diagnostics may enter public Actions logs.
+    known = {
+        'bad request: chat not found': 'Чат не найден. Отправьте /start именно этому боту и проверьте TELEGRAM_CHAT_ID: нужен числовой ID вашего личного чата, не username и не ID бота.',
+        'bad request: chat_id is empty': 'Секрет TELEGRAM_CHAT_ID пуст.',
+        'forbidden: bot was blocked by the user': 'Разблокируйте бота в Telegram и отправьте /start.',
+        "forbidden: bot can't initiate conversation with a user": 'Откройте личный чат с ботом и отправьте /start.',
+        'bad request: message is too long': 'Сообщение превышает допустимую длину.',
+        'unauthorized': 'Проверьте TELEGRAM_BOT_TOKEN: нужен действующий токен BotFather.',
+        'not found': 'Проверьте TELEGRAM_BOT_TOKEN: неверный адрес бота.',
+    }
+    hint = known.get(str(description).strip().lower(), 'Запрос отклонён Telegram; секретные данные не выведены.')
+    return RuntimeError(f'Telegram {method}: HTTP {code}. {hint}')
+
+
+def credentials():
+    token = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
+    if not token or not chat_id:
+        return token, chat_id
+    if not re.fullmatch(r'[0-9]+:[A-Za-z0-9_-]+', token):
+        raise RuntimeError('Неверный формат TELEGRAM_BOT_TOKEN. Скопируйте токен BotFather без кавычек, bot и пробелов внутри.')
+    if not re.fullmatch(r'[1-9][0-9]*', chat_id):
+        raise RuntimeError('Неверный формат TELEGRAM_CHAT_ID. Нужен положительный числовой ID вашего личного чата, без @, кавычек и ссылок.')
+    return token, chat_id
+
+
 def api(token, method, payload):
     request = urllib.request.Request(
         f'https://api.telegram.org/bot{token}/{method}',
@@ -24,12 +52,15 @@ def api(token, method, payload):
         with urllib.request.urlopen(request, timeout=25) as response:
             result = json.load(response)
     except urllib.error.HTTPError as error:
-        # Never log the request URL, token, chat identity or response body.
-        raise RuntimeError(f'Telegram returned HTTP {error.code}') from None
+        try:
+            description = json.loads(error.read(16384)).get('description', '')
+        except (ValueError, AttributeError):
+            description = ''
+        raise api_error(method, error.code, description) from None
     except (urllib.error.URLError, TimeoutError, OSError, ValueError):
         raise RuntimeError('Telegram request failed; credentials were not logged') from None
     if not result.get('ok'):
-        raise RuntimeError('Telegram rejected the request')
+        raise api_error(method, result.get('error_code', 'unknown'), result.get('description', ''))
     return result['result']
 
 
@@ -128,7 +159,7 @@ def save(state):
 
 
 def main():
-    token, chat_id = os.environ.get('TELEGRAM_BOT_TOKEN'), os.environ.get('TELEGRAM_CHAT_ID')
+    token, chat_id = credentials()
     if not token or not chat_id:
         print('Waiting for TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID repository secrets.')
         return
@@ -140,6 +171,8 @@ def main():
         state = {'events': {}}
     first_run = not state.get('connected')
     if first_run:
+        api(token, 'getMe', {})
+        print('Telegram getMe: токен бота проверен.')
         chat = api(token, 'getChat', {'chat_id': chat_id})
         if chat.get('type') != 'private' or str(chat.get('id')) != str(chat_id):
             raise RuntimeError('Configure the numeric ID of your private chat with the bot.')
