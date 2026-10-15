@@ -3,12 +3,23 @@ import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
 const fmt=v=>v?new Intl.DateTimeFormat('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(v)):'Ожидается';
 let data={events:[],feeds:[]},busy=false;const retained=new Map();
+let selectedDate='',calendarMonth=new Date(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Yekaterinburg',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())+'T12:00:00');
+const dateKey=e=>e.start_at?new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Yekaterinburg',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(e.start_at)):e.event_date||'';
+function renderCalendar(){
+const year=calendarMonth.getFullYear(),month=calendarMonth.getMonth(),days=new Date(year,month+1,0).getDate(),offset=(new Date(year,month,1).getDay()+6)%7;
+$('calendar-month').textContent=new Intl.DateTimeFormat('ru-RU',{month:'long',year:'numeric'}).format(calendarMonth);$('calendar').replaceChildren();
+const dates=new Map();for(const e of data.events){const key=dateKey(e);dates.set(key,(dates.get(key)||0)+1);}
+const today=dateKey({start_at:new Date().toISOString()});for(let i=0;i<offset;i++)$('calendar').append(document.createElement('span'));
+for(let day=1;day<=days;day++){const key=[year,String(month+1).padStart(2,'0'),String(day).padStart(2,'0')].join('-'),b=document.createElement('button');b.textContent=day;b.className=[dates.has(key)?'has-events':'',selectedDate===key?'selected':'',today===key?'today':''].join(' ');b.setAttribute('aria-label',key+' · событий: '+(dates.get(key)||0));b.setAttribute('aria-pressed',String(selectedDate===key));b.addEventListener('click',()=>{selectedDate=selectedDate===key?'':key;render();});$('calendar').append(b);}
+$('date-caption').textContent=selectedDate?selectedDate.split('-').reverse().join('.'):'Все даты';
+document.querySelectorAll('[data-sport]').forEach(b=>{b.classList.toggle('active',b.dataset.sport===$('sport').value);b.setAttribute('aria-pressed',String(b.dataset.sport===$('sport').value));});
+}
 function cell(row,value){const c=document.createElement('td');c.textContent=value??'Нет данных';row.append(c);return c;}
 function render(){
 const query=$('search').value.trim().toLocaleLowerCase('ru'),task=$('task').value;
-const events=data.events.filter(e=>(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
+const events=data.events.filter(e=>(!selectedDate||dateKey(e)===selectedDate)&&(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
 const numericPrice=e=>{const n=e.original_odds??parseFloat(String(e.historical_quote||'').replace('≈',''));return Number.isFinite(n)?n:-1;};const key=$('sort').value;events.sort((a,b)=>key==='odds'?numericPrice(b)-numericPrice(a):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at||a.event_date?Date.parse(a.start_at||a.event_date):Infinity)-(b.start_at||b.event_date?Date.parse(b.start_at||b.event_date):Infinity));
-$('rows').replaceChildren();
+$('rows').replaceChildren();renderCalendar();
 function detail(row,value){const c=cell(row,value.text);if(value.basis){const s=document.createElement('small');s.textContent=value.basis;c.append(s);}return c;}
 for(const e of events){
  const r=document.createElement('tr');detail(r,eventDate(e));
@@ -32,4 +43,9 @@ if(name==='latest'){const results=await Promise.allSettled(FEEDS.map(async f=>{c
 data=next;const selected=$('sport').value;$('sport').replaceChildren(new Option('Все',''),...[...new Set(data.events.map(e=>e.sport))].sort().map(s=>new Option(s,s)));$('sport').value=selected;$('message').textContent=errors.length?`Не удалось обновить: ${errors.join(', ')}. Остальные отчёты доступны.`:'';render();
 }catch(e){$('message').textContent=`Не удалось загрузить данные: ${e.message}. Последний загруженный отчёт сохранён на экране.`;$('health').textContent='Ошибка обновления';}finally{busy=false;$('refresh').disabled=false;}}
 async function archive(){try{const list=await json('data/index.json'),selected=$('report').value;$('report').replaceChildren(new Option('Все задачи · последние отчёты','latest'),...list.reports.map(r=>new Option(`${fmt(r.generated_at)} · ${r.task_name||r.title}`,r.file)));$('report').value=[...$('report').options].some(o=>o.value===selected)?selected:'latest';}catch{$('message').textContent+=' Архив пока недоступен.';}}
+$('prev-month').addEventListener('click',()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()-1,1);renderCalendar();});
+$('next-month').addEventListener('click',()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderCalendar();});
+$('clear-date').addEventListener('click',()=>{selectedDate='';render();});
+document.querySelectorAll('[data-sport]').forEach(b=>b.addEventListener('click',()=>{$('sport').value=b.dataset.sport;render();}));
+$('reset-filters').addEventListener('click',()=>{for(const id of ['search','task','sport','status','audit'])$(id).value='';$('sort').value='start';selectedDate='';render();});
 for(const id of ['search','task','sport','status','audit','sort'])$(id).addEventListener('input',render);$('report').addEventListener('change',load);$('refresh').addEventListener('click',async()=>{await load();await archive();});await load();await archive();setInterval(async()=>{if(!document.hidden){await load();await archive();}},60000);
