@@ -44,6 +44,12 @@ def validate(path):
             assert parsed.scheme in ('https', 'http') and parsed.hostname
         if odds is not None:
             assert url and event['source_name'], 'Quoted odds require a source'
+        if report.get('feed_id') == 'history':
+            assert event['odds'] is None, 'History prices must not be represented as current odds'
+            assert event['historical_quote'] is None or isinstance(event['historical_quote'], str)
+            assert re.fullmatch(r'\d{4}-\d{2}-\d{2}', event['discussed_on'])
+            if event['audit_status'] == 'Проверен результат':
+                assert url and event.get('score'), 'Verified historical results require a public source and score'
     return report
 
 if __name__ == '__main__':

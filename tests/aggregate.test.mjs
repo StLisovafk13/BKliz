@@ -7,3 +7,11 @@ const c={feed_id:'signals',task_name:'Signals',generated_at:null,summary:'Waitin
 const result=aggregate([a,b,c]);
 assert.equal(result.events.length,2);assert.notEqual(result.events[0].id,result.events[1].id);assert.equal(result.events[0].task_name,'Cycle');assert.equal(result.events[1].task_name,'Overview');assert.equal(result.generated_at,b.generated_at);assert.equal(result.feeds.length,3);assert.equal(a.events[0].id,'same-event');assert.equal(aggregate([c]).generated_at,null);assert.equal(aggregate([]).events.length,0);
 console.log('Aggregation passed: independent feeds, identical event IDs, pending feeds.');
+const history={feed_id:'history',task_name:'History',generated_at:'2026-10-15T17:00:00Z',summary:'Archive',events:[{...e,historical_quote:'1.70',audit_status:'Только архив'}]};
+const withHistory=aggregate([a,b,c,history]);
+assert.equal(withHistory.events.length,3);
+assert.equal(withHistory.events[2].id,'history:same-event');
+assert.equal(withHistory.events[2].historical_quote,'1.70');
+assert.equal(withHistory.generated_at,history.generated_at);
+assert.equal(withHistory.events[0].feed_id,'cycle');
+console.log('History remains separate from current feeds and preserves archived prices.');
