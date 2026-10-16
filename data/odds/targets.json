@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "id": "ligastavok-amur-salavat-20261017-tm45-60min",
+      "event": "Амур — Салават Юлаев",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-17T10:00:00+03:00",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
+      "market": "Тотал меньше 4,5 шайбы за основное время (60 минут)",
+      "teams": [
+        "Амур",
+        "Салават"
+      ]
+    }
+  ]
+}
