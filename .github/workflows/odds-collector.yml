@@ -2,6 +2,13 @@ name: Odds collector — Selenium pilot
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odds-collector.yml'
+      - 'data/odds/targets.json'
+      - 'scripts/odds_collector.py'
+      - 'tests/test_odds_collector.py'
   schedule:
     - cron: '43 * * * *' # UTC; around 17 minutes before the hourly ChatGPT cycle
 
@@ -33,7 +40,7 @@ jobs:
       - name: Run deterministic collector tests
         run: python -m unittest discover -s tests -p 'test_odds_collector.py' -v
 
-      - name: Probe approved bookmaker event
+      - name: Probe bookmaker sites once
         id: probe
         continue-on-error: true
         run: python scripts/odds_collector.py
@@ -91,5 +98,5 @@ jobs:
       - name: Mark inaccessible bookmaker source as failed
         if: steps.probe.outcome == 'failure'
         run: |
-          echo 'Selenium did not verify event visibility or source accessibility; see JSON and screenshot artifact.'
+          echo 'One or more bookmaker access tests failed; see status JSON and screenshot artifact.'
           exit 1
