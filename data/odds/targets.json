@@ -3,15 +3,47 @@
   "targets": [
     {
       "id": "ligastavok-amur-salavat-20261017-tm45-60min",
+      "bookmaker": "Лига Ставок",
+      "probe_mode": "event",
+      "enabled": false,
+      "revision": 2,
+      "disabled_reason": "Confirmed security page: Доступ заблокирован системой защиты (GitHub Actions runner). Do not retry without review.",
       "event": "Амур — Салават Юлаев",
       "competition": "КХЛ 2026/2027",
       "start_at": "2026-10-17T10:00:00+03:00",
       "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
-      "market": "Тотал меньше 4,5 шайбы за основное время (60 минут)",
+      "market": "Тотал меньше 4,5 за основное время",
       "teams": [
         "Амур",
         "Салават"
       ]
+    },
+    {
+      "id": "pari-homepage-access-test-v1",
+      "bookmaker": "PARI",
+      "probe_mode": "homepage",
+      "enabled": true,
+      "one_shot": true,
+      "revision": 1,
+      "source_url": "https://pari.ru/"
+    },
+    {
+      "id": "winline-homepage-access-test-v1",
+      "bookmaker": "Winline",
+      "probe_mode": "homepage",
+      "enabled": true,
+      "one_shot": true,
+      "revision": 1,
+      "source_url": "https://winline.ru/"
+    },
+    {
+      "id": "betboom-homepage-access-test-v1",
+      "bookmaker": "BetBoom",
+      "probe_mode": "homepage",
+      "enabled": true,
+      "one_shot": true,
+      "revision": 1,
+      "source_url": "https://betboom.ru/"
     }
   ]
 }
