@@ -2,7 +2,7 @@
   "schema_version": 1,
   "collector": "BKliz Selenium pilot",
   "generated_at": "2026-10-16T16:52:02+00:00",
-  "status": "checked",
+  "status": "no_new_probes",
   "note": "Diagnostic accessibility only. Odds=null, and no bookmaker market or event start is verified.",
   "observations": [
     {
