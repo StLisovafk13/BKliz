@@ -17,7 +17,7 @@
 
 1. Откройте https://github.com/StLisovafk13/BKliz/actions/workflows/odds-collector.yml
 2. Нажмите `Run workflow → main`, либо дождитесь запланированного запуска в 43-ю минуту часа UTC (минуты ЕКБ и МСК совпадают).
-3. Откройте запуск `collect → Probe approved bookmaker event` и посмотрите диагностические статусы трёх сайтов.
+3. Откройте запуск `collect → Probe bookmaker sites once` и посмотрите диагностические статусы трёх сайтов.
 4. Внизу страницы запуска в `Artifacts → odds-pilot-...` скачайте ZIP. Внутри `data/odds/latest.json` и скриншоты `odds-diagnostics/*.png`, если изображения удалось получить.
 5. Текущая машина Ubuntu/Chrome может получить отказ из-за политики сайта. Данные блокировки сохраняются как `blocked`, а не как «коэффициентов нет».
 
