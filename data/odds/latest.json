@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "collector": "BKliz Selenium pilot",
+  "generated_at": null,
+  "status": "not_started",
+  "note": "Collector not run. No verified bookmaker prices.",
+  "observations": []
+}
