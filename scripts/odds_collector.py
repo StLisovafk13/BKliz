@@ -277,11 +277,16 @@ def run(targets: list[dict], now: datetime, probe=probe_selenium,
     for target in targets:
         prior = previous_rows.get(target["id"])
         if not target["enabled"]:
-            rows.append(observation(
-                target, "paused",
-                "Disabled after confirmed access denial; manual review required before re-enabling",
-                checked_at,
-            ))
+            if (prior is not None and prior.get("status") == "paused"
+                    and prior.get("source_url") == target["source_url"]
+                    and prior.get("revision") == target.get("revision", 1)):
+                rows.append(prior)
+            else:
+                rows.append(observation(
+                    target, "paused",
+                    "Disabled after confirmed access denial; manual review required before re-enabling",
+                    checked_at,
+                ))
             continue
         if target["probe_mode"] == "event" and parse_start(target["start_at"]) <= now:
             rows.append(observation(
@@ -345,7 +350,7 @@ def main() -> int:
         diag = row.get("diagnostic") or {}
         print(row["bookmaker"] + ": " + row["status"] +
               (" — " + str(diag.get("landing_url")) if diag else ""))
-    if statuses & FAILURE_STATUSES:
+    if data["status"] == "checked" and statuses & FAILURE_STATUSES:
         return 2
     return 0
 
