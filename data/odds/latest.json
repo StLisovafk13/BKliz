@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "collector": "BKliz Selenium pilot",
-  "generated_at": "2026-10-16T15:54:09+00:00",
+  "generated_at": "2026-10-16T16:39:35+00:00",
   "status": "checked",
-  "note": "Accessibility pilot only. All bookmaker odds are deliberately null until a reliable market-specific extractor is tested.",
+  "note": "Diagnostic accessibility pilot only; odds are always null, and no exact market or event time is verified.",
   "observations": [
     {
       "id": "ligastavok-amur-salavat-20261017-tm45-60min",
@@ -17,9 +17,21 @@
       "odds": null,
       "price_verified": false,
       "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
-      "checked_at": "2026-10-16T15:54:09+00:00",
+      "checked_at": "2026-10-16T16:39:35+00:00",
       "status": "event_not_verified",
-      "reason": "Cannot verify both participants on rendered page"
+      "reason": "Both participant names not found in rendered page",
+      "diagnostic": {
+        "render_wait_timeout": true,
+        "landing_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
+        "page_title": "Ставки на спорт - Букмекерская компания \"Лига Ставок\"",
+        "visible_characters": 293,
+        "teams_visible": [
+          false,
+          false
+        ],
+        "screenshot_captured": true,
+        "screenshot_filename": "ligastavok-amur-salavat-20261017-tm45-60min.png"
+      }
     }
   ]
 }
