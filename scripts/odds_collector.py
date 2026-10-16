@@ -19,7 +19,7 @@ from urllib.parse import urlparse, urlunparse
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TARGETS = ROOT / "data/odds/targets.json"
 DEFAULT_OUTPUT = ROOT / "data/odds/latest.json"
-DEFAULT_DIAGNOSTICS = ROOT / ".odds-diagnostics"
+DEFAULT_DIAGNOSTICS = ROOT / "odds-diagnostics"
 ALLOWED_HOSTS = frozenset({"ligastavok.ru", "www.ligastavok.ru"})
 BLOCK_MARKERS = (
     "captcha", "капча", "access denied", "доступ запрещен",
@@ -185,7 +185,7 @@ def probe_selenium(target: dict, diagnostics_dir: Path = DEFAULT_DIAGNOSTICS) ->
                 if driver.save_screenshot(str(diagnostics_dir / filename)):
                     diagnostics["screenshot_captured"] = True
                     diagnostics["screenshot_filename"] = filename
-            except (OSError, Exception):
+            except Exception:
                 diagnostics["screenshot_error"] = "Screenshot unavailable"
         return status, reason, diagnostics
     finally:
