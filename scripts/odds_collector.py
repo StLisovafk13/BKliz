@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Selenium diagnostic pilot for a named Liga Stavok event.
+"""Conservative Selenium accessibility pilot for approved bookmaker pages.
 
-Observations are NOT verified odds. No market-specific extractor is present:
-every row keeps odds=null, market_verified=false and price_verified=false.
-Browser is anonymous: no login, anti-bot bypass, network API interception or
-profile import. Screenshot artifacts can contain public page contents only.
+This pilot intentionally NEVER extracts/validates bookmaker odds or markets.
+The three homepage checks are one-shot; failed/blocked sources are not polled
+again until explicitly rearmed in the target configuration. Screenshots stay
+as GitHub Actions artifacts, never published as website content.
 """
 from __future__ import annotations
 
@@ -20,13 +20,31 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TARGETS = ROOT / "data/odds/targets.json"
 DEFAULT_OUTPUT = ROOT / "data/odds/latest.json"
 DEFAULT_DIAGNOSTICS = ROOT / "odds-diagnostics"
-ALLOWED_HOSTS = frozenset({"ligastavok.ru", "www.ligastavok.ru"})
+
+BOOKMAKER_DOMAINS = {
+    "Лига Ставок": "ligastavok.ru",
+    "PARI": "pari.ru",
+    "Winline": "winline.ru",
+    "BetBoom": "betboom.ru",
+}
+BRAND_MARKERS = {
+    "Лига Ставок": ("лига ставок", "ligastavok"),
+    "PARI": ("pari", "пари"),
+    "Winline": ("winline", "винлайн"),
+    "BetBoom": ("betboom", "бетбум"),
+}
 BLOCK_MARKERS = (
     "captcha", "капча", "access denied", "доступ запрещен",
-    "доступ ограничен", "checking your browser", "verify you are human",
+    "доступ ограничен", "доступ заблокирован",
+    "доступ заблокирован системой защиты", "системой защиты",
+    "checking your browser", "verify you are human",
     "attention required", "error 403",
 )
-BAD_RESULTS = {"blocked", "redirected", "empty_page", "event_not_verified", "source_error"}
+FAILURE_STATUSES = frozenset({
+    "blocked", "redirected", "empty_page", "event_not_verified",
+    "homepage_not_verified", "source_error",
+})
+TERMINAL_STATUSES = FAILURE_STATUSES | {"homepage_visible", "event_visible"}
 
 
 def utc_now() -> datetime:
@@ -40,19 +58,33 @@ def parse_start(value: str) -> datetime:
     return result
 
 
-def valid_source(url: str) -> bool:
-    parsed = urlparse(url)
-    return parsed.scheme == "https" and parsed.hostname in ALLOWED_HOSTS
-
-
-def safe_landing_url(url: str) -> str:
-    """Keep a useful URL without sharing query strings, fragments or credentials."""
+def normalized_host(url: str) -> str | None:
     try:
         parsed = urlparse(url)
-        host = parsed.hostname or ""
+        if parsed.scheme != "https" or not parsed.hostname:
+            return None
+        return parsed.hostname.lower().removeprefix("www.")
+    except ValueError:
+        return None
+
+
+def valid_source(url: str, bookmaker: str | None = None) -> bool:
+    host = normalized_host(url)
+    if host is None:
+        return False
+    if bookmaker is not None:
+        return host == BOOKMAKER_DOMAINS.get(bookmaker)
+    return host in BOOKMAKER_DOMAINS.values()
+
+
+def safe_landing_url(url: str, bookmaker: str | None = None) -> str:
+    """Omit parameters, fragments and userinfo; never store arbitrary hosts."""
+    try:
+        parsed = urlparse(url)
+        host = parsed.hostname
         if not host:
             return "unknown"
-        if not valid_source(url):
+        if not valid_source(url, bookmaker):
             return "external-domain:" + host[:100]
         return urlunparse(("https", host, parsed.path[:300], "", "", ""))
     except ValueError:
@@ -64,30 +96,46 @@ def load_targets(path: Path) -> list[dict]:
     if document.get("schema_version") != 1 or not isinstance(document.get("targets"), list):
         raise ValueError("Invalid targets configuration")
     unique: set[str] = set()
-    targets = []
+    result = []
     for t in document["targets"]:
-        for key in ("id", "event", "start_at", "source_url", "market", "teams"):
+        if not isinstance(t, dict):
+            raise ValueError("Target must be an object")
+        for key in ("id", "bookmaker", "source_url", "probe_mode", "enabled"):
             if key not in t:
                 raise ValueError(f"Missing {key}")
         if not isinstance(t["id"], str) or not re.fullmatch(r"[a-z0-9-]+", t["id"]):
-            raise ValueError("Invalid target id")
+            raise ValueError("Invalid target ID")
         if t["id"] in unique:
-            raise ValueError("Duplicate target id")
+            raise ValueError("Duplicate target ID")
         unique.add(t["id"])
-        if not valid_source(t["source_url"]):
-            raise ValueError("Unsupported source host")
-        parse_start(t["start_at"])
-        if not (isinstance(t["teams"], list) and len(t["teams"]) == 2
-                and all(isinstance(v, str) and len(v) >= 3 for v in t["teams"])):
-            raise ValueError("Two team names are required")
-        aliases = t.get("team_aliases", [[], []])
-        if not (isinstance(aliases, list) and len(aliases) == 2
-                and all(isinstance(group, list) and len(group) <= 5
-                        and all(isinstance(v, str) and 3 <= len(v) <= 80 for v in group)
-                        for group in aliases)):
-            raise ValueError("team_aliases must be two groups of up to five names")
-        targets.append(t)
-    return targets
+        if t["bookmaker"] not in BOOKMAKER_DOMAINS:
+            raise ValueError("Unknown bookmaker")
+        if not isinstance(t["enabled"], bool):
+            raise ValueError("Target enabled must be boolean")
+        if not valid_source(t["source_url"], t["bookmaker"]):
+            raise ValueError("Unsupported or mismatched bookmaker source URL")
+        if t["probe_mode"] not in ("event", "homepage"):
+            raise ValueError("Unsupported probe_mode")
+        if not isinstance(t.get("revision", 1), int) or t.get("revision", 1) < 1:
+            raise ValueError("revision must be a positive integer")
+        if t["probe_mode"] == "event":
+            for key in ("event", "start_at", "market", "teams"):
+                if key not in t:
+                    raise ValueError(f"Missing {key}")
+            parse_start(t["start_at"])
+            if not (isinstance(t["teams"], list) and len(t["teams"]) == 2
+                    and all(isinstance(v, str) and len(v) >= 3 for v in t["teams"])):
+                raise ValueError("Two team names are required")
+            aliases = t.get("team_aliases", [[], []])
+            if not (isinstance(aliases, list) and len(aliases) == 2
+                    and all(isinstance(group, list) and len(group) <= 5
+                            and all(isinstance(v, str) and 3 <= len(v) <= 80 for v in group)
+                            for group in aliases)):
+                raise ValueError("team_aliases must be two lists")
+        elif t.get("one_shot") is not True:
+            raise ValueError("Homepage diagnosis must be one-shot")
+        result.append(t)
+    return result
 
 
 def team_presence(text: str, teams: list[str], aliases: list[list[str]] | None = None) -> list[bool]:
@@ -102,83 +150,85 @@ def classify_page(
     visible_text: str,
     current_url: str,
     teams: list[str],
-    team_aliases: list[list[str]] | None = None,
+    aliases: list[list[str]] | None = None,
+    bookmaker: str = "Лига Ставок",
+    probe_mode: str = "event",
 ) -> tuple[str, str]:
-    """Classify accessibility, never odds availability or market validity."""
-    if not valid_source(current_url):
-        return "redirected", "Browser navigated away from an approved bookmaker host"
-    text = title + "\n" + visible_text
-    if any(marker in text.casefold() for marker in BLOCK_MARKERS):
-        return "blocked", "Possible CAPTCHA or access restriction"
+    if not valid_source(current_url, bookmaker):
+        return "redirected", "Browser left the expected bookmaker domain"
+    combined = (title + "\n" + visible_text).casefold()
+    if any(marker in combined for marker in BLOCK_MARKERS):
+        return "blocked", "Bookmaker security page or access restriction detected"
     if len(visible_text.strip()) < 60:
-        return "empty_page", "Not enough visible page content"
-    if not all(team_presence(text, teams, team_aliases)):
-        return "event_not_verified", "Both participant names not found in rendered page"
-    return "event_visible", "Both participants appear on page; event time, exact market and odds NOT verified"
+        return "empty_page", "Insufficient visible page content"
+    if probe_mode == "homepage":
+        if not any(marker in combined for marker in BRAND_MARKERS[bookmaker]):
+            return "homepage_not_verified", "Bookmaker homepage identity not visible"
+        return "homepage_visible", "Bookmaker-branded page visible; no event, market or odds verified"
+    if not all(team_presence(combined, teams, aliases)):
+        return "event_not_verified", "Both participants not visible on rendered page"
+    return "event_visible", "Both participants visible; event start, exact market and odds NOT verified"
 
 
-def page_snapshot(driver: object, target: dict) -> tuple[str, str, str, str]:
-    current_url = driver.current_url
+def page_snapshot(driver: object, target: dict) -> tuple[str, str, str, tuple[str, str]]:
+    landing_url = driver.current_url
     title = driver.title or ""
     try:
-        visible_text = driver.execute_script(
+        visible = driver.execute_script(
             "return (document.body && document.body.innerText || '').slice(0, 200000)"
         ) or ""
     except Exception:
-        visible_text = ""
-    return current_url, title, visible_text, classify_page(
-        title, visible_text, current_url, target["teams"], target.get("team_aliases")
+        visible = ""
+    result = classify_page(
+        title, visible, landing_url,
+        target.get("teams", []), target.get("team_aliases"),
+        bookmaker=target["bookmaker"], probe_mode=target["probe_mode"],
     )
+    return landing_url, title, visible, result
 
 
 def probe_selenium(target: dict, diagnostics_dir: Path = DEFAULT_DIAGNOSTICS) -> tuple[str, str, dict]:
-    """One normal Chrome navigation and bounded wait for visibly rendered teams."""
+    """Anonymous navigation only. No login, CAPTCHA bypass or API interception."""
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.support.ui import WebDriverWait
 
-    options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--incognito")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--window-size=1440,900")
-    options.add_argument("--lang=ru-RU")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--no-sandbox")  # Dedicated ephemeral GitHub Actions runner
-    options.add_argument("--disable-notifications")
-    driver = webdriver.Chrome(options=options)
-    diagnostics: dict = {}
+    opts = Options()
+    for flag in (
+        "--headless=new", "--incognito", "--disable-extensions",
+        "--window-size=1440,900", "--lang=ru-RU",
+        "--disable-dev-shm-usage", "--no-sandbox", "--disable-notifications",
+    ):
+        opts.add_argument(flag)
+    driver = webdriver.Chrome(options=opts)
+    diagnostics = {}
     try:
         driver.set_page_load_timeout(35)
         try:
             driver.get(target["source_url"])
         except TimeoutException:
-            # Inspect whatever the browser rendered; never fake an accessible market.
             diagnostics["navigation_timeout"] = True
 
-        # Wait for relevant page content, rather than sleeping for four seconds.
-        # The browser never fills a betting slip, logs in or clicks consent banners.
-        def meaningful_page(browser):
-            url, title, body, classification = page_snapshot(browser, target)
-            return classification[0] in ("blocked", "redirected", "event_visible")
+        # Bounded wait for actual site identity or an access denial.
+        def wait_condition(browser):
+            _, _, _, (status, _) = page_snapshot(browser, target)
+            return status in ("blocked", "redirected", "event_visible", "homepage_visible")
 
         try:
-            WebDriverWait(driver, 22, poll_frequency=1.5).until(meaningful_page)
+            WebDriverWait(driver, 22, poll_frequency=1.5).until(wait_condition)
         except TimeoutException:
             diagnostics["render_wait_timeout"] = True
 
-        landing, title, text, (status, reason) = page_snapshot(driver, target)
-        diagnostics["landing_url"] = safe_landing_url(landing)
+        landing, title, visible, (status, reason) = page_snapshot(driver, target)
+        diagnostics["landing_url"] = safe_landing_url(landing, target["bookmaker"])
         diagnostics["page_title"] = re.sub(r"[\r\n\t]+", " ", title)[:160]
-        diagnostics["visible_characters"] = len(text)
-        diagnostics["teams_visible"] = team_presence(
-            title + "\n" + text, target["teams"], target.get("team_aliases")
-        )
+        diagnostics["visible_characters"] = len(visible)
+        if target["probe_mode"] == "event":
+            diagnostics["teams_visible"] = team_presence(
+                title + "\n" + visible, target["teams"], target.get("team_aliases"))
         diagnostics["screenshot_captured"] = False
-        # Screenshot only an anonymous approved bookmaker page, never redirects
-        # to unrelated domains. Artifacts are NOT committed to the repository.
-        if valid_source(landing):
+        if valid_source(landing, target["bookmaker"]):
             try:
                 diagnostics_dir.mkdir(parents=True, exist_ok=True)
                 filename = target["id"] + ".png"
@@ -192,35 +242,59 @@ def probe_selenium(target: dict, diagnostics_dir: Path = DEFAULT_DIAGNOSTICS) ->
         driver.quit()
 
 
-def observation(target: dict, status: str, explanation: str, checked_at: str, diagnostic: dict | None = None) -> dict:
-    result = {
+def observation(target: dict, status: str, reason: str, checked_at: str,
+                diagnostic: dict | None = None) -> dict:
+    row = {
         "id": target["id"],
-        "event": target["event"],
-        "bookmaker": "Лига Ставок",
-        "competition": target.get("competition", "Не подтверждено"),
-        "expected_start_at": target["start_at"],
+        "probe_mode": target["probe_mode"],
+        "revision": target.get("revision", 1),
+        "event": target.get("event", f'{target["bookmaker"]} — homepage access test'),
+        "bookmaker": target["bookmaker"],
+        "competition": target.get("competition"),
+        "expected_start_at": target.get("start_at"),
         "start_at_verified": False,
-        "market": target["market"],
+        "market": target.get("market", "Homepage access only, not a betting market"),
         "market_verified": False,
         "odds": None,
         "price_verified": False,
         "source_url": target["source_url"],
         "checked_at": checked_at,
         "status": status,
-        "reason": explanation,
+        "reason": reason,
     }
     if diagnostic is not None:
-        result["diagnostic"] = diagnostic
-    return result
+        row["diagnostic"] = diagnostic
+    return row
 
 
-def run(targets: list[dict], now: datetime, probe=probe_selenium) -> dict:
+def run(targets: list[dict], now: datetime, probe=probe_selenium,
+        previous: dict | None = None) -> dict:
     checked_at = now.astimezone(timezone.utc).isoformat(timespec="seconds")
-    results = []
+    previous_rows = {x["id"]: x for x in (previous or {}).get("observations", [])
+                     if isinstance(x, dict) and isinstance(x.get("id"), str)}
+    rows = []
+    probed = False
     for target in targets:
-        if parse_start(target["start_at"]) <= now:
-            results.append(observation(target, "expired", "Scheduled match start is past; no live-price claim", checked_at))
+        prior = previous_rows.get(target["id"])
+        if not target["enabled"]:
+            rows.append(observation(
+                target, "paused",
+                "Disabled after confirmed access denial; manual review required before re-enabling",
+                checked_at,
+            ))
             continue
+        if target["probe_mode"] == "event" and parse_start(target["start_at"]) <= now:
+            rows.append(observation(
+                target, "expired", "Scheduled event already started; not a live-price check", checked_at))
+            continue
+        if (target.get("one_shot") is True and prior is not None
+                and prior.get("status") in TERMINAL_STATUSES
+                and prior.get("source_url") == target["source_url"]
+                and prior.get("revision") == target.get("revision", 1)):
+            # One-shot means exactly one browser contact per approved config revision.
+            rows.append(prior)
+            continue
+        probed = True
         try:
             response = probe(target)
             if len(response) == 3:
@@ -229,20 +303,22 @@ def run(targets: list[dict], now: datetime, probe=probe_selenium) -> dict:
                 status, reason = response
                 diagnostic = None
         except Exception as exc:
-            # Do not leak URL query strings, cookies, page text or private user data.
-            status, reason, diagnostic = "source_error", (
-                "Selenium could not render bookmaker page: " + type(exc).__name__
-            ), None
-        results.append(observation(target, status, reason, checked_at, diagnostic))
+            status = "source_error"
+            reason = "Could not render bookmaker page: " + type(exc).__name__
+            diagnostic = None
+        rows.append(observation(target, status, reason, checked_at, diagnostic))
+
+    # A no-op hourly cycle must not forge a fresh bookmaker check or commit.
+    old = previous or {}
+    unchanged = rows == old.get("observations")
     return {
         "schema_version": 1,
         "collector": "BKliz Selenium pilot",
-        "generated_at": checked_at,
+        "generated_at": old.get("generated_at") if unchanged and not probed else checked_at,
         "status": "no_targets" if not targets else (
-            "all_expired" if all(r["status"] == "expired" for r in results) else "checked"
-        ),
-        "note": "Diagnostic accessibility pilot only; odds are always null, and no exact market or event time is verified.",
-        "observations": results,
+            "no_new_probes" if not probed else "checked"),
+        "note": "Diagnostic accessibility only. Odds=null, and no bookmaker market or event start is verified.",
+        "observations": rows,
     }
 
 
@@ -252,29 +328,24 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     try:
-        data = run(load_targets(args.targets), utc_now())
+        targets = load_targets(args.targets)
+        previous = json.loads(args.output.read_text(encoding="utf-8")) if args.output.exists() else None
+        data = run(targets, utc_now(), previous=previous)
     except (ValueError, OSError, json.JSONDecodeError) as exc:
-        print("Configuration error: " + str(exc), file=sys.stderr)
+        print("Collector configuration error: " + str(exc), file=sys.stderr)
         return 1
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temporary = args.output.with_suffix(".tmp")
     temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(args.output)
-    statuses = {item["status"] for item in data["observations"]}
-    print("Odds pilot: " + data["status"] + "; statuses: " + ",".join(sorted(statuses)) + "; confirmed prices: 0")
-    for result in data["observations"]:
-        diag = result.get("diagnostic") or {}
-        if diag:
-            print("Source diagnostic:", json.dumps({
-                "status": result["status"],
-                "landing_url": diag.get("landing_url"),
-                "page_title": diag.get("page_title"),
-                "visible_characters": diag.get("visible_characters"),
-                "teams_visible": diag.get("teams_visible"),
-                "screenshot_captured": diag.get("screenshot_captured"),
-            }, ensure_ascii=False))
-    if statuses & BAD_RESULTS:
-        # Event missing/blocked now makes the pilot fail visibly AFTER uploading JSON.
+    statuses = {x["status"] for x in data["observations"]}
+    print("Odds pilot: " + data["status"] + "; statuses: " +
+          ",".join(sorted(statuses)) + "; verified prices: 0")
+    for row in data["observations"]:
+        diag = row.get("diagnostic") or {}
+        print(row["bookmaker"] + ": " + row["status"] +
+              (" — " + str(diag.get("landing_url")) if diag else ""))
+    if statuses & FAILURE_STATUSES:
         return 2
     return 0
 
