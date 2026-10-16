@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Conservative Selenium accessibility pilot for BKliz odds.
+"""Selenium diagnostic pilot for a named Liga Stavok event.
 
-This pilot intentionally NEVER extracts or confirms a bookmaker price.
-It checks that an allowed page can be rendered for a specifically named event.
-It writes only observations with odds=null until a separately tested,
-market-specific and time-aware extractor is implemented.
+Observations are NOT verified odds. No market-specific extractor is present:
+every row keeps odds=null, market_verified=false and price_verified=false.
+Browser is anonymous: no login, anti-bot bypass, network API interception or
+profile import. Screenshot artifacts can contain public page contents only.
 """
 from __future__ import annotations
 
@@ -12,30 +12,25 @@ import argparse
 import json
 import re
 import sys
-import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TARGETS = ROOT / "data/odds/targets.json"
 DEFAULT_OUTPUT = ROOT / "data/odds/latest.json"
-ALLOWED_HOSTS = {
-    "ligastavok.ru", "www.ligastavok.ru",
-}
+DEFAULT_DIAGNOSTICS = ROOT / ".odds-diagnostics"
+ALLOWED_HOSTS = frozenset({"ligastavok.ru", "www.ligastavok.ru"})
 BLOCK_MARKERS = (
     "captcha", "капча", "access denied", "доступ запрещен",
     "доступ ограничен", "checking your browser", "verify you are human",
     "attention required", "error 403",
 )
+BAD_RESULTS = {"blocked", "redirected", "empty_page", "event_not_verified", "source_error"}
 
 
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
-
-
-def iso_now() -> str:
-    return utc_now().isoformat(timespec="seconds")
 
 
 def parse_start(value: str) -> datetime:
@@ -48,6 +43,20 @@ def parse_start(value: str) -> datetime:
 def valid_source(url: str) -> bool:
     parsed = urlparse(url)
     return parsed.scheme == "https" and parsed.hostname in ALLOWED_HOSTS
+
+
+def safe_landing_url(url: str) -> str:
+    """Keep a useful URL without sharing query strings, fragments or credentials."""
+    try:
+        parsed = urlparse(url)
+        host = parsed.hostname or ""
+        if not host:
+            return "unknown"
+        if not valid_source(url):
+            return "external-domain:" + host[:100]
+        return urlunparse(("https", host, parsed.path[:300], "", "", ""))
+    except ValueError:
+        return "unknown"
 
 
 def load_targets(path: Path) -> list[dict]:
@@ -71,57 +80,120 @@ def load_targets(path: Path) -> list[dict]:
         if not (isinstance(t["teams"], list) and len(t["teams"]) == 2
                 and all(isinstance(v, str) and len(v) >= 3 for v in t["teams"])):
             raise ValueError("Two team names are required")
+        aliases = t.get("team_aliases", [[], []])
+        if not (isinstance(aliases, list) and len(aliases) == 2
+                and all(isinstance(group, list) and len(group) <= 5
+                        and all(isinstance(v, str) and 3 <= len(v) <= 80 for v in group)
+                        for group in aliases)):
+            raise ValueError("team_aliases must be two groups of up to five names")
         targets.append(t)
     return targets
 
 
-def classify_page(title: str, visible_text: str, current_url: str, teams: list[str]) -> tuple[str, str]:
-    """Classify accessibility, NOT odds availability or market validity."""
+def team_presence(text: str, teams: list[str], aliases: list[list[str]] | None = None) -> list[bool]:
+    folded = text.casefold()
+    groups = aliases or [[], []]
+    return [any(name.casefold() in folded for name in [team] + groups[i])
+            for i, team in enumerate(teams)]
+
+
+def classify_page(
+    title: str,
+    visible_text: str,
+    current_url: str,
+    teams: list[str],
+    team_aliases: list[list[str]] | None = None,
+) -> tuple[str, str]:
+    """Classify accessibility, never odds availability or market validity."""
     if not valid_source(current_url):
-        return "redirected", "Navigation left an approved bookmaker host"
-    text = (title + "\n" + visible_text).casefold()
-    if any(marker in text for marker in BLOCK_MARKERS):
-        return "blocked", "Possible CAPTCHA / access restriction"
+        return "redirected", "Browser navigated away from an approved bookmaker host"
+    text = title + "\n" + visible_text
+    if any(marker in text.casefold() for marker in BLOCK_MARKERS):
+        return "blocked", "Possible CAPTCHA or access restriction"
     if len(visible_text.strip()) < 60:
-        return "empty_page", "Insufficient rendered page content"
-    if not all(team.casefold() in text for team in teams):
-        return "event_not_verified", "Cannot verify both participants on rendered page"
-    return "event_visible", "Both participants visible; exact market and odds NOT verified"
+        return "empty_page", "Not enough visible page content"
+    if not all(team_presence(text, teams, team_aliases)):
+        return "event_not_verified", "Both participant names not found in rendered page"
+    return "event_visible", "Both participants appear on page; event time, exact market and odds NOT verified"
 
 
-def probe_selenium(target: dict) -> tuple[str, str]:
-    """One normal browser navigation; no login, bypassing or API interception."""
+def page_snapshot(driver: object, target: dict) -> tuple[str, str, str, str]:
+    current_url = driver.current_url
+    title = driver.title or ""
+    try:
+        visible_text = driver.execute_script(
+            "return (document.body && document.body.innerText || '').slice(0, 200000)"
+        ) or ""
+    except Exception:
+        visible_text = ""
+    return current_url, title, visible_text, classify_page(
+        title, visible_text, current_url, target["teams"], target.get("team_aliases")
+    )
+
+
+def probe_selenium(target: dict, diagnostics_dir: Path = DEFAULT_DIAGNOSTICS) -> tuple[str, str, dict]:
+    """One normal Chrome navigation and bounded wait for visibly rendered teams."""
     from selenium import webdriver
+    from selenium.common.exceptions import TimeoutException
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.support.ui import WebDriverWait
 
     options = Options()
     options.add_argument("--headless=new")
+    options.add_argument("--incognito")
+    options.add_argument("--disable-extensions")
     options.add_argument("--window-size=1440,900")
     options.add_argument("--lang=ru-RU")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--no-sandbox")  # GitHub hosted Linux runner only
+    options.add_argument("--no-sandbox")  # Dedicated ephemeral GitHub Actions runner
     options.add_argument("--disable-notifications")
     driver = webdriver.Chrome(options=options)
+    diagnostics: dict = {}
     try:
         driver.set_page_load_timeout(35)
-        driver.get(target["source_url"])
-        WebDriverWait(driver, 20).until(
-            lambda browser: browser.execute_script("return document.readyState") in ("interactive", "complete")
+        try:
+            driver.get(target["source_url"])
+        except TimeoutException:
+            # Inspect whatever the browser rendered; never fake an accessible market.
+            diagnostics["navigation_timeout"] = True
+
+        # Wait for relevant page content, rather than sleeping for four seconds.
+        # The browser never fills a betting slip, logs in or clicks consent banners.
+        def meaningful_page(browser):
+            url, title, body, classification = page_snapshot(browser, target)
+            return classification[0] in ("blocked", "redirected", "event_visible")
+
+        try:
+            WebDriverWait(driver, 22, poll_frequency=1.5).until(meaningful_page)
+        except TimeoutException:
+            diagnostics["render_wait_timeout"] = True
+
+        landing, title, text, (status, reason) = page_snapshot(driver, target)
+        diagnostics["landing_url"] = safe_landing_url(landing)
+        diagnostics["page_title"] = re.sub(r"[\r\n\t]+", " ", title)[:160]
+        diagnostics["visible_characters"] = len(text)
+        diagnostics["teams_visible"] = team_presence(
+            title + "\n" + text, target["teams"], target.get("team_aliases")
         )
-        time.sleep(4)  # Allow ordinary client-side rendering; do not rapidly poll.
-        current_url = driver.current_url
-        title = driver.title or ""
-        visible_text = driver.execute_script(
-            "return (document.body && document.body.innerText || '').slice(0, 200000)"
-        ) or ""
-        return classify_page(title, visible_text, current_url, target["teams"])
+        diagnostics["screenshot_captured"] = False
+        # Screenshot only an anonymous approved bookmaker page, never redirects
+        # to unrelated domains. Artifacts are NOT committed to the repository.
+        if valid_source(landing):
+            try:
+                diagnostics_dir.mkdir(parents=True, exist_ok=True)
+                filename = target["id"] + ".png"
+                if driver.save_screenshot(str(diagnostics_dir / filename)):
+                    diagnostics["screenshot_captured"] = True
+                    diagnostics["screenshot_filename"] = filename
+            except (OSError, Exception):
+                diagnostics["screenshot_error"] = "Screenshot unavailable"
+        return status, reason, diagnostics
     finally:
         driver.quit()
 
 
-def observation(target: dict, status: str, explanation: str, checked_at: str) -> dict:
-    return {
+def observation(target: dict, status: str, explanation: str, checked_at: str, diagnostic: dict | None = None) -> dict:
+    result = {
         "id": target["id"],
         "event": target["event"],
         "bookmaker": "Лига Ставок",
@@ -137,6 +209,9 @@ def observation(target: dict, status: str, explanation: str, checked_at: str) ->
         "status": status,
         "reason": explanation,
     }
+    if diagnostic is not None:
+        result["diagnostic"] = diagnostic
+    return result
 
 
 def run(targets: list[dict], now: datetime, probe=probe_selenium) -> dict:
@@ -147,11 +222,18 @@ def run(targets: list[dict], now: datetime, probe=probe_selenium) -> dict:
             results.append(observation(target, "expired", "Scheduled match start is past; no live-price claim", checked_at))
             continue
         try:
-            status, reason = probe(target)
+            response = probe(target)
+            if len(response) == 3:
+                status, reason, diagnostic = response
+            else:
+                status, reason = response
+                diagnostic = None
         except Exception as exc:
-            # Do not leak driver network details, credentials or page contents into a public JSON.
-            status, reason = "source_error", "Could not render bookmaker page with Selenium: " + type(exc).__name__
-        results.append(observation(target, status, reason, checked_at))
+            # Do not leak URL query strings, cookies, page text or private user data.
+            status, reason, diagnostic = "source_error", (
+                "Selenium could not render bookmaker page: " + type(exc).__name__
+            ), None
+        results.append(observation(target, status, reason, checked_at, diagnostic))
     return {
         "schema_version": 1,
         "collector": "BKliz Selenium pilot",
@@ -159,7 +241,7 @@ def run(targets: list[dict], now: datetime, probe=probe_selenium) -> dict:
         "status": "no_targets" if not targets else (
             "all_expired" if all(r["status"] == "expired" for r in results) else "checked"
         ),
-        "note": "Accessibility pilot only. All bookmaker odds are deliberately null until a reliable market-specific extractor is tested.",
+        "note": "Diagnostic accessibility pilot only; odds are always null, and no exact market or event time is verified.",
         "observations": results,
     }
 
@@ -175,11 +257,24 @@ def main() -> int:
         print("Configuration error: " + str(exc), file=sys.stderr)
         return 1
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary = args.output.with_suffix(".tmp")
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(args.output)
     statuses = {item["status"] for item in data["observations"]}
-    print("Odds pilot: " + data["status"] + "; result statuses: " + ",".join(sorted(statuses)) + "; confirmed prices: 0")
-    if "source_error" in statuses or "blocked" in statuses:
-        # Fail the job visibly, but leave JSON available for the failure artifact.
+    print("Odds pilot: " + data["status"] + "; statuses: " + ",".join(sorted(statuses)) + "; confirmed prices: 0")
+    for result in data["observations"]:
+        diag = result.get("diagnostic") or {}
+        if diag:
+            print("Source diagnostic:", json.dumps({
+                "status": result["status"],
+                "landing_url": diag.get("landing_url"),
+                "page_title": diag.get("page_title"),
+                "visible_characters": diag.get("visible_characters"),
+                "teams_visible": diag.get("teams_visible"),
+                "screenshot_captured": diag.get("screenshot_captured"),
+            }, ensure_ascii=False))
+    if statuses & BAD_RESULTS:
+        # Event missing/blocked now makes the pilot fail visibly AFTER uploading JSON.
         return 2
     return 0
 
