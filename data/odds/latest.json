@@ -1,8 +1,25 @@
 {
   "schema_version": 1,
   "collector": "BKliz Selenium pilot",
-  "generated_at": null,
-  "status": "not_started",
-  "note": "Collector not run. No verified bookmaker prices.",
-  "observations": []
+  "generated_at": "2026-10-16T15:54:09+00:00",
+  "status": "checked",
+  "note": "Accessibility pilot only. All bookmaker odds are deliberately null until a reliable market-specific extractor is tested.",
+  "observations": [
+    {
+      "id": "ligastavok-amur-salavat-20261017-tm45-60min",
+      "event": "Амур — Салават Юлаев",
+      "bookmaker": "Лига Ставок",
+      "competition": "КХЛ 2026/2027",
+      "expected_start_at": "2026-10-17T10:00:00+03:00",
+      "start_at_verified": false,
+      "market": "Тотал меньше 4,5 шайбы за основное время (60 минут)",
+      "market_verified": false,
+      "odds": null,
+      "price_verified": false,
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
+      "checked_at": "2026-10-16T15:54:09+00:00",
+      "status": "event_not_verified",
+      "reason": "Cannot verify both participants on rendered page"
+    }
+  ]
 }
