@@ -45,7 +45,7 @@ jobs:
           name: odds-pilot-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             data/odds/latest.json
-            .odds-diagnostics/*.png
+            odds-diagnostics/*.png
           if-no-files-found: warn
           retention-days: 7
 
