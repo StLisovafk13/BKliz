@@ -38,12 +38,14 @@ jobs:
         continue-on-error: true
         run: python scripts/odds_collector.py
 
-      - name: Upload diagnostic JSON
+      - name: Upload JSON and anonymous browser screenshot
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: odds-pilot-${{ github.run_id }}-${{ github.run_attempt }}
-          path: data/odds/latest.json
+          path: |
+            data/odds/latest.json
+            .odds-diagnostics/*.png
           if-no-files-found: warn
           retention-days: 7
 
@@ -58,7 +60,7 @@ jobs:
           d = json.load(open("data/odds/latest.json", encoding="utf-8"))
           assert d["schema_version"] == 1
           assert d["collector"] == "BKliz Selenium pilot"
-          assert all(x["odds"] is None and not x["price_verified"] for x in d["observations"])
+          assert all(x["odds"] is None and not x["price_verified"] and not x["market_verified"] and not x["start_at_verified"] for x in d["observations"])
           print("JSON validated; confirmed prices: 0")
           PY
           git config user.name 'github-actions[bot]'
@@ -89,5 +91,5 @@ jobs:
       - name: Mark inaccessible bookmaker source as failed
         if: steps.probe.outcome == 'failure'
         run: |
-          echo 'Selenium could not render the bookmaker source; see status JSON artifact.'
+          echo 'Selenium did not verify event visibility or source accessibility; see JSON and screenshot artifact.'
           exit 1
