@@ -63,7 +63,22 @@ $('date-caption').textContent=selectedDate?selectedDate.split('-').reverse().joi
 document.querySelectorAll('[data-sport]').forEach(b=>{b.classList.toggle('active',b.dataset.sport===$('sport').value);b.setAttribute('aria-pressed',String(b.dataset.sport===$('sport').value));});
 }
 function cell(row,value){const c=document.createElement('td');c.textContent=value??'Нет данных';row.append(c);return c;}
+function renderDashboard(){
+ const events=data.events||[];
+ const set=(id,value)=>{const el=$(id);if(el)el.textContent=String(value);};
+ set('dash-total',events.length);set('dash-upcoming',events.filter(e=>e.status==='Ожидается').length);set('dash-live',events.filter(e=>e.status==='Идёт').length);set('dash-done',events.filter(e=>e.status==='Завершён').length);set('dash-priced',events.filter(e=>bookmakerQuotes(e).size>0).length);
+ set('dashboard-time','Последний отчёт: '+fmt(data.generated_at)+' ЕКБ');
+ const root=$('task-dashboard');if(!root)return;root.replaceChildren();
+ for(const def of FEEDS){const f=data.feeds.find(x=>x.feed_id===def.id);const card=document.createElement('button');card.type='button';card.className='task-status-card'+($('task').value===def.id?' selected':'');
+ const age=f?.generated_at?Date.now()-Date.parse(f.generated_at):Infinity;
+ const state=f?.delivery_error?'Ошибка загрузки':!f?.generated_at?'Нет отчёта':f.report_kind==='bootstrap'?'Первичное наполнение':f.report_kind==='history'?'Архив':age>3*3600000?'Устарел':'Данные доступны';
+ const name=document.createElement('strong');name.textContent=def.name;const status=document.createElement('span');status.textContent=state;status.className='task-state'+(f?.delivery_error?' state-error':age>3*3600000?' state-old':'');
+ const meta=document.createElement('small');meta.textContent=(f?.events?.length??0)+' событий · '+(f?.generated_at?fmt(f.generated_at)+' ЕКБ':'время неизвестно');
+ card.append(name,status,meta);card.addEventListener('click',()=>{$('task').value=$('task').value===def.id?'':def.id;render();document.querySelector('.events-panel')?.scrollIntoView({behavior:'smooth',block:'start'});});root.append(card);
+ }
+}
 function render(){
+renderDashboard();
 const query=$('search').value.trim().toLocaleLowerCase('ru'),task=$('task').value;
 const matching=data.events.filter(e=>(!selectedDate||dateKey(e)===selectedDate)&&(!$('audit').value||e.audit_status===$('audit').value)&&(!task||e.feed_id===task)&&(!$('sport').value||e.sport===$('sport').value)&&(!$('status').value||e.status===$('status').value)&&[e.event,e.competition,e.market,e.analysis].join(' ').toLocaleLowerCase('ru').includes(query));
 for(const key of ['won','lost','unsettled'])$(key+'-count').textContent=matching.filter(e=>outcomeKey(e)===key).length;
