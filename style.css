@@ -76,3 +76,48 @@ main{width:100%;padding:22px 24px}
 @media(min-width:1700px){.workspace{grid-template-columns:290px minmax(0,1fr)}}
 @media(max-width:1000px){main{padding:18px 14px}.workspace{grid-template-columns:248px minmax(0,1fr);gap:14px}.outcome-toolbar{padding:12px}.outcome-counters{gap:8px}.outcome-card{padding:11px}.outcome-card span{font-size:13px}.outcome-card strong{font-size:24px}.technical-content .dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.technical-content .task-dashboard{grid-template-columns:1fr}.technical-content .summary{grid-template-columns:1fr}.technical-content .feed-cards{grid-template-columns:1fr}.technical-content .bank-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){main{padding:16px 12px}.workspace{display:flex;gap:14px}.sidebar{position:static;max-height:none;overflow:visible;width:100%}.sidebar .calendar-panel{margin-bottom:10px}.sidebar .calendar-panel>.panel-heading{padding:14px 18px}.sidebar .calendar-grid button{min-height:36px}.filters-disclosure{margin-bottom:0}.outcome-card{flex-direction:column;align-items:flex-start;gap:5px;padding:10px}.outcome-card span{font-size:12px}.outcome-card strong{font-size:24px}.table-heading{padding:14px 16px}.table-wrap{max-height:none;min-height:0}.technical-content{padding:12px;gap:12px}.footer-disclosure>summary{padding:14px}.footer-disclosure .bank-metrics{grid-template-columns:1fr 1fr;gap:16px}.footer-meta{text-align:center}}
+
+/* European roulette: isolated virtual-chip game in the calendar sidebar. */
+.sidebar .roulette-panel{border:1px solid var(--line);border-radius:12px;margin:0 0 12px;overflow:hidden}
+.roulette-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:16px;border-bottom:1px solid var(--line)}
+.roulette-heading h2{font-size:13px;letter-spacing:1px}
+.roulette-heading>span{font-size:10px;color:var(--muted)}
+.roulette-body{padding:16px 12px 12px}
+.roulette-wheel-frame{position:relative;aspect-ratio:1;width:100%;max-width:260px;margin:0 auto 16px;border:6px solid #b49154;border-radius:50%;background:#174533;box-shadow:0 3px 10px #1e35262b,inset 0 0 0 2px #f1dca2;isolation:isolate}
+.roulette-wheel-frame svg{display:block;width:100%;height:100%;overflow:visible}
+#roulette-rotor{transform-origin:50% 50%;transform-box:view-box}
+.roulette-wheel-frame::before{content:"";position:absolute;z-index:3;left:calc(50% - 9px);top:-13px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:17px solid #d7b86c;filter:drop-shadow(0 2px 1px #0005)}
+.roulette-wheel-frame::after{content:"";position:absolute;left:calc(50% - 4px);top:10px;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#faf7ed 45%,#b5b1a5);box-shadow:0 1px 3px #0008;z-index:2}
+.roulette-hub{position:absolute;inset:35%;border-radius:50%;border:2px solid #d2b572;background:radial-gradient(circle at 35% 30%,#44664b,#0d2c20 80%);box-shadow:0 3px 8px #0005;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#e5cd91;pointer-events:none}
+.roulette-hub>span{font-size:21px;font-weight:700;letter-spacing:-1px}
+.roulette-hub>small{font-size:7px;letter-spacing:1.4px}
+.roulette-colors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border:0;padding:0;margin:0 0 12px;min-width:0}
+.roulette-colors legend{font-size:11px;color:var(--muted);margin-bottom:7px;padding:0}
+.roulette-choice{position:relative;border:2px solid transparent;border-radius:7px;cursor:pointer;text-align:center;background:#f6f8f6;padding:8px 3px;color:#fff;line-height:1.3}
+.roulette-choice.red{background:#a63136}.roulette-choice.black{background:#202a27}.roulette-choice.zero{background:#28734e}
+.roulette-choice>span{display:block;font-size:11px;font-weight:550}
+.roulette-choice small{display:block;font-size:10px;opacity:.8;margin-top:2px}
+.sidebar .roulette-choice input{position:absolute;opacity:0;width:1px;height:1px;min-height:0;padding:0;border:0;left:50%;top:50%}
+.roulette-choice:has(input:checked){border-color:#d9b967;box-shadow:0 0 0 1px #987741}
+.roulette-choice:focus-within{outline:2px solid var(--green);outline-offset:3px}
+.roulette-choice:has(input:disabled){opacity:.6;cursor:wait}
+.roulette-stake-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:end}
+.roulette-stake-row>label{display:flex;flex-direction:column;gap:6px;font-size:11px;color:var(--muted)}
+.roulette-stake-row input{font-variant-numeric:tabular-nums}
+.roulette-balance{display:flex;flex-direction:column;gap:2px;padding-bottom:2px;min-width:0}
+.roulette-balance>span,.roulette-balance>small{font-size:10px;color:var(--muted)}
+.roulette-balance>strong{font-size:19px;line-height:1.2;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.roulette-payout{font-size:10px;line-height:1.5;color:var(--muted);margin:9px 0}
+.roulette-spin{display:block;width:100%;border:1px solid var(--green);background:var(--green);color:#fff;font-size:13px;font-weight:600;padding:11px;border-radius:7px}
+.roulette-spin:hover{background:#275f47;border-color:#275f47}
+.roulette-result{display:flex;align-items:center;gap:8px;min-height:38px;margin:11px 0 7px;font-size:11px;line-height:1.5;color:var(--muted)}
+.roulette-result.is-win{color:#276e49}.roulette-result.is-loss{color:#8a5555}
+.roulette-chip{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:25px;height:25px;border-radius:50%;color:#fff;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;background:#202a27}
+.roulette-chip.red{background:#a63136}.roulette-chip.zero{background:#28734e}
+.roulette-history{display:flex;gap:6px;min-height:25px;margin:0 0 10px;flex-wrap:wrap}
+.roulette-history:empty{display:none}
+.roulette-history .roulette-chip{width:23px;height:23px;font-size:10px}
+.roulette-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:5px;padding-top:9px;border-top:1px solid var(--line)}
+.roulette-bottom>span{font-size:9px;color:var(--muted)}
+.sidebar .roulette-bottom .text-button{font-size:10px}
+@media(max-width:650px){.roulette-body{padding:18px}.roulette-colors{gap:9px}.roulette-choice{padding:10px 5px}.roulette-choice>span{font-size:13px}.roulette-stake-row>label{font-size:12px}.roulette-payout,.roulette-result{font-size:12px}.roulette-bottom>span,.sidebar .roulette-bottom .text-button{font-size:11px}}
