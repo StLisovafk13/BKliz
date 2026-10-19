@@ -2,6 +2,42 @@ import {amount,price,initialPrice,autoSettlement,calculate,totals,ligaLink} from
 import {eventDate,originalPrice,actualResult,forecastResult,outcomeKey} from './presentation.js?v=outcomes-20261015';
 import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
+
+// Список источников. Котировки загружаются исключительно из проверенных данных отчёта.
+const BOOKMAKERS=['Лига Ставок','PARI','Winline','BetBoom','Фонбет','БЕТСИТИ','Марафонбет','Олимпбет','Леон','Балтбет','1xBet','1xСтавка','1win'];
+const bookmakerAliases={'лига ставок':'Лига Ставок','liga stavok':'Лига Ставок','pari':'PARI','winline':'Winline','betboom':'BetBoom','фонбет':'Фонбет','fonbet':'Фонбет','бетсити':'БЕТСИТИ','betcity':'БЕТСИТИ','марафонбет':'Марафонбет','marathonbet':'Марафонбет','олимпбет':'Олимпбет','olimpbet':'Олимпбет','леон':'Леон','leon':'Леон','балтбет':'Балтбет','baltbet':'Балтбет','1xbet':'1xBet','1xставка':'1xСтавка','1win':'1win'};
+function bookmakerName(v){return bookmakerAliases[String(v||'').trim().toLocaleLowerCase('ru')]||null;}
+function safeHttp(v){try{const u=new URL(v);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
+function bookmakerQuotes(e){
+ const quotes=new Map(),market=String(e.market||'').trim();
+ const add=q=>{if(!q||typeof q!=='object')return;const name=bookmakerName(q.bookmaker||q.source_name||q.name),odds=Number(q.odds),url=safeHttp(q.source_url||q.url),qMarket=String(q.market||'').trim(),checked=q.checked_at||null;
+ // Важна точная идентичность рынка; без времени проверки котировка не считается текущей.
+ if(!name||!market||qMarket!==market||!Number.isFinite(odds)||odds<=1||!url||!checked||!Number.isFinite(Date.parse(checked)))return;
+ const old=quotes.get(name);if(!old||Date.parse(checked)>Date.parse(old.checked_at))quotes.set(name,{name,odds,url,checked_at:checked});
+ };
+ if(Array.isArray(e.bookmaker_odds))e.bookmaker_odds.forEach(add);
+ // Основная цена отчёта — подтверждена только если есть прямая ссылка и точное время.
+ if(e.odds!==null&&e.odds!==undefined)add({bookmaker:e.source_name,odds:e.odds,source_url:e.source_url,market:e.market,checked_at:e.checked_at});
+ return quotes;
+}
+function renderBookmakers(){
+ const root=$('bookmaker-list');if(!root)return;root.replaceChildren();
+ for(const name of BOOKMAKERS){const item=document.createElement('span');item.className='bookmaker-chip';item.textContent=name;root.append(item);}
+}
+function appendBookmakerComparison(parent,e){
+ const quotes=bookmakerQuotes(e),values=[...quotes.values()],best=values.length?Math.max(...values.map(q=>q.odds)):null;
+ const details=document.createElement('details');details.className='bookmaker-comparison';
+ const summary=document.createElement('summary');summary.textContent='Сравнить 13 БК · '+values.length+'/13 подтверждено'+(best===null?'':' · лучший '+best.toFixed(2));details.append(summary);
+ const note=document.createElement('p');note.textContent='Рынок: '+(e.market||'не указан')+'. Цены без прямой ссылки и времени проверки не показываются.';details.append(note);
+ const list=document.createElement('div');list.className='bookmaker-quotes';
+ for(const name of BOOKMAKERS){const q=quotes.get(name),line=document.createElement('div');line.className='bookmaker-quote'+(q&&q.odds===best?' bookmaker-best':'');
+ const n=document.createElement('span');n.textContent=name;line.append(n);
+ if(q){const a=document.createElement('a');a.href=q.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=q.odds.toFixed(2)+' ↗';a.title='Проверено: '+fmt(q.checked_at)+' ЕКБ';line.append(a);const when=document.createElement('small');when.textContent=fmt(q.checked_at)+' ЕКБ';line.append(when);}
+ else{const missing=document.createElement('span');missing.className='bookmaker-missing';missing.textContent='Не подтверждён';line.append(missing);}
+ list.append(line);
+ }details.append(list);parent.append(details);
+}
+
 const fmt=v=>v?new Intl.DateTimeFormat('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(v)):'Ожидается';
 let data={events:[],feeds:[]},busy=false;const retained=new Map();
 const storageKey='bkliz-calculator-v1';let ledger={bank:'',entries:{}};try{const saved=JSON.parse(localStorage.getItem(storageKey));if(saved&&typeof saved.entries==='object'&&saved.entries&&!Array.isArray(saved.entries))ledger={bank:saved.bank??'',entries:saved.entries};}catch{}
@@ -34,7 +70,7 @@ for(const key of ['won','lost','unsettled'])$(key+'-count').textContent=matching
 const outcome=$('outcome').value;document.querySelectorAll('[data-outcome]').forEach(b=>{b.classList.toggle('active',b.dataset.outcome===outcome);b.setAttribute('aria-pressed',String(b.dataset.outcome===outcome));});
 const events=matching.filter(e=>!outcome||outcomeKey(e)===outcome);
 const numericPrice=e=>{const n=e.original_odds??parseFloat(String(e.historical_quote||'').replace('≈',''));return Number.isFinite(n)?n:-1;};const key=$('sort').value;events.sort((a,b)=>key==='odds'?numericPrice(b)-numericPrice(a):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at||a.event_date?Date.parse(a.start_at||a.event_date):Infinity)-(b.start_at||b.event_date?Date.parse(b.start_at||b.event_date):Infinity));
-$('rows').replaceChildren();renderCalendar();updateBank();
+$('rows').replaceChildren();renderCalendar();renderBookmakers();updateBank();
 function detail(row,value){const c=cell(row,value.text);if(value.basis){const s=document.createElement('small');s.textContent=value.basis;c.append(s);}return c;}
 for(const e of events){
  const r=document.createElement('tr');detail(r,eventDate(e));
@@ -47,7 +83,7 @@ for(const e of events){
  const cols=[...r.children],market=document.createElement('div');market.className='row-market';market.append(...cols[3].childNodes);cols[1].append(market);
  const priceInfo=document.createElement('details'),priceLabel=document.createElement('summary');priceInfo.className='row-details original-price';priceLabel.textContent='Исходный кэф';priceInfo.append(priceLabel,...cols[2].childNodes);cols[4].append(priceInfo);
  const outcomeInfo=document.createElement('div');outcomeInfo.className='row-outcome '+cols[8].className;outcomeInfo.append(...cols[8].childNodes);cols[7].append(outcomeInfo);const status=document.createElement('small');status.className='row-status';status.textContent=e.status;cols[7].append(status);
- const more=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('div');more.className='row-details';label.textContent=e.audit_status||'Разбор и источник';body.className='row-analysis';body.textContent=e.analysis;more.append(label,body);const source=document.createElement('div');source.className='row-source';source.append(...cols[11].childNodes);more.append(source);cols[10].replaceChildren(more);
+ const more=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('div');more.className='row-details';label.textContent=e.audit_status||'Разбор и источник';body.className='row-analysis';body.textContent=e.analysis;more.append(label,body);const source=document.createElement('div');source.className='row-source';source.append(...cols[11].childNodes);more.append(source);appendBookmakerComparison(more,e);cols[10].replaceChildren(more);
  r.replaceChildren(cols[0],cols[1],cols[4],cols[5],cols[6],cols[7],cols[10]);$('rows').append(r);
 }
 $('empty').hidden=events.length>0;$('count').textContent=`${events.length} / ${data.events.length}`;$('updated').textContent=fmt(data.generated_at);
