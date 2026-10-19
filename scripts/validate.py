@@ -60,7 +60,7 @@ if __name__ == '__main__':
         assert isinstance(snapshot['task_name'], str) and snapshot['task_name']
     reports = []
     for path in sorted((ROOT / 'data/reports').glob('*.json')):
-        assert re.fullmatch(r'\d{8}T\d{6}Z-[a-z0-9-]+\.json', path.name)
+        assert re.fullmatch(r'\d{8}T\d{6}(?:\d{3})?Z-[a-z0-9-]+\.json', path.name)
         report = validate(path)
         reports.append({'file': path.name, 'generated_at': report['generated_at'], 'title': report['title'], 'task_name': report.get('task_name')})
     reports.sort(key=lambda r: timestamp(r['generated_at']), reverse=True)
