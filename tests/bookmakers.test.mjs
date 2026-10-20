@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const app=fs.readFileSync('app.js','utf8');
+const scope={URL};vm.createContext(scope);
+vm.runInContext(app.slice(app.indexOf('const BOOKMAKERS='),app.indexOf('function renderBookmakers'))+';globalThis.api={BOOKMAKERS,bookmakerQuotes};',scope);
+const {BOOKMAKERS,bookmakerQuotes}=scope.api;
+assert.deepEqual(Array.from(BOOKMAKERS),['Лига Ставок','PARI','Winline','BetBoom','Фонбет','БЕТСИТИ','Марафонбет','Олимпбет','Леон','Балтбет','1win']);
+const quote=bookmaker=>({bookmaker,market:'П1',odds:2,source_url:'https://example.com/market',checked_at:'2026-10-20T06:00:00Z'});
+const e={market:'П1',bookmaker_odds:[...BOOKMAKERS,'1xBet','1xСтавка','1xbet','1XСТАВКА'].map(quote),source_name:'1xBet',odds:99,source_url:'https://example.com/market',checked_at:'2026-10-20T07:00:00Z'};
+const before=JSON.stringify(e),quotes=bookmakerQuotes(e);
+assert.equal(quotes.size,11);assert.equal(Math.max(...Array.from(quotes.values(),q=>q.odds)),2);assert.equal(JSON.stringify(e),before);
+console.log('11 sources retained; excluded aliases/main price ignored; input prices unchanged');

@@ -5,8 +5,8 @@ import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
 
 // Список источников. Котировки загружаются исключительно из проверенных данных отчёта.
-const BOOKMAKERS=['Лига Ставок','PARI','Winline','BetBoom','Фонбет','БЕТСИТИ','Марафонбет','Олимпбет','Леон','Балтбет','1xBet','1xСтавка','1win'];
-const bookmakerAliases={'лига ставок':'Лига Ставок','liga stavok':'Лига Ставок','pari':'PARI','winline':'Winline','betboom':'BetBoom','фонбет':'Фонбет','fonbet':'Фонбет','бетсити':'БЕТСИТИ','betcity':'БЕТСИТИ','марафонбет':'Марафонбет','marathonbet':'Марафонбет','олимпбет':'Олимпбет','olimpbet':'Олимпбет','леон':'Леон','leon':'Леон','балтбет':'Балтбет','baltbet':'Балтбет','1xbet':'1xBet','1xставка':'1xСтавка','1win':'1win'};
+const BOOKMAKERS=['Лига Ставок','PARI','Winline','BetBoom','Фонбет','БЕТСИТИ','Марафонбет','Олимпбет','Леон','Балтбет','1win'];
+const bookmakerAliases={'лига ставок':'Лига Ставок','liga stavok':'Лига Ставок','pari':'PARI','winline':'Winline','betboom':'BetBoom','фонбет':'Фонбет','fonbet':'Фонбет','бетсити':'БЕТСИТИ','betcity':'БЕТСИТИ','марафонбет':'Марафонбет','marathonbet':'Марафонбет','олимпбет':'Олимпбет','olimpbet':'Олимпбет','леон':'Леон','leon':'Леон','балтбет':'Балтбет','baltbet':'Балтбет','1win':'1win'};
 function bookmakerName(v){return bookmakerAliases[String(v||'').trim().toLocaleLowerCase('ru')]||null;}
 function safeHttp(v){try{const u=new URL(v);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
 function bookmakerQuotes(e){
@@ -28,7 +28,7 @@ function renderBookmakers(){
 function appendBookmakerComparison(parent,e){
  const quotes=bookmakerQuotes(e),values=[...quotes.values()],best=values.length?Math.max(...values.map(q=>q.odds)):null;
  const details=document.createElement('details');details.className='bookmaker-comparison';
- const summary=document.createElement('summary');summary.textContent='Сравнить 13 БК · '+values.length+'/13 подтверждено'+(best===null?'':' · лучший '+best.toFixed(2));details.append(summary);
+ const summary=document.createElement('summary');summary.textContent='Сравнить '+BOOKMAKERS.length+' БК · '+values.length+'/'+BOOKMAKERS.length+' подтверждено'+(best===null?'':' · лучший '+best.toFixed(2));details.append(summary);
  const note=document.createElement('p');note.textContent='Рынок: '+(e.market||'не указан')+'. Цены без прямой ссылки и времени проверки не показываются.';details.append(note);
  const list=document.createElement('div');list.className='bookmaker-quotes';
  for(const name of BOOKMAKERS){const q=quotes.get(name),line=document.createElement('div');line.className='bookmaker-quote'+(q&&q.odds===best?' bookmaker-best':'');
