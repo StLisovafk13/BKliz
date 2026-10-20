@@ -1,0 +1,2005 @@
+{
+  "schema_version": 1,
+  "feed_id": "cycle",
+  "task_name": "Спортивный аналитик — единый цикл",
+  "report_kind": "task",
+  "run_id": "cycle-20261020t015716z-hourly",
+  "generated_at": "2026-10-20T01:57:16.999Z",
+  "title": "Почасовая спортивная аналитика — 20.10.2026, 06:57:16 ЕКБ",
+  "summary": "ЕДИНЫЙ ЦИКЛ — проверка 20.10.2026, 06:57:16 ЕКБ / 20.10.2026, 04:57:16 МСК. Один почасовой отчёт; новых наборов и реальных ставок нет.\nОкна: 19.10 [19.10 06:00;20.10 06:00 МСК) ещё действует; 20.10 [20.10 06:00;21.10 06:00 МСК) ранее подготовлено, дубликат не создан. В 17:00 ЕКБ будет плановое время для набора на 21.10, не в текущем запуске.\nИсточники: прочитаны TASK_INSTRUCTIONS.md SHA 6dd0cf003b2e5435d469d808827332d5af4d327a, cycle.json SHA c5dcffc120e440692508d04c40bff87c4a317241, предыдущий архив cycle-20261020t005938z-hourly (32 события). Официальный обзор КХЛ 19.10 https://www.khl.ru/news/2026/10/19/567390.html подтверждает Северсталь—Торпедо 4:1, Сочи—Шанхай 2:5; ХК Амур https://hcamur.ru/games/khl/14469/ подтверждает Амур—Барыс 5:2; ХК Салават https://hcsalavat.ru/ подтверждает Адмирал—Салават 2:0; Sportbox https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbnews_NI2376954_Rodina_ushla_ot_porazhenija_v_matche_s_Orenburgom_sravnav_schet_na_90j_minute подтверждает Родина—Оренбург 2:2. Итого наблюдения окна 19.10: 3 совпали, 2 не совпали; все суммы 0 ₽.\nПрямые рынки 2026-10-20T01:57:16.999Z: Лига Ставок Локомотив—Нефтехимик П1 60 минут 1.67 (https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821); Динамо Москва—Сибирь П1 60 минут 1.86 (https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816); Ливерпуль—Вильярреал П1 90 минут 1.50 (https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894); ПСЖ—Барселона ТБ 2.5 голов 90 минут 1.18 (https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891). СКА—Автомобилист: не удалось проверить страницу Лиги Ставок, прямой рынок PARI П1 60 минут 2.05 (https://pari.ru/sports/hockey/country/russia/13283/69043608). Winline и BetBoom не проверялись после получения цены в предписанном порядке; остальные БК из контракта не проверялись. Цены — снимок страницы, не гарантия доступности позже.\nИзменения: Динамо П1 в Лиге Ставок 1.85 → 1.86 (+0.54% к прошлой цене той же БК), остальные сопоставимые последние котировки без изменения. СКА 2.05 PARI без изменения; нельзя сравнивать цены разных БК как изменение линии. K0 отсутствует, текущие котировки Kt наблюдений, не превращать в K0.\nСпортивные основания и ограничения: КХЛ https://www.khl.ru/news/2026/10/20/567399.html сообщает о трёх встречах 20.10, Локомотив 3 победы в 5 матчах, Нефтехимик 3 поражения в 5, но его атака опасна; СКА впервые играет при Андрее Разине, неопределённость тактики и вратарей; Динамо домашний фактор, окончательные составы/вратари не подтверждены. Ливерпуль официальный клуб https://www.liverpoolfc.com/news/liverpool-v-villarreal-team-news-champions-league подтвердил отсутствие Фримпонга и Собослаи, также Брэдли, Экитике и Леони: существенная кадровая ревизия v2 риска П1 с ⭐⭐⭐ на ⭐⭐⭐⭐, исход не меняется. У ПСЖ—Барселона ТБ2.5 защита гостей имеет кадровые потери по https://www.barcablaugranes.com/barcelona-uefa-champions-league/135477/barcelona-confirm-eric-garcia-out-for-3-4-weeks-jules-kounde-to-miss-psg-clash, но независимой вероятности прохода нет. Стартовые составы не утверждены; предматчевая проверка за 3 часа до матчей ещё не наступила.\nОтклонённые для условного банка, сохранены в наблюдении: Локомотив П1 19:00 МСК 1.67 — стартовый вратарь неизвестен и p нет; СКА П1 19:30 МСК 2.05 — смена тренера, p нет; Динамо П1 19:30 МСК 1.86 — неизвестны финальные составы, p нет; Ливерпуль П1 22:00 МСК 1.50 — подтверждённые травмы, риск ⭐⭐⭐⭐, p нет; ПСЖ—Барселона ТБ2.5 22:00 МСК 1.18 — порог 84.75% с маржой, независимая p не обоснована. Все суммы 0 ₽. Риски соответственно ⭐⭐⭐, ⭐⭐⭐⭐⭐, ⭐⭐⭐, ⭐⭐⭐⭐, ⭐⭐⭐⭐⭐. П1 — основное время (хоккей 60 минут, футбол 90+), ничья проигрыш; ТБ2.5 — минимум 3 гола, возврата нет.\nРыночные вероятности 100/K: Локомотив 59.88%, СКА 48.78%, Динамо 53.76%, Ливерпуль 66.67%, ПСЖ ТБ2.5 84.75%. Это вероятности с маржой, не модельные p. Независимые p и EV не рассчитаны, value не заявлено. Условный ориентир по 1000 ₽ на окно, распределено 0 ₽, P/L и ROI не рассчитываются. Работа над ошибками: ничья Родина—Оренбург реализовала риск П2, но 5 наблюдений недостаточно для проверки качества модели.\nGitHub: данный снимок сначала сохраняется как неизменяемый архив data/reports/20261020T015716Z-cycle-20261020t015716z-hourly.json; затем допускается обновление только data/feeds/cycle.json тем же JSON после проверки свежего SHA и отсутствия более нового feed. Итог доставки и GitHub Actions сообщается отдельно после чтения.",
+  "events": [
+    {
+      "id": "cycle-2026-10-16-bohemians-waterford-p1-observation",
+      "event": "Богемианс Дублин — Уотерфорд",
+      "sport": "Футбол",
+      "competition": "Ирландия. Премьер-дивизион",
+      "start_at": "2026-10-16T21:45:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: П1 в основное время",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "00 МСК: 1.60 — историческая котировка наблюдения, НЕ проверенная текущая цена. Прямая букмекерская страница не открылась (Cache miss). Актуальный odds=null; история сохранена. K0 отсутствует, p/EV/банк не рассчитываются.\nПроверка v7 2026-10-16T14:42:06+03:00 МСК: прямой сайт букмекера не открылся. Поисковый индекс показывает П1 1,54 при архивном наблюдении 1,60. Это не надёжная последовательность актуальных цен, изменение Kt не фиксируется; odds=null, предыдущее 1,60 сохранено как история.\nРевизия 2026-10-18T03:06:35.811+05:00: независимо проверен итог 2:1 (основное время 2:1), исход наблюдения ✅ Сбылся. Источник: https://www.skysports.com/football/bohemians-vs-waterford-fc/stats/551298. K0=null, условная сумма 0 ₽. Старый архив не изменён.",
+      "source_name": "Sky Sports",
+      "source_url": "https://www.skysports.com/football/bohemians-vs-waterford-fc/stats/551298",
+      "checked_at": "2026-10-18T03:06:35.811+05:00",
+      "score": "2:1",
+      "winner": "Богемианс Дублин",
+      "regulation_score": "2:1",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-15T19:03:25+03:00",
+          "odds": 1.54
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.6
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.6
+        }
+      ],
+      "schedule_source_url": null
+    },
+    {
+      "id": "cycle-2026-10-16-admiral-spartak-observation",
+      "event": "Адмирал — Спартак",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T12:30:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: победа Спартака, весь матч (с ОТ/буллитами)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "-translyaciya-matcha-khl-sezona-2026-2027-nachalas.html ; https://www.sports.ru/hockey/match/admiral-vs-spartak/ .\nРЕТРО-ПУБЛИКАЦИЯ v8, контроль 2026-10-16T16:17:58+03:00 МСК: КХЛ опубликовала финальный результат 16.10.2026 Адмирал — Спартак 1:5, по периодам 0:1, 1:0, 0:4; Спартак выиграл за основное время. Независимо подтверждено «Чемпионатом». Ранее наблюдение П2 с ОТ/буллитами за исторический 1,58 оказалось спортивно верным, но не было утверждённой аналитической ставкой, K0=null, сумма 0 и forecast_result=null, выплата и ROI не считаются. https://www.khl.ru/news/2026/10/16/567216.html ; https://www.championat.com/hockey/news-6659916-admiral-spartak-rezultat-matcha-16-oktyabrya-2026-goda-schet-1-5-regulyarnyj-chempionat-khl-2026-2027.html",
+      "source_name": "Лига Ставок — прямая страница события",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/admiral-spartak-id-23760102-service-id-26-ext-id-1170167",
+      "checked_at": "2026-10-16T16:17:58+03:00",
+      "score": "1:5",
+      "winner": "Спартак",
+      "regulation_score": "1:5",
+      "forecast_result": null,
+      "price_history": [
+        {
+          "checked_at": "2026-10-16T05:02:23+03:00",
+          "odds": 1.58
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.58
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.58
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567202.html"
+    },
+    {
+      "id": "cycle-2026-10-16-avangard-avtomobilist-observation",
+      "event": "Авангард — Автомобилист",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T16:30:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: победа Авангарда, весь матч (с ОТ/буллитами)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "ако официальный сегодняшний состав не проверен. Индекс Лиги Ставок показывает П1 на весь матч 1,73, ИТМ Авангарда 2,5 за 60 минут 1,85 соответственно, а индекс PARI — итоговая победа Авангарда 1,75 и ИТМ 2,5 1,88, но обе ПРЯМЫЕ страницы дают Cache miss. Рыночные цифры нельзя назвать Kt или подтвердить движение относительно старой цены; odds=null. p и EV не обоснованы, ставка отклонена. https://www.khl.ru/news/2026/10/16/567202.html ; https://pari.ru/sports/hockey/country/russia/13283/68917905\nРевизия 17.10 2026-10-17T15:07:42.840+03:00: независимо подтверждено https://www.khl.ru/news/2026/10/16/567220.html; итог 4:2; ✅ Сбылся по точно записанному рынку. Это наблюдение с 0 ₽, не размещённая ставка. K0=null; финансовый P/L/ROI не вычисляется.",
+      "source_name": "Лига Ставок — прямая страница события",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-avtomobilist-id-23760101-service-id-26-ext-id-1170164",
+      "checked_at": "2026-10-17T15:07:42.840+03:00",
+      "score": "4:2",
+      "winner": "Авангард",
+      "regulation_score": "4:2",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-16T05:02:23+03:00",
+          "odds": 1.73
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.73
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.73
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567202.html"
+    },
+    {
+      "id": "cycle-2026-10-16-neftekhimik-traktor-observation",
+      "event": "Нефтехимик — Трактор",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T19:00:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: победа Нефтехимика, весь матч (с ОТ/буллитами)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "ссчитаны, сумма не назначена. Составы и стартовые вратари на момент этого контроля не подтверждены. Почасовой контроль v4 2026-10-16T09:57:34+03:00: котировка наблюдения 1.82 без изменения; событие не переведено в прогноз, K0 отсутствует.\nКонтроль v7 2026-10-16T14:42:06+03:00 МСК: 1.82 — историческая котировка наблюдения, НЕ проверенная текущая цена. Прямая букмекерская страница не открылась (Cache miss). Актуальный odds=null; история сохранена. K0 отсутствует, p/EV/банк не рассчитываются.\nРевизия 17.10 2026-10-17T15:07:42.840+03:00: независимо подтверждено https://www.khl.ru/news/2026/10/16/567239.html; итог 3:2 ОТ; ✅ Сбылся по точно записанному рынку. Это наблюдение с 0 ₽, не размещённая ставка. K0=null; финансовый P/L/ROI не вычисляется.",
+      "source_name": "Лига Ставок — прямая страница события",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/neftekhimik-traktor-id-23760103-service-id-26-ext-id-1220754",
+      "checked_at": "2026-10-17T15:07:42.840+03:00",
+      "score": "3:2 ОТ",
+      "winner": "Нефтехимик",
+      "regulation_score": "2:2",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-16T05:02:23+03:00",
+          "odds": 1.82
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.82
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.82
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567202.html"
+    },
+    {
+      "id": "cycle-2026-10-16-torpedo-dynamo-observation",
+      "event": "Торпедо НН — Динамо Москва",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T19:00:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: победа Торпедо НН, весь матч (с ОТ/буллитами)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": " рассчитаны, сумма не назначена. Составы и стартовые вратари на момент этого контроля не подтверждены. Почасовой контроль v4 2026-10-16T09:57:34+03:00: котировка наблюдения 1.75 без изменения; событие не переведено в прогноз, K0 отсутствует.\nКонтроль v7 2026-10-16T14:42:06+03:00 МСК: 1.75 — историческая котировка наблюдения, НЕ проверенная текущая цена. Прямая букмекерская страница не открылась (Cache miss). Актуальный odds=null; история сохранена. K0 отсутствует, p/EV/банк не рассчитываются.\nРевизия 17.10 2026-10-17T15:07:42.840+03:00: независимо подтверждено https://www.khl.ru/news/2026/10/16/567239.html; итог 5:4; ✅ Сбылся по точно записанному рынку. Это наблюдение с 0 ₽, не размещённая ставка. K0=null; финансовый P/L/ROI не вычисляется.",
+      "source_name": "Лига Ставок — прямая страница события",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/torpedo-nn-dinamo-moskva-id-23766336-service-id-26-ext-id-1261825",
+      "checked_at": "2026-10-17T15:07:42.840+03:00",
+      "score": "5:4",
+      "winner": "Торпедо НН",
+      "regulation_score": "5:4",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-16T05:02:23+03:00",
+          "odds": 1.75
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.75
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.75
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567202.html"
+    },
+    {
+      "id": "cycle-2026-10-16-dragons-ak-bars-observation",
+      "event": "Шанхай Дрэгонс — Ак Барс",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T19:30:00+03:00",
+      "event_date": "2026-10-16",
+      "market": "Наблюдение: победа Ак Барса, весь матч (с ОТ/буллитами)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "т, независимая p и EV не рассчитаны, сумма не назначена. Составы и стартовые вратари на момент этого контроля не подтверждены. Почасовой контроль v4 2026-10-16T09:57:34+03:00: котировка наблюдения 1.88 без изменения; событие не переведено в прогноз, K0 отсутствует.\nКонтроль v7 2026-10-16T14:42:06+03:00 МСК: 1.88 — историческая котировка наблюдения, НЕ проверенная текущая цена. Прямая букмекерская страница не открылась (Cache miss). Актуальный odds=null; история сохранена. K0 отсутствует, p/EV/банк не рассчитываются.\nРевизия 2026-10-18T03:06:35.811+05:00: независимо проверен итог 2:3 ОТ (основное время 2:2), исход наблюдения ✅ Сбылся. Источник: https://www.sports.ru/hockey/match/1947685/. K0=null, условная сумма 0 ₽. Старый архив не изменён.",
+      "source_name": "Sports.ru",
+      "source_url": "https://www.sports.ru/hockey/match/1947685/",
+      "checked_at": "2026-10-18T03:06:35.811+05:00",
+      "score": "2:3 ОТ",
+      "winner": "Ак Барс",
+      "regulation_score": "2:2",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-16T05:02:23+03:00",
+          "odds": 1.88
+        },
+        {
+          "checked_at": "2026-10-16T06:20:08.074Z",
+          "odds": 1.88
+        },
+        {
+          "checked_at": "2026-10-16T09:57:34+03:00",
+          "odds": 1.88
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567202.html"
+    },
+    {
+      "id": "cycle-2026-10-16-avangard-avtomobilist-itm25-watch",
+      "event": "Авангард — Автомобилист",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-16T16:30:00+03:00",
+      "event_date": "2026-10-16",
+      "calendar_date": "2026-10-16",
+      "market": "Наблюдение: индивидуальный тотал Авангарда МЕНЬШЕ 2,5; основное время (60 минут)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": " официальный сегодняшний состав не проверен. Индекс Лиги Ставок показывает П1 на весь матч 1,73, ИТМ Авангарда 2,5 за 60 минут 1,85 соответственно, а индекс PARI — итоговая победа Авангарда 1,75 и ИТМ 2,5 1,88, но обе ПРЯМЫЕ страницы дают Cache miss. Рыночные цифры нельзя назвать Kt или подтвердить движение относительно старой цены; odds=null. p и EV не обоснованы, ставка отклонена. https://www.khl.ru/news/2026/10/16/567202.html ; https://pari.ru/sports/hockey/country/russia/13283/68917905\nРевизия 17.10 2026-10-17T15:07:42.840+03:00: независимо подтверждено https://www.khl.ru/news/2026/10/16/567220.html; итог 4:2; ❌ Не сбылся по точно записанному рынку. Это наблюдение с 0 ₽, не размещённая ставка. K0=null; финансовый P/L/ROI не вычисляется.",
+      "source_name": "Лига Ставок — индексированная страница события; цена не подтверждена",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-avtomobilist-id-23760101-service-id-26-ext-id-1170164",
+      "checked_at": "2026-10-17T15:07:42.840+03:00",
+      "score": "4:2",
+      "winner": "Авангард",
+      "regulation_score": "4:2",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-16-stpatricks-shelbourne-p1-watch",
+      "event": "Сент-Патрикс Атлетик — Шелбурн",
+      "sport": "Футбол",
+      "competition": "Ирландия. Премьер-дивизион",
+      "start_at": null,
+      "event_date": "2026-10-16",
+      "calendar_date": "2026-10-16",
+      "market": "Наблюдение: победа Сент-Патрикс Атлетик (П1), основное время",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "рландскому времени, официальный клуб Сент-Патрикс — 20:00. Расхождение не устранено; start_at=null и odds=null остаются. https://www.leagueofireland.ie/mens/sse-airtricity-mens-premier-division/fixtures/ https://www.stpatsfc.com/preview.php?id=2026\nПроверка v7 2026-10-16T14:42:06+03:00 МСК: официальный календарь лиги 19:45 местного (21:45 МСК), клуб хозяев указывает 20:00 (22:00 МСК). Противоречие остаётся, exact start_at=null, текущая цена П1 не подтверждена, odds=null.\nРевизия 2026-10-18T03:06:35.811+05:00: независимо проверен итог 1:2 (основное время 1:2), исход наблюдения ❌ Не сбылся. Источник: https://www.skysports.com/football/st-patricks-athletic-vs-shelbourne/6295176609848530232. K0=null, условная сумма 0 ₽. Старый архив не изменён.",
+      "source_name": "Sky Sports",
+      "source_url": "https://www.skysports.com/football/st-patricks-athletic-vs-shelbourne/6295176609848530232",
+      "checked_at": "2026-10-18T03:06:35.811+05:00",
+      "score": "1:2",
+      "winner": "Шелбурн",
+      "regulation_score": "1:2",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-17-amur-salavat-tm45-watch",
+      "event": "Амур — Салават Юлаев",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-17T10:00:00+03:00",
+      "event_date": "2026-10-17",
+      "calendar_date": "2026-10-17",
+      "market": "Наблюдение: тотал меньше 4,5 шайбы, основное время 60 минут",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "ртовые вратари, потери и независимая p не подтверждены. Предматчевая неопределённость, EV не рассчитан. https://hcsalavat.ru/salavat-yulaev/?type=list\nРевизия 17.10 2026-10-17T15:07:42.840+03:00: независимо подтверждено https://hcsalavat.ru/news/salavat-yulaev-v-gostyakh-obygral-amur/; итог 3:4; ❌ Не сбылся по точно записанному рынку. Это наблюдение с 0 ₽, не размещённая ставка. K0=null; финансовый P/L/ROI не вычисляется.\nСогласно новому правилу пользователя вариант принят к наблюдению с оценкой риска, даже если ранее имел статус «Отклонена»; это не означает положительный EV или условную сумму.\nИтоговая сверка окна 2026-10-18T09:02:19.859+05:00: официальный результат повторно подтверждён, спортивный статус не изменён. Наблюдение, сумма 0 ₽.",
+      "source_name": "Лига Ставок — индексированная страница события, прямая котировка не подтверждена",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-salawat-iulaev-id-23764990-service-id-26-ext-id-1174616",
+      "checked_at": "2026-10-18T09:02:19.859+05:00",
+      "score": "3:4",
+      "winner": "Салават Юлаев",
+      "regulation_score": "3:4",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-17-sibir-barys-p1ot-watch",
+      "event": "Сибирь — Барыс",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-17T13:30:00+03:00",
+      "event_date": "2026-10-17",
+      "calendar_date": "2026-10-17",
+      "market": "Наблюдение: победа Сибири за весь матч, включая ОТ/буллиты",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "/\nКонтроль 2026-10-17T15:07:42.840+03:00: начало по расписанию прошло; актуальный период/финальный результат официально не подтверждён на этом запуске. Статус «Нет данных», не объявлять результат.\nСогласно новому правилу пользователя вариант принят к наблюдению с оценкой риска, даже если ранее имел статус «Отклонена»; это не означает положительный EV или условную сумму.\nПроверка 2026-10-17T21:00:35+05:00: матч 17 октября завершился 0:1; П1 Сибири с ОТ/буллитами не сбылся. Независимо подтверждено Sportbox; официальная карточка https://www.khl.ru/game/1436/902149/resume/. Условная сумма 0 ₽.\nПовторная официальная сверка 2026-10-17T23:05:41.077+00:00: ХК Барыс подтвердил победу над Сибирью 1:0; наблюдение П1 с ОТ не совпало. Нового исхода нет.",
+      "source_name": "ХК Барыс — официальный клубный отчёт",
+      "source_url": "https://ru.hcbarys.kz/media/news/barys-s-minimalnym-schyetom-pereigral-sibir/",
+      "checked_at": "2026-10-17T23:05:41.077+00:00",
+      "score": "0:1",
+      "winner": "Барыс",
+      "regulation_score": "0:1",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-17-krylia-fakel-btts-watch",
+      "event": "Крылья Советов — Факел",
+      "sport": "Футбол",
+      "competition": "Россия. Премьер-лига 2026/2027",
+      "start_at": "2026-10-17T14:00:00+03:00",
+      "event_date": "2026-10-17",
+      "calendar_date": "2026-10-17",
+      "market": "Наблюдение: обе команды забьют — да, основное время 90 минут",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "/premier_league/spbnews_NI2375664_Krylja_Sovetov__Fakel__11_Kramarich_na_25j_minute_sravnjal_schet_v_matche_RPL_Video\nРевизия 2026-10-17T19:57:58+05:00: официальный отчёт ФК «Факел» подтверждает 1:2 (1:1), голы Клейтон 17, Крамарич 25, Бардачёв 67. Наблюдение «обе забьют — да» за 90 минут совпало: ✅ Сбылся. Цена текущего рынка после завершения не существует, odds=null, K0=null, сумма 0 ₽, выплат/ROI нет. Источник: https://fakelfc.ru/news/view/10369-vazhnejshaya-pobeda .\nПовторная проверка 2026-10-18T07:58:02.997+05:00: официальный отчёт ФК Факел 1:2; обе забьют да — совпало. K0=null, сумма 0 ₽.\nИтоговая сверка окна 2026-10-18T09:02:19.859+05:00: официальный результат повторно подтверждён, спортивный статус не изменён. Наблюдение, сумма 0 ₽.",
+      "source_name": "ФК Факел — официальный отчёт",
+      "source_url": "https://fakelfc.ru/news/view/10369-vazhnejshaya-pobeda",
+      "checked_at": "2026-10-18T09:02:19.859+05:00",
+      "score": "1:2",
+      "winner": "Факел",
+      "regulation_score": "1:2",
+      "forecast_result": "✅ Сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-17-sochi-lokomotiv-f2-15-watch",
+      "event": "ХК Сочи — Локомотив Ярославль",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/2027",
+      "start_at": "2026-10-17T17:00:00+03:00",
+      "event_date": "2026-10-17",
+      "calendar_date": "2026-10-17",
+      "market": "Наблюдение: фора Локомотива −1,5 шайбы, основное время 60 минут",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "https://www.khl.ru/game/1436/902148/resume/ и Спорт Mail https://sportmail.ru/hockey-khl/407/match/8129249/ показывают 3:6 по периодам 0:3, 3:2, 0:1. Ф2−1,5 за 60 минут выполнена.\nПовторная официальная сверка 2026-10-17T23:05:41.077+00:00: КХЛ подтверждает 3:6; Ф2−1,5 за 60 минут — совпадение. Нового исхода нет.\nКонтроль 2026-10-18T06:00:44.933+05:00: официальный обзор КХЛ повторно доступен; финальный счёт 3:6 подтверждён; результат наблюдения Ф2−1,5 за 60 минут без изменения.\nПовторная проверка 2026-10-18T07:58:02.997+05:00: КХЛ подтверждает 3:6, Ф2−1,5 за 60 минут совпала. K0=null, сумма 0 ₽.\nИтоговая сверка окна 2026-10-18T09:02:19.859+05:00: официальный результат повторно подтверждён, спортивный статус не изменён. Наблюдение, сумма 0 ₽.",
+      "source_name": "КХЛ — официальный обзор",
+      "source_url": "https://www.khl.ru/news/2026/10/17/567273.html",
+      "checked_at": "2026-10-18T09:02:19.859+05:00",
+      "score": "3:6",
+      "winner": "Локомотив Ярославль",
+      "regulation_score": "3:6",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T16:01:22+03:00",
+          "odds": 1.8,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/khk-sochi-lokomotiv-id-23764991-service-id-26-ext-id-1240922"
+        }
+      ]
+    },
+    {
+      "id": "cycle-2026-10-17-lokomotiv-krasnodar-p2-watch",
+      "event": "Локомотив Москва — Краснодар",
+      "sport": "Футбол",
+      "competition": "Россия. Премьер-лига 2026/2027",
+      "start_at": "2026-10-17T19:30:00+03:00",
+      "event_date": "2026-10-17",
+      "calendar_date": "2026-10-17",
+      "market": "Наблюдение: победа Краснодара (П2), основное время 90 минут",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "OI нет.\nНезависимая повторная сверка 18.10: счёт 3:3 подтверждён Sportbox https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbvideo_NI2376019_clip_Gol_Dzhona_Kordoby_Lokomotiv___Krasnodar_33_video_Alfa_Bank_Rossijskaja_Premjer_Liga_Futbol ; П2 за 90 минут не прошла.\nПроверка 2026-10-18T03:06:35.811+05:00: официальный отчёт ФК «Локомотив» повторно найден, итог 3:3, П2 ❌; https://www.fclm.ru/news/n/lokomotiv-krasnodar-rpl-2026-27-match-summary/.\nПовторная проверка 2026-10-18T07:58:02.997+05:00: официальный клубный отчёт тренера подтверждает 3:3; П2 не совпала. K0=null, сумма 0 ₽.\nИтоговая сверка окна 2026-10-18T09:02:19.859+05:00: официальный результат повторно подтверждён, спортивный статус не изменён. Наблюдение, сумма 0 ₽.",
+      "source_name": "ФК Локомотив — официальная пресс-конференция",
+      "source_url": "https://www.fclm.ru/news/n/galaktionov-s-press-conference-after-home-rpl-match-vs-krasnodar/",
+      "checked_at": "2026-10-18T09:02:19.859+05:00",
+      "score": "3:3",
+      "winner": "Ничья",
+      "regulation_score": "3:3",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": []
+    },
+    {
+      "id": "cycle-2026-10-18-zenit-akhmat-f1m15-watch",
+      "event": "Зенит — Ахмат",
+      "sport": "Футбол",
+      "competition": "РПЛ 2026/27",
+      "start_at": "2026-10-18T14:00:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Фора Зенита −1,5 гола за 90 минут; победа только при разнице ≥2, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "не рассчитаны. Стороннее табло сообщило 0:1 к перерыву, не итог; окончательный score=null.\nКонтроль 2026-10-18T18:07:48+05:00: СМИ «Чемпионат» сообщает о финале 3:2, но официальный финальный протокол не подтверждён. Результат наблюдения Ф1−1,5 пока не присваивается; после начала матча актуальной предматчевой цены нет. https://www.championat.ru/football/news-6662428-zenit-ahmat-rezultat-matcha-18-oktyabrya-2026-schet-3-2-11-j-tur-rpl-2026-2027.html\nРевизия 2026-10-18T19:04:47.422+05:00: подтверждён итог 3:2, счёт за основное время 3:2, результат рынка-наблюдения ❌ Не сбылся; K0=null, сумма 0 ₽, финансовых расчётов нет. Источник https://www.sport-express.net/football/rfpl/news/zenit-ahmat-rezultat-matcha-11-tura-rpl-18-oktyabrya-2026-2464440/",
+      "source_name": "Спорт-Экспресс",
+      "source_url": "https://www.sport-express.net/football/rfpl/news/zenit-ahmat-rezultat-matcha-11-tura-rpl-18-oktyabrya-2026-2464440/",
+      "checked_at": "2026-10-18T19:04:47.422+05:00",
+      "score": "3:2",
+      "winner": "Зенит",
+      "regulation_score": "3:2",
+      "forecast_result": "❌ Не сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 2.05,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T16:01:22+03:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626"
+        },
+        {
+          "checked_at": "2026-10-17T19:06:05.553+05:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 2.05,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 2.1,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202626",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://winline.ru/forecasts/futbol/rpl/prognoz-zenit-akhmat-18-10-2026"
+    },
+    {
+      "id": "cycle-2026-10-18-cska-neftekhimik-p1ot-watch",
+      "event": "ЦСКА — Нефтехимик",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-18T14:00:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Победа ЦСКА с учётом овертайма и буллитов; возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "ица конкретного рынка Лига Ставок показывает Kt=1.38; предыдущая Kt=1.35 (+2.22%). Это НЕ K0 и не подтверждение доступности ставки после начала события. Время календарного старта наступило, фактический старт и live-протокол не подтверждены; LIVE до 15:00 МСК не выпускается. Независимая p и EV не рассчитаны; условно 0 ₽.\nКонтроль 2026-10-18T17:01:17+05:00: предыдущая котировка остаётся только в истории, текущая цена этого часа для данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nРевизия 2026-10-18T19:04:47.422+05:00: подтверждён итог 4:1, счёт за основное время 4:1, результат рынка-наблюдения ✅ Сбылся; K0=null, сумма 0 ₽, финансовых расчётов нет. Источник https://www.khl.ru/news/2026/10/18/567311.html",
+      "source_name": "КХЛ",
+      "source_url": "https://www.khl.ru/news/2026/10/18/567311.html",
+      "checked_at": "2026-10-18T19:04:47.422+05:00",
+      "score": "4:1",
+      "winner": "ЦСКА",
+      "regulation_score": "4:1",
+      "forecast_result": "✅ Сбылся",
+      "risk": "⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.35,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T16:01:22+03:00",
+          "odds": 1.35,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/68973964"
+        },
+        {
+          "checked_at": "2026-10-17T19:06:05.553+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:57:58+05:00",
+          "odds": 1.35,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.35,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.35,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.38,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/tcska-neftekhimik-id-23769471-service-id-26-ext-id-1180099",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/14/567114.html"
+    },
+    {
+      "id": "cycle-2026-10-18-avangard-traktor-p1reg-watch",
+      "event": "Авангард — Трактор",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-18T14:00:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Победа Авангарда за 60 минут; ничья после 60 минут = проигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "конкретного рынка Лига Ставок показывает Kt=1.8; предыдущая Kt=1.91 (-5.76%). Это НЕ K0 и не подтверждение доступности ставки после начала события. Время календарного старта наступило, фактический старт и live-протокол не подтверждены; LIVE до 15:00 МСК не выпускается. Независимая p и EV не рассчитаны; условно 0 ₽.\nКонтроль 2026-10-18T17:01:17+05:00: предыдущая котировка остаётся только в истории, текущая цена этого часа для данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nРевизия 2026-10-18T19:04:47.422+05:00: подтверждён итог 2:1 Б, счёт за основное время 1:1, результат рынка-наблюдения ❌ Не сбылся; K0=null, сумма 0 ₽, финансовых расчётов нет. Источник https://www.khl.ru/news/2026/10/18/567311.html",
+      "source_name": "КХЛ",
+      "source_url": "https://www.khl.ru/news/2026/10/18/567311.html",
+      "checked_at": "2026-10-18T19:04:47.422+05:00",
+      "score": "2:1 Б",
+      "winner": "Авангард",
+      "regulation_score": "1:1",
+      "forecast_result": "❌ Не сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.92,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T16:01:22+03:00",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/68973968"
+        },
+        {
+          "checked_at": "2026-10-17T19:06:05.553+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:57:58+05:00",
+          "odds": 1.91,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.91,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.91,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.8,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/avangard-traktor-id-23769463-service-id-26-ext-id-1180105",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567220.html"
+    },
+    {
+      "id": "cycle-2026-10-18-metallurg-avtomobilist-p1reg-watch",
+      "event": "Металлург Мг — Автомобилист",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-18T14:30:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Победа Металлурга за 60 минут; ничья = проигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": " EV не рассчитаны; условно 0 ₽. 18 октября СМИ со ссылкой на клуб подтвердили расторжение контракта с Андреем Разиным; ранее с 6 октября обязанности выполнял Владимир Воробьёв. Стартовые вратари не проверены.\nКонтроль 2026-10-18T17:01:17+05:00: предыдущая котировка остаётся только в истории, текущая цена этого часа для данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nРевизия 2026-10-18T19:04:47.422+05:00: подтверждён итог 4:2, счёт за основное время 4:2, результат рынка-наблюдения ✅ Сбылся; K0=null, сумма 0 ₽, финансовых расчётов нет. Источник https://www.championat.ru/hockey/news-6662478-metallurg-avtomobilist-rezultat-matcha-18-oktyabrya-2026-goda-schet-4-2-regulyarnyj-chempionat-khl-2026-2027.html",
+      "source_name": "Чемпионат",
+      "source_url": "https://www.championat.ru/hockey/news-6662478-metallurg-avtomobilist-rezultat-matcha-18-oktyabrya-2026-goda-schet-4-2-regulyarnyj-chempionat-khl-2026-2027.html",
+      "checked_at": "2026-10-18T19:04:47.422+05:00",
+      "score": "4:2",
+      "winner": "Металлург Мг",
+      "regulation_score": "4:2",
+      "forecast_result": "✅ Сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.85,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:06:05.553+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:57:58+05:00",
+          "odds": 1.84,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.84,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.84,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.89,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/metallurg-magnitogorsk-avtomobilist-id-23769472-service-id-26-ext-id-1272593",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567220.html"
+    },
+    {
+      "id": "cycle-2026-10-18-dynamo-cska-btts-watch",
+      "event": "Динамо Москва — ЦСКА",
+      "sport": "Футбол",
+      "competition": "РПЛ 2026/27",
+      "start_at": "2026-10-18T16:15:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Обе забьют — да за 90 минут; гол каждой команды, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": " по календарю. Независимая p и EV не рассчитаны; условно 0 ₽.\nКонтроль 2026-10-18T17:01:17+05:00: предыдущая котировка остаётся только в истории, текущая цена этого часа для данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nКонтроль 2026-10-18T19:04:47.422+05:00: официально подтверждённого окончательного результата нет; исторические коэффициенты не являются текущими, odds=null.\nКонтроль 2026-10-18T20:00:58.484+05:00: окончательный результат и актуальный LIVE-счёт не подтверждены.\nРевизия 2026-10-18T16:01:38.624+00:00: подтверждён окончательный счёт 3:1 (Спорт-Экспресс); обе команды забили, наблюдение «обе забьют — да» совпало с исходом (✅). K0=null, условно 0 ₽, финансовый результат не рассчитывается.",
+      "source_name": "Спорт-Экспресс — результат матча",
+      "source_url": "https://www.sport-express.net/football/rfpl/news/rpl-11-tur-raspisanie-i-rezultaty-lokomotiv-krasnodar-dinamo-cska-spartak-rubin-i-drugie-matchi-17-19-oktyabrya-2026-2463706/",
+      "checked_at": "2026-10-18T16:01:38.624+00:00",
+      "score": "3:1",
+      "winner": "Динамо Москва",
+      "regulation_score": "3:1",
+      "forecast_result": "✅ Сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.6,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.55,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.55,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.55,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.55,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.55,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.55,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.52,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202642",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://stavka.tv/matches/soccer/18-10-2026-dynamo-moscow-cska-moscow"
+    },
+    {
+      "id": "cycle-2026-10-18-lada-dynamo-p2reg-watch",
+      "event": "Лада — Динамо Москва",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-18T16:00:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Победа Динамо Москва за 60 минут; ничья = проигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "жуточное табло «Чемпионата» (Лада — Динамо 1:1 в 3-м периоде; Динамо Минск — Ак Барс 1:2 в перерыве); это не подтверждение текущего счёта на 2026-10-18T20:00:58.484+05:00 и не финальный результат. odds=null, итог наблюдения не рассчитан.\nКонтроль 2026-10-18T16:01:38.624+00:00: окончательный официальный протокол и актуальная стадия матча не подтверждены; ранее увиденные промежуточные счета не выдаются за итог.\nКонтроль 2026-10-18T18:07:23.965Z: Итог 1:2 по буллитам, после 60 минут 1:1; П2 за 60 минут проиграла. Источник: https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-18-oktyabrya-2026-avangard-traktor-cska-neftehimik-dinamo-mn-ak-bars-2464349/. Наблюдение без K0, сумма 0 ₽, выплаты/ROI не рассчитываются.",
+      "source_name": "Спорт-Экспресс — результаты КХЛ",
+      "source_url": "https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-18-oktyabrya-2026-avangard-traktor-cska-neftehimik-dinamo-mn-ak-bars-2464349/",
+      "checked_at": "2026-10-18T18:07:23.965Z",
+      "score": "1:2 Б",
+      "winner": "Динамо Москва",
+      "regulation_score": "1:1",
+      "forecast_result": "❌ Не сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.75,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:57:58+05:00",
+          "odds": 1.83,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.83,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.83,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.83,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.83,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.83,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.83,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.79,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lada-dinamo-moskva-id-23769470-service-id-26-ext-id-1360257",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.khl.ru/news/2026/10/16/567239.html"
+    },
+    {
+      "id": "cycle-2026-10-18-dinamo-minsk-akbars-tb55-watch",
+      "event": "Динамо Минск — Ак Барс",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-18T17:10:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Тотал больше 5,5 шайбы за 60 минут; 6+ шайб = выигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "но только промежуточное табло «Чемпионата» (Лада — Динамо 1:1 в 3-м периоде; Динамо Минск — Ак Барс 1:2 в перерыве); это не подтверждение текущего счёта на 2026-10-18T20:00:58.484+05:00 и не финальный результат. odds=null, итог наблюдения не рассчитан.\nКонтроль 2026-10-18T16:01:38.624+00:00: окончательный официальный протокол и актуальная стадия матча не подтверждены; ранее увиденные промежуточные счета не выдаются за итог.\nКонтроль 2026-10-18T18:07:23.965Z: Итог 1:4, всего 5 шайб; ТБ 5,5 за 60 минут проиграл. Источник: https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-18-oktyabrya-2026-avangard-traktor-cska-neftehimik-dinamo-mn-ak-bars-2464349/. Наблюдение без K0, сумма 0 ₽, выплаты/ROI не рассчитываются.",
+      "source_name": "Спорт-Экспресс — результаты КХЛ",
+      "source_url": "https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-18-oktyabrya-2026-avangard-traktor-cska-neftehimik-dinamo-mn-ak-bars-2464349/",
+      "checked_at": "2026-10-18T18:07:23.965Z",
+      "score": "1:4",
+      "winner": "Ак Барс",
+      "regulation_score": "1:4",
+      "forecast_result": "❌ Не сбылся",
+      "risk": "⭐⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 2.1,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T19:57:58+05:00",
+          "odds": 2.12,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 2.14,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 2.14,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 2.14,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 2.14,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 2.14,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 2.14,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-minsk-ak-bars-id-23769473-service-id-26-ext-id-1180103",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.sport-express.net/live/hockey/18/18-10-2026/"
+    },
+    {
+      "id": "cycle-2026-10-18-spartak-rubin-p1reg-watch",
+      "event": "Спартак Москва — Рубин",
+      "sport": "Футбол",
+      "competition": "РПЛ 2026/27",
+      "start_at": "2026-10-18T18:45:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Победа Спартака за 90 минут; ничья = проигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "для данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nКонтроль 2026-10-18T19:04:47.422+05:00: официально подтверждённого окончательного результата нет; исторические коэффициенты не являются текущими, odds=null.\nКонтроль 2026-10-18T16:01:38.624+00:00: окончательный официальный протокол и актуальная стадия матча не подтверждены; ранее увиденные промежуточные счета не выдаются за итог.\nКонтроль 2026-10-18T18:07:23.965Z: Итог 4:0 за 90 минут; П1 Спартака совпала. Источник: https://www.sport-express.net/football/rfpl/news/rpl-11-tur-raspisanie-i-rezultaty-lokomotiv-krasnodar-dinamo-cska-spartak-rubin-i-drugie-matchi-17-19-oktyabrya-2026-2463706/. Наблюдение без K0, сумма 0 ₽, выплаты/ROI не рассчитываются.",
+      "source_name": "Спорт-Экспресс — результаты РПЛ",
+      "source_url": "https://www.sport-express.net/football/rfpl/news/rpl-11-tur-raspisanie-i-rezultaty-lokomotiv-krasnodar-dinamo-cska-spartak-rubin-i-drugie-matchi-17-19-oktyabrya-2026-2463706/",
+      "checked_at": "2026-10-18T18:07:23.965Z",
+      "score": "4:0",
+      "winner": "Спартак Москва",
+      "regulation_score": "4:0",
+      "forecast_result": "✅ Сбылся",
+      "risk": "⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.45,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.45,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.4,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202614",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.ligastavok.ru/signal/media/news/rpl-izmenila-vremya-dvuh-matchej-11-go-tura-id32361"
+    },
+    {
+      "id": "cycle-2026-10-18-baltika-rostov-tm25-watch",
+      "event": "Балтика — Ростов",
+      "sport": "Футбол",
+      "competition": "РПЛ 2026/27",
+      "start_at": "2026-10-18T21:00:00+03:00",
+      "event_date": "2026-10-18",
+      "market": "Наблюдение: Тотал меньше 2,5 голов за 90 минут; 0–2 гола = выигрыш, возврата нет",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "данного точного рынка не подтверждена; odds=null, сумма 0 ₽, K0=null, p/EV не рассчитаны.\nКонтроль 2026-10-18T19:04:47.422+05:00: официально подтверждённого окончательного результата нет; исторические коэффициенты не являются текущими, odds=null.\nУточнение календаря 2026-10-18T18:07:23.965Z: официальный сайт ФК Ростов https://fc-rostov.ru/matches/upcoming подтверждает начало 21:00 МСК, а 20:45 в другом календаре противоречит клубному источнику. Фактическое начало и LIVE-счёт не подтверждены; статус Нет данных, финальный исход не назначен. Исторические котировки не считаются текущими.\n2026-10-19T02:04:09+05:00: итог 0:0 подтверждён двумя спортивными изданиями; ТМ 2,5 за 90 минут совпало (✅), K0=null, сумма 0 ₽, исторические Kt не переписаны.",
+      "source_name": "Чемпионат / Спорт-Экспресс",
+      "source_url": "https://www.championat.ru/football/news-6663022-baltika-rostov-rezultat-matcha-18-oktyabrya-schet-0-0-rpl-2026-2027.html",
+      "checked_at": "2026-10-19T02:04:09+05:00",
+      "score": "0:0",
+      "winner": "Ничья",
+      "regulation_score": "0:0",
+      "forecast_result": "✅ Сбылся",
+      "risk": "⭐⭐⭐⭐",
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-17T15:07:42.840+03:00",
+          "odds": 1.65,
+          "kind": "первое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-17T21:00:35+05:00",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T02:00:22+05:00",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634",
+          "kind": "наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T05:02:35+05:00",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634"
+        },
+        {
+          "checked_at": "2026-10-18T06:00:44.933+05:00",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634",
+          "kind": "observation_not_K0"
+        },
+        {
+          "checked_at": "2026-10-18T09:59:36.098+05:00",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634"
+        },
+        {
+          "checked_at": "2026-10-18T10:59:40.458+05:00",
+          "odds": 1.65,
+          "kind": "повторная прямая проверка, наблюдение (не K0)"
+        },
+        {
+          "checked_at": "2026-10-18T03:06:35.811+05:00",
+          "odds": 1.65
+        },
+        {
+          "checked_at": "2026-10-18T11:58:13.987+05:00",
+          "odds": 1.47
+        },
+        {
+          "checked_at": "2026-10-18T13:00:00.185+05:00",
+          "odds": 1.47,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634",
+          "kind": "повторная прямая проверка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T16:05:38.244+05:00",
+          "odds": 1.45,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202634",
+          "comparison_base": "предыдущая Kt наблюдения, не K0"
+        }
+      ],
+      "schedule_source_url": "https://www.ligastavok.ru/signal/media/news/rpl-izmenila-vremya-dvuh-matchej-11-go-tura-id32361"
+    },
+    {
+      "id": "cycle-2026-10-19-amur-barys-p1reg-watch",
+      "event": "Амур — Барыс",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-19T12:00:00+03:00",
+      "event_date": "2026-10-19",
+      "market": "Наблюдение: П1 за 60 минут (ничья после 60 минут — проигрыш, возврата нет)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "у событию 0 ₽.\nПроверка 2026-10-19T10:03:54.998Z: матч идёт; текущая предматчевая цена не подтверждена, сохранена лишь история.\nКонтроль 2026-10-19T11:00:07.681Z: начало по календарю уже прошло, в предыдущем архиве зафиксировано LIVE; текущий официальный протокол и финальный счёт не удалось независимо проверить. Котировки на страницах PARI могут быть кэшированными предматчевыми, не принимаются как актуальные. Статус Нет данных до проверки.\nРевизия 2026-10-19T13:19:58.747Z: официальный сайт ХК Амур подтвердил окончание матча 19.10.2026 со счётом 5:2, по периодам 1:1,3:0,1:1. Рынок наблюдения П1 за 60 минут спортивно сбылся; это НЕ размещённая ставка, K0=null, условно 0 ₽, финансовые результаты не считаются. https://hcamur.ru/games/khl/14469/\nКонтроль 2026-10-20T01:57:16.999Z: ранее зафиксированный итог повторно сверён, изменения исхода нет. https://hcamur.ru/games/khl/14469/",
+      "source_name": "ХК Амур — официальный протокол",
+      "source_url": "https://hcamur.ru/games/khl/14469/",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": "5:2",
+      "winner": "Амур",
+      "regulation_score": "5:2",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-18T17:01:17+05:00",
+          "odds": 2.26,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/amur-barys-id-23775091-service-id-26-ext-id-1185320",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T13:07:48.282Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005425",
+          "kind": "v2 текущая цена наблюдения; смена букмекера, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T20:00:58.484+05:00",
+          "odds": 2.2,
+          "source_name": "PARI"
+        },
+        {
+          "checked_at": "2026-10-18T16:01:38.624+00:00",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005425",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T18:07:23.965Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005425",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T01:03:09.337Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005425"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005425",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        }
+      ],
+      "conditional_amount": 0
+    },
+    {
+      "id": "cycle-2026-10-19-admiral-salavat-p2reg-watch",
+      "event": "Адмирал — Салават Юлаев",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-19T12:30:00+03:00",
+      "event_date": "2026-10-19",
+      "market": "Наблюдение: П2 за 60 минут (ничья после 60 минут — проигрыш, возврата нет)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "ию 0 ₽.\nПроверка 2026-10-19T10:03:54.998Z: матч идёт; текущая предматчевая цена не подтверждена, сохранена лишь история.\nКонтроль 2026-10-19T11:00:07.681Z: начало по календарю уже прошло, в предыдущем архиве зафиксировано LIVE; текущий официальный протокол и финальный счёт не удалось независимо проверить. Котировки на страницах PARI могут быть кэшированными предматчевыми, не принимаются как актуальные. Статус Нет данных до проверки.\n2026-10-19T15:02:24.088Z: Sofascore показывает завершение Адмирал—Салават 2:0, но официальный сайт Салавата по матчу 19.10 пока не показывает счёт; официальный итог не подтверждён, status/score/forecast_result не меняем. https://www.sofascore.com/sk/ice-hockey/match/admiral-vladivostok-salavat-yulaev-ufa/UDbsOvU | 2026-10-19T17:01:06.059Z: официальный итог 2:0 (0:0,0:0,2:0), прогноз П2 за 60 минут не сбылся, 0 ₽.\n2026-10-19T18:05:33.794Z Независимая повторная проверка официального протокола 2:0 (0:0,0:0,2:0); прогноз П2 60 минут ❌, 0 ₽.\nКонтроль 2026-10-20T01:57:16.999Z: ранее зафиксированный итог повторно сверён, изменения исхода нет. https://hcsalavat.ru/",
+      "source_name": "ХК Салават Юлаев — официальный сайт",
+      "source_url": "https://hcsalavat.ru/",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": "2:0",
+      "winner": "Адмирал",
+      "regulation_score": "2:0",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-18T17:01:17+05:00",
+          "odds": 1.98,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/admiral-salawat-iulaev-id-23775092-service-id-26-ext-id-1185321",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T13:07:48.282Z",
+          "odds": 2.1,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "v2 текущая цена наблюдения; смена букмекера, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T19:04:47.422+05:00",
+          "odds": 1.97,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "v3 текущая цена наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T20:00:58.484+05:00",
+          "odds": 1.97,
+          "source_name": "PARI"
+        },
+        {
+          "checked_at": "2026-10-18T16:01:38.624+00:00",
+          "odds": 1.97,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T18:07:23.965Z",
+          "odds": 1.97,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T01:03:09.337Z",
+          "odds": 1.97,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 1.95,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        },
+        {
+          "checked_at": "2026-10-19T09:03:44.140Z",
+          "odds": 1.95,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005453",
+          "kind": "снимок прямого рынка; наблюдение, не K0"
+        }
+      ],
+      "conditional_amount": 0
+    },
+    {
+      "id": "cycle-2026-10-19-severstal-torpedo-p1reg-watch",
+      "event": "Северсталь — Торпедо НН",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-19T19:00:00+03:00",
+      "event_date": "2026-10-19",
+      "market": "Наблюдение: П1 за 60 минут (ничья после 60 минут — проигрыш, возврата нет)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "вых вратарей, независимая p и EV не рассчитаны. Условно 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 2.33; предыдущая цена 2.24; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: Предматчевая проверка: Северсталь выиграла пять последних встреч, но Торпедо занимает 3-е место Запада; стартовый вратарь не подтверждён. Прямая страница Лиги Ставок недоступна. Предыдущие 2.33 Лиги Ставок — историческая цена другой БК, изменение относительно PARI не рассчитывается. Риск ⭐⭐⭐. История: Лига Ставок 2.33 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: П1 60 мин 2.20; без изменений; вратари не подтверждены. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | 2026-10-19T17:01:06.059Z: матч должен был начаться; LIVE-статус/счёт не подтверждён, текущая котировка неизвестна. Последняя историческая котировка: {\"odds\":2.2,\"source\":\"PARI\",\"checked_at\":\"2026-10-19T15:58:21.711Z\"}.\n[2026-10-19T22:02:32.708Z v4] Официальный результат 4:1 (https://severstalclub.ru/). Победа Северстали в основное время. Прогноз ✅ Сбылся; K0=null, условно 0 ₽, EV и ROI не рассчитываются. Исторические цены не являются актуальными.\n[2026-10-20T04:58:14.407+05:00 повторная независимая проверка] Официальный обзор КХЛ подтвердил итог 4:1 и победителя в основное время. Исторические коэффициенты не являются текущими; K0=null, условно 0 ₽. https://www.khl.ru/news/2026/10/19/567390.html\nКонтроль 2026-10-20T01:57:16.999Z: ранее зафиксированный итог повторно сверён, изменения исхода нет. https://www.khl.ru/news/2026/10/19/567390.html",
+      "source_name": "КХЛ — официальный обзор",
+      "source_url": "https://www.khl.ru/news/2026/10/19/567390.html",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": "4:1",
+      "winner": "Северсталь",
+      "regulation_score": "4:1",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-18T17:01:17+05:00",
+          "odds": 2.23,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/severstal-torpedo-nn-id-23775093-service-id-26-ext-id-1185319",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T13:07:48.282Z",
+          "odds": 2.1,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "v2 текущая цена наблюдения; смена букмекера, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T19:04:47.422+05:00",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "v3 текущая цена наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T20:00:58.484+05:00",
+          "odds": 2.2,
+          "source_name": "PARI"
+        },
+        {
+          "checked_at": "2026-10-18T16:01:38.624+00:00",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T18:07:23.965Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T01:03:09.337Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        },
+        {
+          "checked_at": "2026-10-19T09:03:44.140Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "снимок прямого рынка; наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T11:00:07.681Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "Наблюдение, не K0; рынок 60/90 мин"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 2.24,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/severstal-torpedo-nn-id-23775093-service-id-26-ext-id-1185319",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 2.2,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005429",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 2.33,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/severstal-torpedo-nn-id-23775093-service-id-26-ext-id-1185319",
+          "kind": "Kt наблюдения, не K0"
+        }
+      ],
+      "conditional_amount": 0
+    },
+    {
+      "id": "cycle-2026-10-19-sochi-shanghai-p2reg-watch",
+      "event": "ХК Сочи — Шанхай Дрэгонс",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-19T19:30:00+03:00",
+      "event_date": "2026-10-19",
+      "market": "Наблюдение: П2 за 60 минут (ничья после 60 минут — проигрыш, возврата нет)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "той же БК, НЕ K0. PARI 1.85. Стартовые составы и независимая p не подтверждены, EV не рассчитан, 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 1.94; предыдущая цена 1.94; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: Предматчевая проверка: Сочи 6 очков в 14 играх, Шанхай 17 очков в 12, но у гостей серия из трёх поражений; вратари не подтверждены. PARI 1.85 (историческая котировка) → 1.80 (-2.70%) в снимке прямой страницы, K0=null. Лига Ставок недоступна. Риск ⭐⭐⭐⭐. История: Лига Ставок 1.94 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: П2 60 мин 1.85; ранее 1.80, +2.78%, возможен кэш страницы. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | 2026-10-19T17:01:06.059Z: матч должен был начаться; LIVE-статус/счёт не подтверждён, текущая котировка неизвестна. Последняя историческая котировка: {\"odds\":1.85,\"source\":\"PARI\",\"checked_at\":\"2026-10-19T15:58:21.711Z\"}.\n[2026-10-19T22:02:32.708Z v4] Официальный результат 2:5 (https://www.hcsochi.ru/). Победа гостей в основное время. Прогноз ✅ Сбылся; K0=null, условно 0 ₽, EV и ROI не рассчитываются. Исторические цены не являются актуальными.\n[2026-10-20T04:58:14.407+05:00 повторная независимая проверка] Официальный обзор КХЛ подтвердил итог 2:5 и победителя в основное время. Исторические коэффициенты не являются текущими; K0=null, условно 0 ₽. https://www.khl.ru/news/2026/10/19/567390.html\nКонтроль 2026-10-20T01:57:16.999Z: ранее зафиксированный итог повторно сверён, изменения исхода нет. https://www.khl.ru/news/2026/10/19/567390.html",
+      "source_name": "КХЛ — официальный обзор",
+      "source_url": "https://www.khl.ru/news/2026/10/19/567390.html",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": "2:5",
+      "winner": "Шанхайские Драконы",
+      "regulation_score": "2:5",
+      "forecast_result": "✅ Сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-18T17:01:17+05:00",
+          "odds": 1.9,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/khk-sochi-shankhai-dregons-id-23775090-service-id-26-ext-id-1240920",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T13:07:48.282Z",
+          "odds": 1.8,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "v2 текущая цена наблюдения; смена букмекера, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T20:00:58.484+05:00",
+          "odds": 1.8,
+          "source_name": "PARI"
+        },
+        {
+          "checked_at": "2026-10-18T16:01:38.624+00:00",
+          "odds": 1.8,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T18:07:23.965Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T01:03:09.337Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        },
+        {
+          "checked_at": "2026-10-19T09:03:44.140Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "снимок прямого рынка; наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T11:00:07.681Z",
+          "odds": 1.9,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/khk-sochi-shankhai-dregons-id-23775090-service-id-26-ext-id-1240920",
+          "kind": "Наблюдение, не K0; рынок 60/90 мин"
+        },
+        {
+          "checked_at": "2026-10-19T11:00:07.681Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "Наблюдение, не K0; рынок 60/90 мин"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.94,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/khk-sochi-shankhai-dregons-id-23775090-service-id-26-ext-id-1240920",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69005437",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 1.94,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/khk-sochi-shankhai-dregons-id-23775090-service-id-26-ext-id-1240920",
+          "kind": "Kt наблюдения, не K0"
+        }
+      ],
+      "conditional_amount": 0
+    },
+    {
+      "id": "cycle-2026-10-19-rodina-orenburg-p2reg-watch",
+      "event": "Родина Москва — Оренбург",
+      "sport": "Футбол",
+      "competition": "РПЛ 2026/27",
+      "start_at": "2026-10-19T19:30:00+03:00",
+      "event_date": "2026-10-19",
+      "market": "Наблюдение: П2 за 90 минут плюс добавленное время (ничья — проигрыш, возврата нет)",
+      "odds": null,
+      "original_odds": null,
+      "status": "Завершён",
+      "analysis": "га Ставок 2.39 и PARI 2.40; не изменение одной линии. Нет независимой p/EV, 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 2.39; предыдущая цена 2.39; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: Предматчевая проверка: Родина проиграла ЦСКА 0:3 и Спартаку 2:4, Оренбург победил Родину 4:1 в Кубке 18.08; однако риск ничьей и выездного матча. Стартовые составы и потери не подтверждены. Лига Ставок П2 90 мин 2.39 без изменения к предыдущей проверке; K0=null. Риск ⭐⭐⭐⭐. История: Лига Ставок 2.39 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: П2 90 мин 2.38; ранее 2.39, -0.42%; составы не подтверждены. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | 2026-10-19T17:01:06.059Z: матч должен был начаться; LIVE-статус/счёт не подтверждён, текущая котировка неизвестна. Последняя историческая котировка: {\"odds\":2.38,\"source\":\"Лига Ставок\",\"checked_at\":\"2026-10-19T15:58:21.711Z\"}.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: независимо подтверждён итог Родина — Оренбург 2:2 за 90 минут (90+5' матч окончен; 90' Тимошенко сравнял). Прогноз П2 за 90 минут ❌ не сбылся. Источники: https://www.championat.com/football/_russiapl/tournament/7096/match/1318720/ и https://www.wildstat.ru/p/1/news/1314881 . Официальный протокол РПЛ отдельно не получен. K0=null, сумма 0 ₽, P/L/ROI нет.\nКонтроль 2026-10-20T01:57:16.999Z: ранее зафиксированный итог повторно сверён, изменения исхода нет. https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbnews_NI2376954_Rodina_ushla_ot_porazhenija_v_matche_s_Orenburgom_sravnav_schet_na_90j_minute",
+      "source_name": "Sportbox — финальный результат",
+      "source_url": "https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbnews_NI2376954_Rodina_ushla_ot_porazhenija_v_matche_s_Orenburgom_sravnav_schet_na_90j_minute",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": "2:2",
+      "winner": "Ничья",
+      "regulation_score": "2:2",
+      "forecast_result": "❌ Не сбылся",
+      "price_history": [
+        {
+          "checked_at": "2026-10-18T17:01:17+05:00",
+          "odds": 2.42,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T13:07:48.282Z",
+          "odds": 2.42,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "v2 текущая цена наблюдения; смена букмекера, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T20:00:58.484+05:00",
+          "odds": 2.42,
+          "source_name": "PARI"
+        },
+        {
+          "checked_at": "2026-10-18T16:01:38.624+00:00",
+          "odds": 2.42,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-18T18:07:23.965Z",
+          "odds": 2.42,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "почасовое наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T01:03:09.337Z",
+          "odds": 2.42,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 2.39,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/rodina-moskva-orenburg-id-23632652-service-id-26-ext-id-1185322",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        },
+        {
+          "checked_at": "2026-10-19T08:21:06.771Z",
+          "odds": 2.35,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "Kt наблюдения, не K0; прямая проверка конкретного рынка"
+        },
+        {
+          "checked_at": "2026-10-19T09:03:44.140Z",
+          "odds": 2.39,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/rodina-moskva-orenburg-id-23632652-service-id-26-ext-id-1185322",
+          "kind": "снимок прямого рынка; наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T09:03:44.140Z",
+          "odds": 2.35,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "снимок прямого рынка; наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T11:00:07.681Z",
+          "odds": 2.4,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "Наблюдение, не K0; рынок 60/90 мин"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 2.39,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/rodina-moskva-orenburg-id-23632652-service-id-26-ext-id-1185322",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 2.4,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/68202622",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 2.39,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/rodina-moskva-orenburg-id-23632652-service-id-26-ext-id-1185322",
+          "kind": "Kt наблюдения, не K0"
+        }
+      ],
+      "conditional_amount": 0
+    },
+    {
+      "id": "cycle-2026-10-20-observation-1",
+      "event": "Локомотив Ярославль — Нефтехимик",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-20T19:00:00+03:00",
+      "event_date": "2026-10-20",
+      "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+      "odds": 1.67,
+      "original_odds": null,
+      "status": "Ожидается",
+      "analysis": "с иной ценой. Лига Ставок 1.68 и PARI 1.65, различие букмекеров, не движение K0. Нет независимой p/EV, 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 1.67; предыдущая цена 1.68; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: 20.10 19:00 МСК: П1 только за 60 минут; домашнее преимущество Локомотива, но ничья после 60 минут = проигрыш. PARI прямая страница 1.65; Лига Ставок не открылась, прежние 1.67 Лиги — исторические. Вратари и составы пока не подтверждены. Риск ⭐⭐⭐. История: Лига Ставок 1.67 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: П1 60 мин 1.65; без изменений. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | v2 2026-10-19T17:01:06.059Z: подтверждён рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Лига Ставок Kt=1.67. ⭐⭐⭐; фаворит дома, но ничья за 60 минут проигрыш; вратари не подтверждены. Историческая цена: {\"odds\":1.65,\"source\":\"PARI\",\"checked_at\":\"2026-10-19T15:58:21.711Z\"}. K0=null, p/EV нет, 0 ₽.\n2026-10-19T18:05:33.794Z Проверка прямого рынка 19.10 около 23:05 ЕКБ: П1 60 минут 1.67, предыдущая 1.67, без изменения. Риск ⭐⭐⭐. Независимая p/EV отсутствует, 0 ₽.\n[v3 2026-10-19T19:07:08.384Z]: Лига Ставок прямой рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш; Kt=1.67, предыдущее Kt=1.67; П1 60 мин без изменения; домашний фактор, ничья за 60 минут проигрыш. Вратарь не подтверждён. Риск ⭐⭐⭐. K0=null (не менять); модельная p/EV не рассчитаны; условная сумма 0 ₽. Реальных ставок нет.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: Лига Ставок — прямую страницу П1 60 минут не удалось открыть; PARI прямой рынок П1 60 минут 1.65, отличие от последней Лиги Ставок 1.67 — сравнение разных БК, не движение одной линии; предыдущий снимок 1.67 (история, не K0). Независимая p/EV не рассчитана, условно 0 ₽. K0=null.\n2026-10-19T20:58:26.887Z: почасовая проверка; Kt=1.65, PARI, https://pari.ru/sports/hockey/country/russia/13283/69043596; ⭐⭐⭐. П1 за 60 минут; ничья проигрыш. Стартовый вратарь не подтверждён. K0 не установлен, p/EV не рассчитаны, условно 0 ₽. Исторические котировки неизменны.\n[2026-10-19T22:02:32.708Z v4] Прямой рынок Лига Ставок П1, 60 минут Kt=1.67; 1.67 → 1.67 (0.00% внутри Лиги Ставок). Рыночная вероятность с маржой 59.88%. ⭐⭐⭐; вратарь и окончательный состав не подтверждены; ничья за 60 минут проигрыш. K0=null, независимая p и EV не рассчитаны, value не заявлено, условно 0 ₽. История неизменна.\n[2026-10-19T23:03:47.551Z v5] П1 60 мин PARI 1.65; Лига Ставок прямая страница не открылась. Историческая Лига Ставок 1.67 не сопоставляется с PARI; K0=null; ⭐⭐⭐; неизвестен стартовый вратарь, p/EV не рассчитаны. Исторические K0/версии не изменялись. Условная сумма 0 ₽.\n[2026-10-20T04:58:14.407+05:00 v6] PARI П1 60 минут 1.65; без изменения к последней подтверждённой PARI 1.65; Лига Ставок прямая страница недоступна. Рыночная вероятность 100/K=60.61% (с маржой); независимо обоснованной p нет, EV не рассчитан, value не заявлено. Условная сумма 0 ₽. K0 и предыдущие версии неизменны.\n[2026-10-20T01:00:25.315Z v7] Лига Ставок, прямая проверка рынка: 1.67. стартовый вратарь не подтверждён; без изменения относительно последней Лиги Ставок 1.67. Рыночная вероятность 59.88% с маржой; независимая p/EV не рассчитаны, value не заявлено, сумма 0 ₽, K0=null. https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821\nПочасовая проверка 2026-10-20T01:57:16.999Z, 20.10.2026, 06:57:16 ЕКБ: Лига Ставок, конкретный рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Kt=1.67, риск ⭐⭐⭐. КХЛ 20.10: у Локомотива 3 победы из 5, у Нефтехимика 3 поражения из 5; стартовые вратари не подтверждены. Независимые p/EV не рассчитаны; условная сумма 0 ₽. K0 не установлен, история не переписывается.",
+      "source_name": "Лига Ставок",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": null,
+      "winner": null,
+      "regulation_score": null,
+      "forecast_result": null,
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-19T12:01:47.275Z",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043596",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.68,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043596",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 1.67,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 1.67,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "checked_at": "2026-10-19T17:01:06.059Z"
+        },
+        {
+          "checked_at": "2026-10-19T20:01:35.773Z",
+          "odds": 1.65,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043596",
+          "kind": "проверенная котировка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:00:25.315Z",
+          "odds": 1.67,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:57:16.999Z",
+          "odds": 1.67,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "kind": "прямая проверка рынка, Kt наблюдения; не K0"
+        }
+      ],
+      "risk": "⭐⭐⭐",
+      "bookmaker_odds": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 1.67,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/lokomotiv-neftekhimik-id-23781740-service-id-26-ext-id-1190821",
+          "checked_at": "2026-10-20T01:57:16.999Z"
+        }
+      ]
+    },
+    {
+      "id": "cycle-2026-10-20-observation-2",
+      "event": "СКА — Автомобилист",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-20T19:30:00+03:00",
+      "event_date": "2026-10-20",
+      "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+      "odds": 2.05,
+      "original_odds": null,
+      "status": "Ожидается",
+      "analysis": "ская котировка, сегодня страница открылась без нужного рынка, не считается актуальной. Нет подтверждённых вратарей и независимой p/EV, 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 2.21; предыдущая цена 2.21; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: 20.10 19:30 МСК: П1 только за 60 минут. СКА и Автомобилист конкурентны, не подтверждены вратари/составы. PARI 2.15 прямая страница, Лига Ставок не открылась; 2.21 Лиги — историческая котировка другой БК. Риск ⭐⭐⭐⭐. История: Лига Ставок 2.21 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: PARI страница без рынка П1 60 мин, Лига Ставок недоступна. Историческая цена PARI 2.15 не является текущей. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | v2 2026-10-19T17:01:06.059Z: подтверждён рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Лига Ставок Kt=2.21. ⭐⭐⭐⭐; конкурентный матч, риск ничьей; составы не подтверждены. Историческая цена: {\"odds\":null,\"source\":null,\"checked_at\":\"2026-10-19T15:58:21.711Z\"}. K0=null, p/EV нет, 0 ₽.\n2026-10-19T18:05:33.794Z Проверка прямого рынка 19.10 около 23:05 ЕКБ: П1 60 минут 2.21, предыдущая 2.21, без изменения. Риск ⭐⭐⭐⭐. Независимая p/EV отсутствует, 0 ₽.\n[v3 2026-10-19T19:07:08.384Z]: Лига Ставок прямой рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш; Kt=2.21, предыдущее Kt=2.21; П1 60 мин без изменения; СУЩЕСТВЕННЫЙ НОВЫЙ ФАКТОР: официальный сайт КХЛ 18.10 подтвердил назначение Андрея Разина вместо Игоря Ларионова. Дебют нового тренера создаёт неопределённость; риск повышен ⭐⭐⭐⭐→⭐⭐⭐⭐⭐, исход не меняется. https://www.khl.ru/news/2026/10/18/567300.html Риск ⭐⭐⭐⭐⭐. K0=null (не менять); модельная p/EV не рассчитаны; условная сумма 0 ₽. Реальных ставок нет.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: Лига Ставок — прямую страницу П1 60 минут не удалось открыть; PARI страница открылась, но точный исход П1 60 минут и цена отсутствуют; коэффициенты не найдены; риск ⭐⭐⭐⭐⭐ после ранее зафиксированной смены тренера; предыдущий снимок 2.21 (история, не K0). Независимая p/EV не рассчитана, условно 0 ₽. K0=null.\n2026-10-19T20:58:26.887Z: почасовая проверка; коэффициенты не найдены; ⭐⭐⭐⭐⭐. П1 за 60 минут. Смена тренера СКА подтверждена КХЛ, прямые страницы Лиги Ставок и PARI не дали подтверждённую котировку; индекс PARI не подтверждает цену. K0 не установлен, p/EV не рассчитаны, условно 0 ₽. Исторические котировки неизменны.\n[2026-10-19T22:02:32.708Z v4] Прямой рынок Лига Ставок П1, 60 минут Kt=2.22; 2.21 → 2.22 (0.45% внутри Лиги Ставок). Рыночная вероятность с маржой 45.05%. ⭐⭐⭐⭐⭐; после смены тренера СКА неопределённость, составы и вратари не подтверждены. K0=null, независимая p и EV не рассчитаны, value не заявлено, условно 0 ₽. История неизменна.\n[2026-10-19T23:03:47.551Z v5] П1 60 мин PARI 2.05; предыдущая исторически подтверждённая PARI 2.15, изменение (2.05-2.15)/2.15=-4.65% (близко к 5%), но K0=null. Лига Ставок прямая страница не открылась, историческая 2.22 не сравнивается с PARI. ⭐⭐⭐⭐⭐ после смены тренера СКА; кадры/вратари не подтверждены, p/EV нет. Исторические K0/версии не изменялись. Условная сумма 0 ₽.\n[2026-10-20T04:58:14.407+05:00 v6] PARI П1 60 минут 2.05, без изменения к прошлому PARI 2.05. В СКА дополнительно подтверждён уход трёх помощников главного тренера (Миронов, Епанчинцев, Терещенко) после назначения Разина; новая кадровая неопределённость, риск ⭐⭐⭐⭐⭐. Исторический PARI 2.15 → 2.05 (-4.65%) не K0. https://news.sportbox.ru/Vidy_sporta/Hokkej/spbnews_NI2376911_Boris_Mironov_Vadim_Jepanchincev_i_Aleksej_Tereshhenko_pokinuli_trenerskij_shtab_SKA Рыночная вероятность 100/K=48.78% (с маржой); независимо обоснованной p нет, EV не рассчитан, value не заявлено. Условная сумма 0 ₽. K0 и предыдущие версии неизменны.\n[2026-10-20T01:00:25.315Z v7] PARI, прямая проверка рынка: 2.05. Лига Ставок не открылась; смена тренерского штаба, PARI 2.05 без изменения. Рыночная вероятность 48.78% с маржой; независимая p/EV не рассчитаны, value не заявлено, сумма 0 ₽, K0=null. https://pari.ru/sports/hockey/country/russia/13283/69043608\nПочасовая проверка 2026-10-20T01:57:16.999Z, 20.10.2026, 06:57:16 ЕКБ: PARI, конкретный рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Kt=2.05, риск ⭐⭐⭐⭐⭐. Лига Ставок: прямой рынок недоступен; PARI подтвердил исход СКА в основное время 2.05. Дебют тренера Разина, риск тактики и состава. Независимые p/EV не рассчитаны; условная сумма 0 ₽. K0 не установлен, история не переписывается.",
+      "source_name": "PARI",
+      "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043608",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": null,
+      "winner": null,
+      "regulation_score": null,
+      "forecast_result": null,
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-19T12:01:47.275Z",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043608",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 2.21,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/ska-avtomobilist-id-23781742-service-id-26-ext-id-1190822",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 2.21,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/ska-avtomobilist-id-23781742-service-id-26-ext-id-1190822",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 2.21,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/ska-avtomobilist-id-23781742-service-id-26-ext-id-1190822",
+          "checked_at": "2026-10-19T17:01:06.059Z"
+        },
+        {
+          "checked_at": "2026-10-20T01:00:25.315Z",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043608",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:57:16.999Z",
+          "odds": 2.05,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043608",
+          "kind": "прямая проверка рынка, Kt наблюдения; не K0"
+        }
+      ],
+      "risk": "⭐⭐⭐⭐⭐",
+      "bookmaker_odds": [
+        {
+          "bookmaker": "PARI",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 2.05,
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043608",
+          "checked_at": "2026-10-20T01:57:16.999Z"
+        }
+      ]
+    },
+    {
+      "id": "cycle-2026-10-20-observation-3",
+      "event": "Динамо Москва — Сибирь",
+      "sport": "Хоккей",
+      "competition": "КХЛ 2026/27",
+      "start_at": "2026-10-20T19:30:00+03:00",
+      "event_date": "2026-10-20",
+      "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+      "odds": 1.86,
+      "original_odds": null,
+      "status": "Ожидается",
+      "analysis": "ые потери и сила последних соперников. Лига Ставок и PARI 1.85; в PARI относительно прошлого снимка без изменения. Независимая p/EV отсутствует, 0 ₽.\n19.10.2026 19:12 ЕКБ: прямая проверка рынка Лиги Ставок 1.85; предыдущая цена 1.85; это наблюдение, K0=null, p и EV не рассчитаны, условная сумма 0 ₽. Стартовые составы/вратари не подтверждены.\n2026-10-19T15:02:24.088Z [почасовая ревизия]: 20.10 19:30 МСК: П1 только за 60 минут, домашний фактор Динамо, риск ничьей и неизвестных составов. PARI 1.85 (исторически) → 1.80 (-2.70%) по прямой странице, K0=null. Лига Ставок не открылась. Риск ⭐⭐⭐. История: Лига Ставок 1.85 (2026-10-19T14:12:01.625Z). Спортивный прогноз остаётся наблюдением с указанным риском, p и EV не обоснованы, условная сумма 0 ₽. | Проверка 20:58 ЕКБ: П1 60 мин 1.85; ранее 1.80, +2.78%, возможен кэш страницы. Риск сохраняется; p/EV не рассчитаны; 0 ₽. K0 не изменён. | v2 2026-10-19T17:01:06.059Z: подтверждён рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Лига Ставок Kt=1.85. ⭐⭐⭐; домашний фактор, но стартовые вратари неизвестны. Историческая цена: {\"odds\":1.85,\"source\":\"PARI\",\"checked_at\":\"2026-10-19T15:58:21.711Z\"}. K0=null, p/EV нет, 0 ₽.\n2026-10-19T18:05:33.794Z Проверка прямого рынка 19.10 около 23:05 ЕКБ: П1 60 минут 1.85, предыдущая 1.85, без изменения. Риск ⭐⭐⭐. Независимая p/EV отсутствует, 0 ₽.\n[v3 2026-10-19T19:07:08.384Z]: Лига Ставок прямой рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш; Kt=1.85, предыдущее Kt=1.85; П1 60 мин без изменения; домашний фактор, стартовый вратарь не подтверждён. Риск ⭐⭐⭐. K0=null (не менять); модельная p/EV не рассчитаны; условная сумма 0 ₽. Реальных ставок нет.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: Лига Ставок — прямую страницу П1 60 минут не удалось открыть; PARI прямой рынок П1 60 минут 1.85; предыдущий снимок 1.85 (история, не K0). Независимая p/EV не рассчитана, условно 0 ₽. K0=null.\n2026-10-19T20:58:26.887Z: почасовая проверка; Kt=1.85, PARI, https://pari.ru/sports/hockey/country/russia/13283/69043612; ⭐⭐⭐. П1 за 60 минут; состав и вратарь не подтверждены. K0 не установлен, p/EV не рассчитаны, условно 0 ₽. Исторические котировки неизменны.\n[2026-10-19T22:02:32.708Z v4] Прямой рынок Лига Ставок П1, 60 минут Kt=1.85; 1.85 → 1.85 (0.00% внутри Лиги Ставок). Рыночная вероятность с маржой 54.05%. ⭐⭐⭐; составы и вратари не подтверждены, риск ничьей. K0=null, независимая p и EV не рассчитаны, value не заявлено, условно 0 ₽. История неизменна.\n[2026-10-19T23:03:47.551Z v5] П1 60 мин PARI 1.85, без изменения относительно ранее подтверждённой PARI 1.85. Лига Ставок прямая страница недоступна; K0=null; ⭐⭐⭐, составы/вратари не подтверждены, p/EV нет. Исторические K0/версии не изменялись. Условная сумма 0 ₽.\n[2026-10-20T04:58:14.407+05:00 v6] PARI П1 60 минут 1.85; без изменения к последней PARI 1.85; стартовые вратари/составы пока не подтверждены. Рыночная вероятность 100/K=54.05% (с маржой); независимо обоснованной p нет, EV не рассчитан, value не заявлено. Условная сумма 0 ₽. K0 и предыдущие версии неизменны.\n[2026-10-20T01:00:25.315Z v7] PARI, прямая проверка рынка: 1.85. Лига Ставок не открылась; составы/вратари не подтверждены, PARI 1.85 без изменения. Рыночная вероятность 54.05% с маржой; независимая p/EV не рассчитаны, value не заявлено, сумма 0 ₽, K0=null. https://pari.ru/sports/hockey/country/russia/13283/69043612\nПочасовая проверка 2026-10-20T01:57:16.999Z, 20.10.2026, 06:57:16 ЕКБ: Лига Ставок, конкретный рынок Наблюдение: П1, основное время 60 минут; ничья проигрыш, Kt=1.86, риск ⭐⭐⭐. Изменение в той же БК 1.85→1.86 (+0.54%); финальные составы и вратари неизвестны. Независимые p/EV не рассчитаны; условная сумма 0 ₽. K0 не установлен, история не переписывается.",
+      "source_name": "Лига Ставок",
+      "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": null,
+      "winner": null,
+      "regulation_score": null,
+      "forecast_result": null,
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "checked_at": "2026-10-19T12:01:47.275Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043612",
+          "kind": "v1 наблюдение, не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.85,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T13:19:58.747Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043612",
+          "kind": "снимок наблюдения; не K0"
+        },
+        {
+          "checked_at": "2026-10-19T14:12:01.625Z",
+          "odds": 1.85,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 1.85,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+          "checked_at": "2026-10-19T17:01:06.059Z"
+        },
+        {
+          "checked_at": "2026-10-19T20:01:35.773Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043612",
+          "kind": "проверенная котировка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:00:25.315Z",
+          "odds": 1.85,
+          "source_name": "PARI",
+          "source_url": "https://pari.ru/sports/hockey/country/russia/13283/69043612",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:57:16.999Z",
+          "odds": 1.86,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+          "kind": "прямая проверка рынка, Kt наблюдения; не K0"
+        }
+      ],
+      "risk": "⭐⭐⭐",
+      "bookmaker_odds": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, основное время 60 минут; ничья проигрыш",
+          "odds": 1.86,
+          "source_url": "https://www.ligastavok.ru/sports/ice-hockey/dinamo-moskva-sibir-id-23781741-service-id-26-ext-id-1190816",
+          "checked_at": "2026-10-20T01:57:16.999Z"
+        }
+      ]
+    },
+    {
+      "id": "cycle-2026-10-20-observation-4",
+      "event": "Ливерпуль — Вильярреал",
+      "sport": "Футбол",
+      "competition": "ЛЧ УЕФА 2026/27",
+      "start_at": "2026-10-20T22:00:00+03:00",
+      "event_date": "2026-10-20",
+      "market": "Наблюдение: П1, 90 минут + добавленное время",
+      "odds": 1.5,
+      "original_odds": null,
+      "status": "Ожидается",
+      "analysis": "v1 2026-10-19T12:01:47.275Z: ⭐⭐⭐⭐; победы в прошлом туре 6:3 и 3:1 соответственно, но кадровые данные и точный рынок не подтверждены. EV не рассчитан; условно 0 ₽. K0 отсутствует. Коэффициенты не найдены; p/EV/ROI не рассчитаны. | v2 2026-10-19T17:01:06.059Z: подтверждён рынок Наблюдение: П1, 90 минут + добавленное время, Лига Ставок Kt=1.51. ⭐⭐⭐; УЕФА: сильная домашняя серия Ливерпуля против испанских клубов, слабые выезды Вильярреала; составы неизвестны. Историческая цена: {\"odds\":null,\"source\":\"УЕФА (расписание)\",\"checked_at\":\"2026-10-19T12:01:47.275Z\"}. K0=null, p/EV нет, 0 ₽.\n2026-10-19T18:05:33.794Z Проверка прямого рынка 19.10 около 23:05 ЕКБ: П1 90 минут 1.52, предыдущая 1.51, изменение +0.66% одной БК. Риск ⭐⭐⭐. Независимая p/EV отсутствует, 0 ₽.\n[v3 2026-10-19T19:07:08.384Z]: Лига Ставок прямой рынок Наблюдение: П1, 90 минут + добавленное время; Kt=1.52, предыдущее Kt=1.52; П1 90 мин без изменения; риск ротации и силы соперника. Риск ⭐⭐⭐. K0=null (не менять); модельная p/EV не рассчитаны; условная сумма 0 ₽. Реальных ставок нет.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: прямой рынок П1 за 90 минут 1.52, без изменения относительно прошлого снимка Лиги Ставок; предыдущий снимок 1.52 (история, не K0). Независимая p/EV не рассчитана, условно 0 ₽. K0=null.\n2026-10-19T20:58:26.887Z: почасовая проверка; Kt=1.52, Лига Ставок, https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894; ⭐⭐⭐. П1 за 90 минут плюс добавленное; риск ничьей и ротации. K0 не установлен, p/EV не рассчитаны, условно 0 ₽. Исторические котировки неизменны.\n[2026-10-19T22:02:32.708Z v4] Прямой рынок Лига Ставок П1, 90 минут Kt=1.52; 1.52 → 1.52 (0.00% внутри Лиги Ставок). Рыночная вероятность с маржой 65.79%. ⭐⭐⭐; возможная ротация и риск ничьей. K0=null, независимая p и EV не рассчитаны, value не заявлено, условно 0 ₽. История неизменна.\n[2026-10-19T23:03:47.551Z v5] П1 90 мин Лига Ставок 1.52, без изменения относительно предыдущей проверки той же БК; K0=null; ⭐⭐⭐, ротация и ничья остаются рисками, p/EV нет. Исторические K0/версии не изменялись. Условная сумма 0 ₽.\n[2026-10-20T04:58:14.407+05:00 v6] Лига Ставок П1 90 минут: отображается 1.50 вместо предыдущей подтверждённой 1.52; изменение (1.50-1.52)/1.52=-1.32%. Страница может кэшироваться; время прямого чтения зафиксировано. Ничья проигрыш, риск ⭐⭐⭐. K0=null. Рыночная вероятность 100/K=66.67% (с маржой); независимо обоснованной p нет, EV не рассчитан, value не заявлено. Условная сумма 0 ₽. K0 и предыдущие версии неизменны.\n[2026-10-20T01:00:25.315Z v7] Лига Ставок, прямая проверка рынка: 1.5. риск ротации и ничьей, Лига Ставок 1.50 без изменения. Рыночная вероятность 66.67% с маржой; независимая p/EV не рассчитаны, value не заявлено, сумма 0 ₽, K0=null. https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894\nПочасовая проверка 2026-10-20T01:57:16.999Z, 20.10.2026, 06:57:16 ЕКБ: Лига Ставок, конкретный рынок Наблюдение: П1, 90 минут + добавленное время, Kt=1.5, риск ⭐⭐⭐⭐. Ревизия риска v2 ⭐⭐⭐→⭐⭐⭐⭐: официальный Ливерпуль подтвердил отсутствие Фримпонга и Собослаи; также Брэдли, Экитике, Леони. https://www.liverpoolfc.com/news/liverpool-v-villarreal-team-news-champions-league Независимые p/EV не рассчитаны; условная сумма 0 ₽. K0 не установлен, история не переписывается.",
+      "source_name": "Лига Ставок",
+      "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": null,
+      "winner": null,
+      "regulation_score": null,
+      "forecast_result": null,
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, 90 минут + добавленное время",
+          "odds": 1.51,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+          "checked_at": "2026-10-19T17:01:06.059Z"
+        },
+        {
+          "checked_at": "2026-10-19T20:01:35.773Z",
+          "odds": 1.52,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+          "kind": "проверенная котировка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:00:25.315Z",
+          "odds": 1.5,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:57:16.999Z",
+          "odds": 1.5,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+          "kind": "прямая проверка рынка, Kt наблюдения; не K0"
+        }
+      ],
+      "risk": "⭐⭐⭐",
+      "bookmaker_odds": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1, 90 минут + добавленное время",
+          "odds": 1.5,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/liverpul-viliarreal-id-23768901-service-id-26-ext-id-1137894",
+          "checked_at": "2026-10-20T01:57:16.999Z"
+        }
+      ]
+    },
+    {
+      "id": "cycle-2026-10-20-observation-5",
+      "event": "ПСЖ — Барселона",
+      "sport": "Футбол",
+      "competition": "ЛЧ УЕФА 2026/27",
+      "start_at": "2026-10-20T22:00:00+03:00",
+      "event_date": "2026-10-20",
+      "market": "Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш",
+      "odds": 1.18,
+      "original_odds": null,
+      "status": "Ожидается",
+      "analysis": "v1 2026-10-19T12:01:47.275Z: ⭐⭐⭐⭐⭐; прошлый тур 4:2 и 4:1, но p, составы и цена не подтверждены. EV не рассчитан; условно 0 ₽. K0 отсутствует. Коэффициенты не найдены; p/EV/ROI не рассчитаны. | v2 2026-10-19T17:01:06.059Z: подтверждён рынок Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш, Лига Ставок Kt=1.18. ⭐⭐⭐⭐⭐; ТБ 2.5 требует >84.75% для положительного EV, p независимо не оценена. Историческая цена: {\"odds\":null,\"source\":\"УЕФА (расписание)\",\"checked_at\":\"2026-10-19T12:01:47.275Z\"}. K0=null, p/EV нет, 0 ₽.\n2026-10-19T18:05:33.794Z Проверка 19.10 около 23:05 ЕКБ: страница Лиги Ставок нужного рынка ТБ2.5 не открылась (таймаут); исторический снимок 1.18 за 22:00 ЕКБ не считать текущим. odds=null, коэффициенты не найдены, p/EV/сумма отсутствуют. Winline доступна аналитика, не прямая котировка.\n[v3 2026-10-19T19:07:08.384Z]: Лига Ставок прямой рынок Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш; Kt=1.17, предыдущее Kt=null; ТБ 2.5 за 90 мин; ранее 1.18, теперь 1.17 (-0.85%); прямая страница снова доступна. Рыночная 85.47% с маржой, независимо p/EV не рассчитаны. Не путать с другими тоталами. Риск ⭐⭐⭐⭐⭐. K0=null (не менять); модельная p/EV не рассчитаны; условная сумма 0 ₽. Реальных ставок нет.\nКонтроль 20.10.2026, 01:01:35 ЕКБ: прямой рынок ТБ 2.5 за 90 минут 1.18, предыдущий архивный снимок 1.17, изменение +0.85%; высокая цена необходимой вероятности 84.75%, модельной p нет; предыдущий снимок 1.17 (история, не K0). Независимая p/EV не рассчитана, условно 0 ₽. K0=null.\n2026-10-19T20:58:26.887Z: почасовая проверка; Kt=1.18, Лига Ставок, https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891; ⭐⭐⭐⭐⭐. ТБ 2,5 голов за 90 минут плюс добавленное; для положительного EV требуется p>84,75%, она не обоснована. K0 не установлен, p/EV не рассчитаны, условно 0 ₽. Исторические котировки неизменны.\n[2026-10-19T22:02:32.708Z v4] Прямой рынок PARI ТБ 2,5 голов, 90 минут Kt=1.18; не сопоставлять с другой БК. Рыночная вероятность с маржой 84.75%. ⭐⭐⭐⭐⭐; для безубыточности требуется p>84,75%, независимая p не подтверждена. K0=null, независимая p и EV не рассчитаны, value не заявлено, условно 0 ₽. История неизменна.\n[2026-10-19T23:03:47.551Z v5] ТБ 2.5 голов за 90 минут PARI 1.19, предыдущая PARI 1.18, изменение +0.85% внутри PARI; порог безубыточности 84.03%, независимой p нет; K0=null; ⭐⭐⭐⭐⭐. Лига Ставок прямая страница недоступна. Исторические K0/версии не изменялись. Условная сумма 0 ₽.\n[2026-10-20T04:58:14.407+05:00 v6] Лига Ставок ТБ 2.5 голов за 90 минут отображается 1.18, прежняя подтверждённая Лига Ставок 1.18 — без изменения; PARI 1.19 в прошлом цикле — другой букмекер, нельзя считать движением. Рыночная 84.75%, независимой p нет. Риск ⭐⭐⭐⭐⭐. Рыночная вероятность 100/K=84.75% (с маржой); независимо обоснованной p нет, EV не рассчитан, value не заявлено. Условная сумма 0 ₽. K0 и предыдущие версии неизменны.\n[2026-10-20T01:00:25.315Z v7] Лига Ставок, прямая проверка рынка: 1.18. ТБ2.5 90 минут, без изменения; p>84.75% для EV>0 не доказана. Рыночная вероятность 84.75% с маржой; независимая p/EV не рассчитаны, value не заявлено, сумма 0 ₽, K0=null. https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891\nПочасовая проверка 2026-10-20T01:57:16.999Z, 20.10.2026, 06:57:16 ЕКБ: Лига Ставок, конкретный рынок Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш, Kt=1.18, риск ⭐⭐⭐⭐⭐. ТБ2.5: требуется 3+ голов за 90 минут, без возврата. Порог 84.75%, независимая p не обоснована; травмы защиты Барселоны не заменяют p. Независимые p/EV не рассчитаны; условная сумма 0 ₽. K0 не установлен, история не переписывается.",
+      "source_name": "Лига Ставок",
+      "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+      "checked_at": "2026-10-20T01:57:16.999Z",
+      "score": null,
+      "winner": null,
+      "regulation_score": null,
+      "forecast_result": null,
+      "conditional_amount": 0,
+      "price_history": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш",
+          "odds": 1.18,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+          "checked_at": "2026-10-19T17:01:06.059Z"
+        },
+        {
+          "checked_at": "2026-10-19T20:01:35.773Z",
+          "odds": 1.18,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+          "kind": "проверенная котировка наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:00:25.315Z",
+          "odds": 1.18,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+          "kind": "Kt наблюдения, не K0"
+        },
+        {
+          "checked_at": "2026-10-20T01:57:16.999Z",
+          "odds": 1.18,
+          "source_name": "Лига Ставок",
+          "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+          "kind": "прямая проверка рынка, Kt наблюдения; не K0"
+        }
+      ],
+      "risk": "⭐⭐⭐⭐⭐",
+      "bookmaker_odds": [
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: ТБ 2,5 голов, 90 минут + добавленное время; 2 гола — проигрыш",
+          "odds": 1.18,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/pari-sen-zhermen-barselona-id-23768892-service-id-26-ext-id-1137891",
+          "checked_at": "2026-10-20T01:57:16.999Z"
+        }
+      ]
+    }
+  ]
+}
