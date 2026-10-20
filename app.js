@@ -1,3 +1,4 @@
+import {calendarDate,briefReason} from './event-view.js?v=event-layout-20261020';
 import {preservedPrice} from './prices.js?v=result-odds-20261020';
 import {amount,price,initialPrice,autoSettlement,calculate,totals,ligaLink} from './calculator.js?v=result-odds-20261020';
 import {eventDate,originalPrice,actualResult,forecastResult,outcomeKey} from './presentation.js?v=outcomes-20261015';
@@ -5,7 +6,6 @@ import {FEEDS,aggregate} from './aggregate.js';
 const $=id=>document.getElementById(id);
 
 // Список источников. Котировки загружаются исключительно из проверенных данных отчёта.
-const BOOKMAKERS=['Лига Ставок','PARI','Winline','BetBoom','Фонбет','БЕТСИТИ','Марафонбет','Олимпбет','Леон','Балтбет','1win'];
 const bookmakerAliases={'лига ставок':'Лига Ставок','liga stavok':'Лига Ставок','pari':'PARI','winline':'Winline','betboom':'BetBoom','фонбет':'Фонбет','fonbet':'Фонбет','бетсити':'БЕТСИТИ','betcity':'БЕТСИТИ','марафонбет':'Марафонбет','marathonbet':'Марафонбет','олимпбет':'Олимпбет','olimpbet':'Олимпбет','леон':'Леон','leon':'Леон','балтбет':'Балтбет','baltbet':'Балтбет','1win':'1win'};
 function bookmakerName(v){return bookmakerAliases[String(v||'').trim().toLocaleLowerCase('ru')]||null;}
 function safeHttp(v){try{const u=new URL(v);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
@@ -21,24 +21,6 @@ function bookmakerQuotes(e){
  if(e.odds!==null&&e.odds!==undefined)add({bookmaker:e.source_name,odds:e.odds,source_url:e.source_url,market:e.market,checked_at:e.checked_at});
  return quotes;
 }
-function renderBookmakers(){
- const root=$('bookmaker-list');if(!root)return;root.replaceChildren();
- for(const name of BOOKMAKERS){const item=document.createElement('span');item.className='bookmaker-chip';item.textContent=name;root.append(item);}
-}
-function appendBookmakerComparison(parent,e){
- const quotes=bookmakerQuotes(e),values=[...quotes.values()],best=values.length?Math.max(...values.map(q=>q.odds)):null;
- const details=document.createElement('details');details.className='bookmaker-comparison';
- const summary=document.createElement('summary');summary.textContent='Сравнить '+BOOKMAKERS.length+' БК · '+values.length+'/'+BOOKMAKERS.length+' подтверждено'+(best===null?'':' · лучший '+best.toFixed(2));details.append(summary);
- const note=document.createElement('p');note.textContent='Рынок: '+(e.market||'не указан')+'. Цены без прямой ссылки и времени проверки не показываются.';details.append(note);
- const list=document.createElement('div');list.className='bookmaker-quotes';
- for(const name of BOOKMAKERS){const q=quotes.get(name),line=document.createElement('div');line.className='bookmaker-quote'+(q&&q.odds===best?' bookmaker-best':'');
- const n=document.createElement('span');n.textContent=name;line.append(n);
- if(q){const a=document.createElement('a');a.href=q.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=q.odds.toFixed(2)+' ↗';a.title='Проверено: '+fmt(q.checked_at)+' ЕКБ';line.append(a);const when=document.createElement('small');when.textContent=fmt(q.checked_at)+' ЕКБ';line.append(when);}
- else{const missing=document.createElement('span');missing.className='bookmaker-missing';missing.textContent='Не подтверждён';line.append(missing);}
- list.append(line);
- }details.append(list);parent.append(details);
-}
-
 const fmt=v=>v?new Intl.DateTimeFormat('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(v)):'Ожидается';
 let data={events:[],feeds:[]},busy=false;const retained=new Map();
 const storageKey='bkliz-calculator-v1';let ledger={bank:'',entries:{}};try{const saved=JSON.parse(localStorage.getItem(storageKey));if(saved&&typeof saved.entries==='object'&&saved.entries&&!Array.isArray(saved.entries))ledger={bank:saved.bank??'',entries:saved.entries};}catch{}
@@ -52,8 +34,8 @@ const entry=()=>({event:e.event,market:e.market,stake:s.value,odds:k.value,settl
 function update(){const v=calculate(entry());output.textContent=v.stake>0?(v.payout===null?'Возможная: '+rub(v.potential):'Выплата: '+rub(v.payout)):'—';hint.textContent=v.stake>0?(v.profit===null?'Итог ожидается'+(v.odds===null?' · укажите коэффициент':''):'Итог: '+rub(v.profit)):'';}
 function changed(){ledger.entries[e.id]=entry();saveLedger();update();updateBank();}for(const input of [k,s])input.addEventListener('input',changed);state.addEventListener('change',changed);odds.append(k);const basis=document.createElement('small');basis.className='price-basis';basis.textContent=saved?'Сохранённый для расчёта':initialPrice(e)===null?'Введите коэффициент выбранного исхода':e.original_odds!=null?'K0 · исходный прогноз':preservedPrice(e)?'Архивная цена · '+preservedPrice(e).source_name:'Из отчёта · можно изменить';odds.append(basis);stake.append(s);result.append(output,hint,state);update();}
 
-let selectedDate='',calendarMonth=new Date(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Yekaterinburg',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())+'T12:00:00');
-const dateKey=e=>e.start_at?new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Yekaterinburg',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(e.start_at)):e.event_date||'';
+let selectedDate=calendarDate(),calendarMonth=new Date(selectedDate+'T12:00:00');
+const dateKey=e=>e.start_at?calendarDate(e.start_at):e.event_date||'';
 function renderCalendar(){
 const year=calendarMonth.getFullYear(),month=calendarMonth.getMonth(),days=new Date(year,month+1,0).getDate(),offset=(new Date(year,month,1).getDay()+6)%7;
 $('calendar-month').textContent=new Intl.DateTimeFormat('ru-RU',{month:'long',year:'numeric'}).format(calendarMonth);$('calendar').replaceChildren();
@@ -86,24 +68,40 @@ for(const key of ['won','lost','unsettled'])$(key+'-count').textContent=matching
 const outcome=$('outcome').value;document.querySelectorAll('[data-outcome]').forEach(b=>{b.classList.toggle('active',b.dataset.outcome===outcome);b.setAttribute('aria-pressed',String(b.dataset.outcome===outcome));});
 const events=matching.filter(e=>!outcome||outcomeKey(e)===outcome);
 const numericPrice=e=>{const n=initialPrice(e);return n===null?-1:n;};const key=$('sort').value;events.sort((a,b)=>key==='odds'?numericPrice(b)-numericPrice(a):key==='checked'?Date.parse(b.checked_at)-Date.parse(a.checked_at):(a.start_at||a.event_date?Date.parse(a.start_at||a.event_date):Infinity)-(b.start_at||b.event_date?Date.parse(b.start_at||b.event_date):Infinity));
-$('rows').replaceChildren();renderCalendar();renderBookmakers();updateBank();
+$('rows').replaceChildren();renderCalendar();updateBank();
 function detail(row,value){const c=cell(row,value.text);if(value.basis){const s=document.createElement('small');s.textContent=value.basis;c.append(s);}return c;}
 for(const e of events){
- const r=document.createElement('tr');detail(r,eventDate(e));
- const title=cell(r,'');const eventName=document.createElement('span');eventName.textContent=e.event;title.append(eventName);const confirmed=[...bookmakerQuotes(e).values()];const links=document.createElement('small');if(confirmed.length){links.className='event-bookmaker-links';for(const q of confirmed){const a=document.createElement('a');a.className='event-link';a.href=q.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=q.name+' '+q.odds.toFixed(2)+' ↗';a.title='Рынок: '+e.market+'; проверено '+fmt(q.checked_at)+' ЕКБ';a.style.marginRight='10px';links.append(a);}}else{const archived=preservedPrice(e);if(archived){const a=document.createElement('a');a.className='event-link archived-price-link';a.href=archived.source_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Архив · '+archived.source_name+' '+archived.odds.toFixed(2)+' ↗';a.title='Цена проверена '+fmt(archived.checked_at)+' ЕКБ · '+e.market;links.append(a);}else links.textContent='Прямые ссылки с подтверждённой ценой отсутствуют';}title.append(links);const sub=document.createElement('small');sub.textContent=[e.sport,e.competition,e.task_name,e.history_group].filter(Boolean).join(' · ');title.append(sub);
- detail(r,originalPrice(e));cell(r,e.market);calculatorCells(r,e);detail(r,actualResult(e));detail(r,forecastResult(e)).classList.add('result-'+outcomeKey(e));cell(r,e.status);
- const analysis=cell(r,e.analysis);if(e.audit_status){const badge=document.createElement('small');badge.textContent=e.audit_status;analysis.prepend(badge);}
- const c=cell(r,e.source_url?'':e.source_name||'Нет источника');if(e.discussed_on){const p=document.createElement('small');p.textContent='Обсуждалось: '+e.discussed_on;c.append(p);}
- if(e.source_url){try{const u=new URL(e.source_url);if(['https:','http:'].includes(u.protocol)){const a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=e.source_name||u.hostname;c.append(a);}}catch{c.textContent='Ошибка ссылки';}}
- const t=document.createElement('small');t.textContent=(e.feed_id==='history'?'Разбор: ':'')+fmt(e.checked_at);c.append(t);
- const cols=[...r.children],market=document.createElement('div');market.className='row-market';market.append(...cols[3].childNodes);cols[1].append(market);
- const priceInfo=document.createElement('details'),priceLabel=document.createElement('summary');priceInfo.className='row-details original-price';priceLabel.textContent='Исходный кэф';priceInfo.append(priceLabel,...cols[2].childNodes);cols[4].append(priceInfo);
- const archived=preservedPrice(e);if(archived){const details=document.createElement('details'),summary=document.createElement('summary'),stamp=document.createElement('small'),link=document.createElement('a');details.className='row-details preserved-price';summary.textContent='До результата · '+archived.odds.toFixed(2);stamp.textContent=fmt(archived.checked_at)+' ЕКБ · архивная цена, не текущая линия';link.href=archived.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=archived.source_name+' ↗';details.append(summary,stamp,link);cols[4].append(details);}
- const outcomeInfo=document.createElement('div');outcomeInfo.className='row-outcome '+cols[8].className;outcomeInfo.append(...cols[8].childNodes);cols[7].append(outcomeInfo);const status=document.createElement('small');status.className='row-status';status.textContent=e.status;cols[7].append(status);
- const more=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('div');more.className='row-details';label.textContent=e.audit_status||'Разбор и источник';body.className='row-analysis';body.textContent=e.analysis;more.append(label,body);const source=document.createElement('div');source.className='row-source';source.append(...cols[11].childNodes);more.append(source);appendBookmakerComparison(more,e);cols[10].replaceChildren(more);
- r.replaceChildren(cols[0],cols[1],cols[4],cols[5],cols[6],cols[7],cols[10]);$('rows').append(r);
+ const r=document.createElement('tr');r.className='event-row';r.dataset.eventId=e.id;detail(r,eventDate(e));
+ const quote=[...bookmakerQuotes(e).values()][0],archived=preservedPrice(e);
+ const title=cell(r,''),url=ligaLink(e)||quote?.url||archived?.source_url;
+ const name=document.createElement(url?'a':'span');name.textContent=e.event;
+ if(url){name.href=url;name.target='_blank';name.rel='noopener noreferrer';name.className='event-link';}title.append(name);
+ const sub=document.createElement('small');sub.textContent=[e.sport,e.competition].filter(Boolean).join(' · ');title.append(sub);
+ const market=document.createElement('div');market.className='row-market';market.textContent=e.market;title.append(market);
+ calculatorCells(r,e);
+ const result=detail(r,actualResult(e)),outcome=forecastResult(e),outcomeInfo=document.createElement('div');outcomeInfo.className='row-outcome result-'+outcomeKey(e);outcomeInfo.textContent=outcome.text;result.append(outcomeInfo);
+ const status=document.createElement('small');status.className='row-status';status.textContent=e.status;result.append(status);
+ const odds=r.children[2],original=originalPrice(e),priceInfo=document.createElement('details'),priceLabel=document.createElement('summary'),originalValue=document.createElement('small');priceInfo.className='row-details original-price';priceLabel.textContent='Исходный кэф';originalValue.textContent=original.text+' · '+original.basis;priceInfo.append(priceLabel,originalValue);odds.append(priceInfo);
+ if(archived){const details=document.createElement('details'),summary=document.createElement('summary'),stamp=document.createElement('small'),link=document.createElement('a');details.className='row-details preserved-price';summary.textContent='До результата · '+archived.odds.toFixed(2);stamp.textContent=fmt(archived.checked_at)+' ЕКБ · архивная цена';link.href=archived.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=archived.source_name+' ↗';details.append(summary,stamp,link);odds.append(details);}
+ const context=document.createElement('tr');context.className='event-context-row';context.dataset.eventId=e.id;
+ const contextCell=document.createElement('td');contextCell.colSpan=6;
+ const info=document.createElement('div');info.className='event-context';const brief=briefReason(e),reason=document.createElement('p'),label=document.createElement('strong');
+ label.textContent='Почему рассматриваем: ';reason.append(label,document.createTextNode(brief.reason));info.append(reason);
+ if(brief.risk||brief.riskNote){const risk=document.createElement('p');risk.className='event-risk';risk.textContent=['Риск: '+(brief.risk||'не указан'),brief.riskNote].filter(Boolean).join(' · ');info.append(risk);}
+ const sources=document.createElement('div');sources.className='event-sources';sources.setAttribute('aria-label','Источники: '+e.event);
+ const sourcesLabel=document.createElement('span');sourcesLabel.textContent='Источники:';sources.append(sourcesLabel);const seen=new Set();
+ const sourceLink=(value,label)=>{const href=safeHttp(value);if(!href||seen.has(href)||seen.size>=4)return;seen.add(href);const a=document.createElement('a');a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label||new URL(href).hostname;a.title=href;sources.append(a);};
+ for(const s of Array.isArray(e.selection_sources)?e.selection_sources:[])if(s&&typeof s==='object')sourceLink(s.url||s.source_url,s.name||s.source_name);
+ sourceLink(e.result_source_url,'Результат');sourceLink(e.source_url,e.source_name);
+ if(archived)sourceLink(archived.source_url,'Коэффициент · '+archived.source_name);
+ sourceLink(e.schedule_source_url,'Календарь');
+ for(const href of String(e.analysis||'').match(/https?:\/\/[^\s]+/g)||[])sourceLink(href.replace(/[),.;]+$/,''),'');
+ const checked=document.createElement('small');checked.className='event-checked';checked.textContent='Проверено: '+fmt(e.checked_at)+' ЕКБ';
+ if(e.audit_status)checked.textContent+=' · '+e.audit_status;
+ if(!seen.size){const missing=document.createElement('span');missing.textContent='Не указаны в отчёте';sources.append(missing);}sources.append(checked);info.append(sources);
+ contextCell.append(info);context.append(contextCell);$('rows').append(r,context);
 }
-$('empty').hidden=events.length>0;$('count').textContent=`${events.length} / ${data.events.length}`;$('updated').textContent=fmt(data.generated_at);
+$('empty').textContent=selectedDate?'На выбранную дату событий по этим фильтрам нет. Выберите другую дату или нажмите «Сбросить» под календарём.':'В этом отчёте нет событий, подходящих под фильтры.';$('empty').hidden=events.length>0;$('count').textContent=`${events.length} / ${data.events.length}`;$('updated').textContent=fmt(data.generated_at);
 const selected=task?data.feeds.filter(f=>f.feed_id===task):data.feeds;$('notes').textContent=selected.length?selected.map(f=>`${f.task_name}\n${f.summary}`).join('\n\n'):data.summary||'Нет комментария.';
 $('health').textContent=$('report').value!=='latest'?'Архивный отчёт':!data.generated_at?'Ожидается отчёт':Date.now()-Date.parse(data.generated_at)>3*3600000?'Есть устаревшие данные':'Данные загружены';
 $('feeds').replaceChildren();for(const f of data.feeds){const article=document.createElement('article'),h=document.createElement('h2'),p=document.createElement('p');h.textContent=f.task_name;p.textContent=f.delivery_error?'Ошибка загрузки; показана сохранённая версия':f.generated_at?`${f.events.length} событий · ${fmt(f.generated_at)} · ${f.report_kind==='history'?'Архив обсуждений':f.report_kind==='bootstrap'?'Первичное наполнение':'Отчёт задачи'}`:'Ожидается первый отчёт задачи';article.append(h,p);$('feeds').append(article);}
@@ -136,5 +134,7 @@ $('next-month').addEventListener('click',()=>{calendarMonth=new Date(calendarMon
 $('clear-date').addEventListener('click',()=>{selectedDate='';render();});
 document.querySelectorAll('[data-sport]').forEach(b=>b.addEventListener('click',()=>{$('sport').value=b.dataset.sport;render();}));
 document.querySelectorAll('[data-outcome]').forEach(b=>b.addEventListener('click',()=>{$('outcome').value=$('outcome').value===b.dataset.outcome?'':b.dataset.outcome;render();}));
-$('reset-filters').addEventListener('click',()=>{for(const id of ['search','task','sport','status','audit','outcome'])$(id).value='';$('sort').value='start';selectedDate='';render();});
+$('reset-filters').addEventListener('click',()=>{for(const id of ['search','task','sport','status','audit','outcome'])$(id).value='';$('sort').value='start';selectedDate=calendarDate();calendarMonth=new Date(selectedDate+'T12:00:00');render();});
 for(const id of ['search','task','sport','status','audit','sort','outcome'])$(id).addEventListener('input',render);$('report').addEventListener('change',load);$('refresh').addEventListener('click',async()=>{await load();await archive();});await load();await archive();setInterval(async()=>{if(!document.hidden){await load();await archive();}},60000);
+
+window.addEventListener('pageshow',event=>{if(event.persisted){selectedDate=calendarDate();calendarMonth=new Date(selectedDate+'T12:00:00');render();}});

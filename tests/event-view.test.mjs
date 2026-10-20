@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {calendarDate,briefReason} from '../event-view.js';
+assert.equal(calendarDate('2026-10-20T18:59:59Z'),'2026-10-20');
+assert.equal(calendarDate('2026-10-20T19:00:00Z'),'2026-10-21');
+assert.equal(calendarDate('2026-12-31T20:00:00Z'),'2027-01-01');
+assert.equal(calendarDate('invalid'),'');
+assert.equal(briefReason({selection_reason:'Сильная домашняя форма.',analysis:'Другой длинный текст.'}).reason,'Сильная домашняя форма.');
+assert.equal(briefReason({analysis:'K0=null; Kt=1.88; p/EV не рассчитаны.'}).reason,'Спортивное обоснование выбора в отчёте не указано.');
+assert.equal(briefReason({analysis:'Команда выиграла пять последних матчей. Состав пока не подтверждён.'}).riskNote,'Состав пока не подтверждён.');
+assert.match(briefReason({analysis:'Сильная домашняя форма. Источник: https://example.com/a'}).reason,/домашняя форма/);
+assert.equal(briefReason({analysis:'Итог 4:1, победа хозяев; прогноз сбылся.'}).reason,'Спортивное обоснование выбора в отчёте не указано.');
+assert.equal(briefReason({risk:3}).risk,'⭐⭐⭐');
+const text='Команда создаёт больше опасных моментов. '.repeat(20);
+assert(briefReason({selection_reason:text}).reason.length<=260);
+assert(!briefReason({selection_reason:'Основание https://example.com/a'}).reason.includes('https://'));
+console.log('Event view passed: Yekaterinburg midnight, year boundary, concise reasons, risk and missing evidence.');
