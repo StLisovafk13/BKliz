@@ -121,3 +121,7 @@ main{width:100%;padding:22px 24px}
 .roulette-bottom>span{font-size:9px;color:var(--muted)}
 .sidebar .roulette-bottom .text-button{font-size:10px}
 @media(max-width:650px){.roulette-body{padding:18px}.roulette-colors{gap:9px}.roulette-choice{padding:10px 5px}.roulette-choice>span{font-size:13px}.roulette-stake-row>label{font-size:12px}.roulette-payout,.roulette-result{font-size:12px}.roulette-bottom>span,.sidebar .roulette-bottom .text-button{font-size:11px}}
+
+/* Keep the source and historical basis of settled-event odds visible. */
+.table-wrap table td:nth-child(3)>small.price-basis{display:block;font-size:10px;color:var(--muted)}
+.preserved-price{margin-top:7px}.preserved-price>summary{font-size:11px}.preserved-price>a{font-size:11px}.archived-price-link{font-weight:500}

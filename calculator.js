@@ -1,8 +1,9 @@
+import {preservedPrice} from './prices.js?v=result-odds-20261020';
 import {outcomeKey} from './presentation.js?v=outcomes-20261015';
 export const amount=v=>{if(typeof v!=='number'&&typeof v!=='string')return null;const s=String(v).trim().replace(',','.');if(!s)return null;const n=Number(s);return Number.isFinite(n)&&n>=0&&n<=1e9?n:null;};
 export const price=v=>{const n=amount(v);return n!==null&&n>=1&&n<100000?n:null;};
 const round=n=>Math.round((n+Number.EPSILON)*100)/100;
-export function initialPrice(e){if(price(e.original_odds)!==null)return price(e.original_odds);const quote=String(e.historical_quote||'').trim();if(/^[≈~]?\s*\d+(?:[.,]\d+)?$/.test(quote))return price(quote.replace(/[≈~]/g,''));return price(e.odds);}
+export function initialPrice(e){if(price(e.original_odds)!==null)return price(e.original_odds);const quote=String(e.historical_quote||'').trim();if(/^[≈~]?\s*\d+(?:[.,]\d+)?$/.test(quote))return price(quote.replace(/[≈~]/g,''));return price(e.odds)??preservedPrice(e)?.odds??null;}
 export function autoSettlement(e){const text=String(e.forecast_result||'').toLowerCase();if(/возврат/.test(text))return 'refund';return e.forecast_result?outcomeKey(e):'pending';}
 export function calculate(entry){const stake=amount(entry.stake)||0,k=price(entry.odds),state=entry.settlement==='auto'?entry.auto:entry.settlement;const potential=k===null?null:round(stake*k);let payout=null;
 if(state==='lost')payout=0;else if(state==='refund')payout=stake;else if(state==='won'&&k!==null)payout=potential;
