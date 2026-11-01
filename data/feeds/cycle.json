@@ -3,10 +3,10 @@
   "feed_id": "cycle",
   "task_name": "Спортивный аналитик — единый цикл",
   "report_kind": "task",
-  "run_id": "cycle-20261101t123949z-live-football",
-  "generated_at": "2026-11-01T12:39:49.952Z",
-  "title": "Единый цикл: предварительные LIVE-наблюдения европейского футбола 1 ноября",
-  "summary": "Добавлены пять европейских футбольных матчей как LIVE-наблюдения 1 ноября 2026. Расписание сверено с LiveScore и другими календарями. LIVE-статус, счёт, минута, точные коэффициенты и статистика не подтверждены; ординары не готовы, p/EV не рассчитаны, условный банк 0/1000 ₽. Предыдущие хоккейные наблюдения и история сохранены. Результаты не менялись. Новых подтверждённых ставок нет.",
+  "run_id": "cycle-20261101t124624z-live-status",
+  "generated_at": "2026-11-01T12:46:24.300Z",
+  "title": "Единый цикл: статус европейских футбольных LIVE-кандидатов",
+  "summary": "Повторная проверка 1 ноября 2026, 15:46 МСК: пять футбольных матчей из LIVE-листа по опубликованному календарю ещё не начались. Обновлён статус «Ожидается», результатов и счёта пока нет. LIVE-коэффициенты и EV не подтверждены; 0 готовых ставок, банк 0/1000 ₽. История и прочие события сохранены.",
   "events": [
     {
       "id": "cycle-2026-10-16-bohemians-waterford-p1-observation",
@@ -9222,11 +9222,11 @@
       "market": "LIVE-наблюдение: ТМ 3,5 гола (90 минут)",
       "odds": null,
       "original_odds": null,
-      "status": "Нет данных",
-      "analysis": "Предварительный LIVE-кандидат, не подтверждённый LIVE-вход. Расписание матча найдено, но актуальные минута, счёт, статистика и точная цена рынка в БК не подтверждены. При отсутствии live-проверки не ставить.",
-      "source_name": "LiveScore — календарь 1 ноября 2026",
-      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=3",
-      "checked_at": "2026-11-01T12:39:49.952Z",
+      "status": "Ожидается",
+      "analysis": "Проверка календаря 1 ноября: по последним доступным данным матч ещё не начался; LIVE-счёт и статистика отсутствуют. Предварительный рынок сохранён для наблюдения. Коэффициент точного рынка в разрешённых БК не подтверждён; ставка не готова.",
+      "source_name": "LiveScore — результаты и календарь 1 ноября 2026",
+      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=7",
+      "checked_at": "2026-11-01T12:46:24.300Z",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9236,8 +9236,12 @@
       "risk_note": "LIVE-счёт и коэффициент отсутствуют; ставка не подтверждена.",
       "selection_sources": [
         {
-          "name": "LiveScore — расписание",
-          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=3"
+          "name": "LiveScore — календарь 1 ноября",
+          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=7"
+        },
+        {
+          "name": "Soccerbase — календарь 1 ноября",
+          "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-01"
         }
       ]
     },
@@ -9251,11 +9255,11 @@
       "market": "LIVE-наблюдение: ТБ 1,5 гола (90 минут)",
       "odds": null,
       "original_odds": null,
-      "status": "Нет данных",
-      "analysis": "Предварительный LIVE-кандидат, не подтверждённый LIVE-вход. Расписание матча найдено, но актуальные минута, счёт, статистика и точная цена рынка в БК не подтверждены. При отсутствии live-проверки не ставить.",
-      "source_name": "LiveScore — календарь 1 ноября 2026",
-      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=3",
-      "checked_at": "2026-11-01T12:39:49.952Z",
+      "status": "Ожидается",
+      "analysis": "Проверка календаря 1 ноября: по последним доступным данным матч ещё не начался; LIVE-счёт и статистика отсутствуют. Предварительный рынок сохранён для наблюдения. Коэффициент точного рынка в разрешённых БК не подтверждён; ставка не готова.",
+      "source_name": "LiveScore — результаты и календарь 1 ноября 2026",
+      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=7",
+      "checked_at": "2026-11-01T12:46:24.300Z",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9265,8 +9269,12 @@
       "risk_note": "LIVE-счёт и коэффициент отсутствуют; ставка не подтверждена.",
       "selection_sources": [
         {
-          "name": "LiveScore — расписание",
-          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=3"
+          "name": "LiveScore — календарь 1 ноября",
+          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=7"
+        },
+        {
+          "name": "Soccerbase — календарь 1 ноября",
+          "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-01"
         }
       ]
     },
@@ -9280,11 +9288,11 @@
       "market": "LIVE-наблюдение: ТМ 3,5 гола (90 минут)",
       "odds": null,
       "original_odds": null,
-      "status": "Нет данных",
-      "analysis": "Предварительный LIVE-кандидат, не подтверждённый LIVE-вход. Расписание матча найдено, но актуальные минута, счёт, статистика и точная цена рынка в БК не подтверждены. При отсутствии live-проверки не ставить.",
-      "source_name": "LiveScore — календарь 1 ноября 2026",
-      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=3",
-      "checked_at": "2026-11-01T12:39:49.952Z",
+      "status": "Ожидается",
+      "analysis": "Проверка календаря 1 ноября: по последним доступным данным матч ещё не начался; LIVE-счёт и статистика отсутствуют. Предварительный рынок сохранён для наблюдения. Коэффициент точного рынка в разрешённых БК не подтверждён; ставка не готова.",
+      "source_name": "LiveScore — результаты и календарь 1 ноября 2026",
+      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=7",
+      "checked_at": "2026-11-01T12:46:24.300Z",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9294,8 +9302,12 @@
       "risk_note": "LIVE-счёт и коэффициент отсутствуют; ставка не подтверждена.",
       "selection_sources": [
         {
-          "name": "LiveScore — расписание",
-          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=3"
+          "name": "LiveScore — календарь 1 ноября",
+          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=7"
+        },
+        {
+          "name": "Soccerbase — календарь 1 ноября",
+          "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-01"
         }
       ]
     },
@@ -9309,11 +9321,11 @@
       "market": "LIVE-наблюдение: ТБ 1,5 гола (90 минут)",
       "odds": null,
       "original_odds": null,
-      "status": "Нет данных",
-      "analysis": "Предварительный LIVE-кандидат, не подтверждённый LIVE-вход. Расписание матча найдено, но актуальные минута, счёт, статистика и точная цена рынка в БК не подтверждены. При отсутствии live-проверки не ставить.",
-      "source_name": "LiveScore — календарь 1 ноября 2026",
-      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=3",
-      "checked_at": "2026-11-01T12:39:49.952Z",
+      "status": "Ожидается",
+      "analysis": "Проверка календаря 1 ноября: по последним доступным данным матч ещё не начался; LIVE-счёт и статистика отсутствуют. Предварительный рынок сохранён для наблюдения. Коэффициент точного рынка в разрешённых БК не подтверждён; ставка не готова.",
+      "source_name": "LiveScore — результаты и календарь 1 ноября 2026",
+      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=7",
+      "checked_at": "2026-11-01T12:46:24.300Z",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9323,8 +9335,12 @@
       "risk_note": "LIVE-счёт и коэффициент отсутствуют; ставка не подтверждена.",
       "selection_sources": [
         {
-          "name": "LiveScore — расписание",
-          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=3"
+          "name": "LiveScore — календарь 1 ноября",
+          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=7"
+        },
+        {
+          "name": "Soccerbase — календарь 1 ноября",
+          "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-01"
         }
       ]
     },
@@ -9338,11 +9354,11 @@
       "market": "LIVE-наблюдение: ТМ 3,5 гола (90 минут)",
       "odds": null,
       "original_odds": null,
-      "status": "Нет данных",
-      "analysis": "Предварительный LIVE-кандидат, не подтверждённый LIVE-вход. Расписание матча найдено, но актуальные минута, счёт, статистика и точная цена рынка в БК не подтверждены. При отсутствии live-проверки не ставить.",
-      "source_name": "LiveScore — календарь 1 ноября 2026",
-      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=3",
-      "checked_at": "2026-11-01T12:39:49.952Z",
+      "status": "Ожидается",
+      "analysis": "Проверка календаря 1 ноября: по последним доступным данным матч ещё не начался; LIVE-счёт и статистика отсутствуют. Предварительный рынок сохранён для наблюдения. Коэффициент точного рынка в разрешённых БК не подтверждён; ставка не готова.",
+      "source_name": "LiveScore — результаты и календарь 1 ноября 2026",
+      "source_url": "https://www.livescore.mobi/football/2026-11-01/?tz=7",
+      "checked_at": "2026-11-01T12:46:24.300Z",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9352,8 +9368,12 @@
       "risk_note": "LIVE-счёт и коэффициент отсутствуют; ставка не подтверждена.",
       "selection_sources": [
         {
-          "name": "LiveScore — расписание",
-          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=3"
+          "name": "LiveScore — календарь 1 ноября",
+          "url": "https://www.livescore.mobi/football/2026-11-01/?tz=7"
+        },
+        {
+          "name": "Soccerbase — календарь 1 ноября",
+          "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-01"
         }
       ]
     }
