@@ -3,10 +3,10 @@
   "feed_id": "cycle",
   "task_name": "Спортивный аналитик — единый цикл",
   "report_kind": "task",
-  "run_id": "cycle-20261101t143232z-results-refresh",
-  "generated_at": "2026-11-01T19:32:32+05:00",
-  "title": "Единый цикл: обновление результатов 01.11.2026 19:32 ЕКБ",
-  "summary": "Единый цикл спортивной аналитики — обновление результатов\nВремя запуска: 01.11.2026 19:32:32 ЕКБ (UTC+5) / 17:32:32 МСК (UTC+3).\nОкна: текущее [01.11.2026 06:00; 02.11.2026 06:00) МСК; следующее [02.11.2026 06:00; 03.11.2026 06:00) МСК.\n\nИсточники БК — фактическая повторная проверка по порядку:\n1) Лига Ставок — прямые карточки доступны; подтверждены Крылья Советов — Зенит П2 1,52, Сассуоло — Фиорентина ОЗ да 1,49, Аталанта — Парма П1 1,49, Ньюкасл — Эвертон П1 2,35.\n2) PARI — карточка Крылья Советов — Зенит доступна; П2 1,55 сохранён как лучшая подтверждённая цена.\n3) Winline — повторная загрузка завершилась тайм-аутом; точные рынки не подтверждены.\n4) BetBoom — прямой доступ через инструмент не получен (401/неоткрываемый URL).\n5) Фонбет — карточка Крылья Советов — Зенит открыта; точная цена выбранного рынка не установлена.\n6) БЕТСИТИ — страница линии открыта без читаемых строк.\n7) Марафонбет — общая линия доступна; она не подтверждает цену точного рынка.\n8) Олимпбет — карточка Крылья Советов — Зенит открыта; точная цена не извлечена.\n9) Леон — страница требует JavaScript, точные рынки не прочитаны.\n10) Балтбет — сайт доступен, точные карточки/рынки не подтверждены.\n11) 1win — прямой URL через инструмент недоступен.\n1xBet и 1xСтавка не проверялись и не включались.\n\nРезультаты текущего окна:\n— Комо — Венеция: финал 1:0, ТМ 3,5 за 90 минут ✅; result_price=null, условная сумма 0 ₽.\n— Сибирь — Нефтехимик: финал 1:3, ТМ 5,5 включая ОТ/буллиты ✅; result_price=null, условная сумма 0 ₽.\n— Адмирал — Амур: финал 2:5, ТМ 6,5 включая ОТ/буллиты ❌; result_price=null, условная сумма 0 ₽.\nНовых финальных исходов после предыдущего отчёта не подтверждено. Обновлены текущие LIVE-счета и статусы начавшихся матчей.\n\nПодтверждённые текущие цены следующего окна:\n— Крылья Советов — Зенит, П2 1,55 PARI; Лига Ставок 1,52; 100/K=64,52%; p=58%; EV=−10,10%; риск ⭐⭐⭐⭐; 0 ₽.\n— Сассуоло — Фиорентина, ОЗ да 1,49; 100/K=67,11%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\n— Аталанта — Парма, П1 1,49; 100/K=67,11%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\n— Ньюкасл — Эвертон, П1 2,35; 100/K=42,55%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\noriginal_odds/K0 у этих наблюдений остаётся null; текущие Kt добавлены в price_history без заднего изменения K0.\n\nОтклонённые ставки и почему:\n1) Крылья Советов — Зенит, П2, 02.11 18:00 МСК, 1,55 PARI: p=58% ниже 64,52%, EV −10,10%.\n2) Сассуоло — Фиорентина, ОЗ да, 20:30, 1,49: независимая p отсутствует, EV не рассчитан.\n3) Аталанта — Парма, П1, 22:45, 1,49: независимая p отсутствует; нестабильность обороны хозяев.\n4) Ньюкасл — Эвертон, П1, 23:00, 2,35: независимая p отсутствует; очные данные противоречивы.\n5) Хетафе — Севилья, LIVE ТМ 3,5: 0:1 на 29′ подтверждено, но точная текущая LIVE-цена рынка не найдена.\n\nLIVE-футбол:\n— Идёт: Хетафе — Севилья 0:1, 29′; Кике Салас 19′, жёлтая карточка Габриэля Суазо 27′. Прогноз-наблюдение ТМ 3,5; коэффициент не найден; без итога.\n— Идёт: Лацио — Кальяри 0:0; минута не подтверждена. ТБ 1,5; коэффициент не найден; без итога.\n— Идёт: Фрозиноне — Торино 0:0; минута не подтверждена. ТМ 3,5; коэффициент не найден; без итога.\n— Идёт: Страсбур — Осер 0:0; минута не подтверждена. ТБ 1,5; коэффициент не найден; без итога.\n— Идёт: Унион Берлин — Кёльн 0:0; минута не подтверждена. ТМ 3,5; коэффициент не найден; без итога.\n— Завершён: Комо — Венеция 1:0, наблюдение ТМ 3,5 ✅.\nНовых LIVE-ставок нет: прямые актуальные цены точных рынков отсутствуют.\n\nКХЛ после времени старта:\n— Торпедо — Спартак, Шанхайские Драконы — Салават Юлаев, Динамо Минск — Динамо Москва: официальное превью подтверждает календарь и травмы, но актуальные счёт/период не подтверждены; статус «Нет данных», итоги не присвоены.\n\nНаблюдение, ревизии и банк:\nНаблюдения следующего окна охватывают 1X2 и «обе забьют»; разнообразие рынков соблюдено без искусственного набора ставок. Существенного движения подтверждённых цен не обнаружено. Условно выделено 0 ₽ из ориентира 1000 ₽. Реальных ставок нет. ROI не рассчитывается, потому что 1000 ₽ не распределены полностью.\n\nРабота над ошибками:\nНе принимать устаревшие/противоречивые табло за финальный результат и не смешивать предматчевые цены с LIVE. Один промежуточный счёт не является основанием для статистического вывода.",
+  "run_id": "cycle-20261101t145659z-hourly",
+  "generated_at": "2026-11-01T19:56:59+05:00",
+  "title": "Единый цикл: почасовая проверка 01.11.2026 19:56 ЕКБ",
+  "summary": "Единый цикл спортивной аналитики — почасовой отчёт\nВремя проверки: 01.11.2026 19:56:59 ЕКБ (UTC+5) / 17:56:59 МСК (UTC+3).\nОкна: текущее [01.11.2026 06:00; 02.11.2026 06:00) МСК; следующее [02.11.2026 06:00; 03.11.2026 06:00) МСК.\nРеальных ставок нет.\n\nИсточники БК — фактическая проверка по порядку:\n1) Лига Ставок — прямые карточки доступны: Крылья Советов — Зенит П2 1,52; Сассуоло — Фиорентина ОЗ да 1,49; Аталанта — Парма П1 1,49; Ньюкасл — Эвертон П1 2,35.\n2) PARI — Крылья Советов — Зенит, П2 1,55 за 90 минут.\n3) Winline — сайт доступен, точные карточки выбранных рынков не подтверждены.\n4) BetBoom — 401 Unauthorized.\n5) Фонбет — карточка Крылья Советов — Зенит открылась, точная цена П2 не установлена.\n6) БЕТСИТИ — страница линии без читаемых строк.\n7) Марафонбет — общая линия/LIVE доступны; общая страница не подтверждает точную цену.\n8) Олимпбет — карточка Крылья Советов — Зенит доступна, точная цена не извлечена.\n9) Леон — требуется JavaScript, рынки не прочитаны.\n10) Балтбет — LIVE-табло доступно; прямые карточки четырёх матчей открываются без читаемых рынков, поэтому показанные в общем списке 1X2 не зафиксированы как подтверждённые цены.\n11) 1win — прямой URL недоступен через инструмент.\n1xBet и 1xСтавка не проверялись.\n\nРезультаты:\n— Комо — Венеция 1:0: ТМ 3,5 за 90 минут ✅; result_price=null; 0 ₽.\n— Сибирь — Нефтехимик 1:3: ТМ 5,5 с ОТ/буллитами ✅; result_price=null; 0 ₽.\n— Адмирал — Амур 2:5: ТМ 6,5 с ОТ/буллитами ❌; result_price=null; 0 ₽.\nНовых финальных результатов после предыдущего отчёта не подтверждено.\n\nТекущие цены следующего окна:\n— Крылья Советов — Зенит, П2 1,55 PARI / 1,52 Лига Ставок; 100/K=64,52%; p=58%; EV=−10,10%; риск ⭐⭐⭐⭐; 0 ₽.\n— Сассуоло — Фиорентина, ОЗ да 1,49; 100/K=67,11%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\n— Аталанта — Парма, П1 1,49; 100/K=67,11%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\n— Ньюкасл — Эвертон, П1 2,35; 100/K=42,55%; p/EV не рассчитаны; риск ⭐⭐⭐; 0 ₽.\noriginal_odds=null сохранён; новые Kt добавлены в price_history.\n\nОтклонённые ставки и почему:\n1) Крылья Советов — Зенит, П2, 02.11 18:00 МСК, 1,55 PARI: p=58% ниже 64,52%, EV −10,10%.\n2) Сассуоло — Фиорентина, ОЗ да, 20:30, 1,49: независимая p отсутствует, EV не рассчитан.\n3) Аталанта — Парма, П1, 22:45, 1,49: независимая p отсутствует, оборона хозяев нестабильна.\n4) Ньюкасл — Эвертон, П1, 23:00, 2,35: независимая p отсутствует, очные данные противоречивы.\n5) Лацио — Кальяри, LIVE X2/П2 при 0:1: рассмотрен иной рынок, но прямая карточка БК не отдала читаемую текущую цену; odds=null, без p/EV/суммы.\n\nLIVE-футбол:\n— Идёт: Хетафе — Севилья 0:1, 68′; гол Кике Саласа 19′. ТМ 3,5, коэффициент не найден, без итога.\n— Идёт: Лацио — Кальяри 0:1, 32′; Нзола 20′, передача Фадеры. ТБ 1,5, коэффициент не найден, без итога.\n— Идёт: Фрозиноне — Торино 0:0, 28′. ТМ 3,5, коэффициент не найден, без итога.\n— Идёт: Страсбур — Осер 0:0, 30′. ТБ 1,5, коэффициент не найден, без итога.\n— Идёт: Унион Берлин — Кёльн 1:0, 23′; Хаберер 10′. ТМ 3,5, коэффициент не найден, без итога.\n— Завершён: Комо — Венеция 1:0, ТМ 3,5 ✅.\nРазнообразные LIVE-рынки 1X2/X2 фактически рассмотрены, но не добавлены без прямой читаемой цены точного рынка.\n\nКХЛ:\n— Торпедо — Спартак, Шанхайские Драконы — Салават Юлаев, Динамо Минск — Динамо Москва: расписание подтверждено, но проверенные источники ещё не показывают счёт/период. Статус «Нет данных», без итога.\n\nНаблюдение, ревизии и банк:\nСущественного движения подтверждённых цен не обнаружено. Условно распределено 0 из 1000 ₽. ROI не рассчитывается. Архивные K0, price_history и result_price не изменены.\n\nРабота над ошибками:\nLIVE-коэффициенты из общего списка БК не приняты без читаемой прямой карточки точного рынка. Промежуточный счёт не считается итогом; один результат не используется для статистического вывода.",
   "events": [
     {
       "id": "cycle-2026-10-16-bohemians-waterford-p1-observation",
@@ -8810,10 +8810,10 @@
       "odds": 1.55,
       "original_odds": null,
       "status": "Ожидается",
-      "analysis": "Контроль 17:32 МСК: П2 за 90 минут — 1,55 в PARI; Лига Ставок — 1,52. 100/K=64,52%. Независимая p=58%, EV=−10,10%; отклонено, сумма 0 ₽. K0=null сохранён.",
+      "analysis": "Контроль 17:56 МСК: П2 за 90 минут — 1,55 в PARI; Лига Ставок — 1,52. 100/K=64,52%. Независимая p=58%, EV=−10,10%; отклонено, сумма 0 ₽. K0=null сохранён.",
       "source_name": "PARI",
       "source_url": "https://pari.ru/sports/football/country/russia/11935/69126853",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -8882,6 +8882,22 @@
           "source_url": "https://pari.ru/sports/football/country/russia/11935/69126853",
           "checked_at": "2026-11-01T19:32:32+05:00",
           "kind": "повторная текущая проверка результатов/цен; K0=null не изменён"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П2 в основное время",
+          "odds": 1.52,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/krylia-sovetov-zenit-spb-id-23795622-service-id-26-ext-id-1256718",
+          "checked_at": "2026-11-01T19:56:59+05:00",
+          "kind": "ежечасная текущая проверка; K0=null не изменён"
+        },
+        {
+          "bookmaker": "PARI",
+          "market": "Наблюдение: П2 в основное время",
+          "odds": 1.55,
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/69126853",
+          "checked_at": "2026-11-01T19:56:59+05:00",
+          "kind": "ежечасная текущая проверка; K0=null не изменён"
         }
       ],
       "selection_reason": "«Зенит» выиграл пять последних матчей и опережает хозяев на 12 очков, но независимая модель даёт П2 лишь 58% против требуемых 65,79%.",
@@ -8956,6 +8972,20 @@
           "odds": 1.55,
           "source_url": "https://pari.ru/sports/football/country/russia/11935/69126853",
           "checked_at": "2026-11-01T19:32:32+05:00"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П2 в основное время",
+          "odds": 1.52,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/krylia-sovetov-zenit-spb-id-23795622-service-id-26-ext-id-1256718",
+          "checked_at": "2026-11-01T19:56:59+05:00"
+        },
+        {
+          "bookmaker": "PARI",
+          "market": "Наблюдение: П2 в основное время",
+          "odds": 1.55,
+          "source_url": "https://pari.ru/sports/football/country/russia/11935/69126853",
+          "checked_at": "2026-11-01T19:56:59+05:00"
         }
       ]
     },
@@ -8970,10 +9000,10 @@
       "odds": 1.49,
       "original_odds": null,
       "status": "Ожидается",
-      "analysis": "Контроль 17:32 МСК: ОЗ — да, 90 минут подтверждён по 1,49. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
+      "analysis": "Контроль 17:56 МСК: ОЗ — да, 90 минут подтверждён по 1,49. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
       "source_name": "Лига Ставок",
       "source_url": "https://www.ligastavok.ru/sports/soccer/sassuolo-fiorentina-id-23829281-service-id-26-ext-id-1262928",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9010,6 +9040,14 @@
           "source_url": "https://www.ligastavok.ru/sports/soccer/sassuolo-fiorentina-id-23829281-service-id-26-ext-id-1262928",
           "checked_at": "2026-11-01T19:32:32+05:00",
           "kind": "повторная текущая проверка результатов/цен; K0=null не изменён"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: обе команды забьют — да, 90 минут",
+          "odds": 1.49,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/sassuolo-fiorentina-id-23829281-service-id-26-ext-id-1262928",
+          "checked_at": "2026-11-01T19:56:59+05:00",
+          "kind": "ежечасная текущая проверка; K0=null не изменён"
         }
       ],
       "selection_reason": "Обе команды много пропускают, а «Фиорентина» забивает семь матчей подряд; однако обе находятся в слабой форме.",
@@ -9056,6 +9094,13 @@
           "odds": 1.49,
           "source_url": "https://www.ligastavok.ru/sports/soccer/sassuolo-fiorentina-id-23829281-service-id-26-ext-id-1262928",
           "checked_at": "2026-11-01T19:32:32+05:00"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: обе команды забьют — да, 90 минут",
+          "odds": 1.49,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/sassuolo-fiorentina-id-23829281-service-id-26-ext-id-1262928",
+          "checked_at": "2026-11-01T19:56:59+05:00"
         }
       ]
     },
@@ -9070,10 +9115,10 @@
       "odds": 1.49,
       "original_odds": null,
       "status": "Ожидается",
-      "analysis": "Контроль 17:32 МСК: П1, 90 минут подтверждён по 1,49. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
+      "analysis": "Контроль 17:56 МСК: П1, 90 минут подтверждён по 1,49. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
       "source_name": "Лига Ставок",
       "source_url": "https://www.ligastavok.ru/sports/soccer/atalanta-parma-id-23829282-service-id-26-ext-id-1262929",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9110,6 +9155,14 @@
           "source_url": "https://www.ligastavok.ru/sports/soccer/atalanta-parma-id-23829282-service-id-26-ext-id-1262929",
           "checked_at": "2026-11-01T19:32:32+05:00",
           "kind": "повторная текущая проверка результатов/цен; K0=null не изменён"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1 в основное время",
+          "odds": 1.49,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/atalanta-parma-id-23829282-service-id-26-ext-id-1262929",
+          "checked_at": "2026-11-01T19:56:59+05:00",
+          "kind": "ежечасная текущая проверка; K0=null не изменён"
         }
       ],
       "selection_reason": "«Парма» набрала одно очко в четырёх последних матчах, но «Аталанта» также нестабильна и пропускала в четырёх из пяти последних игр.",
@@ -9156,6 +9209,13 @@
           "odds": 1.49,
           "source_url": "https://www.ligastavok.ru/sports/soccer/atalanta-parma-id-23829282-service-id-26-ext-id-1262929",
           "checked_at": "2026-11-01T19:32:32+05:00"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1 в основное время",
+          "odds": 1.49,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/atalanta-parma-id-23829282-service-id-26-ext-id-1262929",
+          "checked_at": "2026-11-01T19:56:59+05:00"
         }
       ]
     },
@@ -9203,10 +9263,10 @@
       "odds": 2.35,
       "original_odds": null,
       "status": "Ожидается",
-      "analysis": "Контроль 17:32 МСК: П1, 90 минут подтверждён по 2,35. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
+      "analysis": "Контроль 17:56 МСК: П1, 90 минут подтверждён по 2,35. Независимая p не установлена; EV не рассчитан; сумма 0 ₽. K0=null сохранён.",
       "source_name": "Лига Ставок",
       "source_url": "https://www.ligastavok.ru/sports/soccer/niukasl-iunaited-everton-id-23785720-service-id-26-ext-id-1389798",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9243,6 +9303,14 @@
           "source_url": "https://www.ligastavok.ru/sports/soccer/niukasl-iunaited-everton-id-23785720-service-id-26-ext-id-1389798",
           "checked_at": "2026-11-01T19:32:32+05:00",
           "kind": "повторная текущая проверка результатов/цен; K0=null не изменён"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1 в основное время",
+          "odds": 2.35,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/niukasl-iunaited-everton-id-23785720-service-id-26-ext-id-1389798",
+          "checked_at": "2026-11-01T19:56:59+05:00",
+          "kind": "ежечасная текущая проверка; K0=null не изменён"
         }
       ],
       "selection_reason": "«Ньюкасл» имеет преимущество своего поля, а «Эвертон» проиграл дважды подряд без голов; очные встречи при этом скорее в пользу гостей.",
@@ -9289,6 +9357,13 @@
           "odds": 2.35,
           "source_url": "https://www.ligastavok.ru/sports/soccer/niukasl-iunaited-everton-id-23785720-service-id-26-ext-id-1389798",
           "checked_at": "2026-11-01T19:32:32+05:00"
+        },
+        {
+          "bookmaker": "Лига Ставок",
+          "market": "Наблюдение: П1 в основное время",
+          "odds": 2.35,
+          "source_url": "https://www.ligastavok.ru/sports/soccer/niukasl-iunaited-everton-id-23785720-service-id-26-ext-id-1389798",
+          "checked_at": "2026-11-01T19:56:59+05:00"
         }
       ]
     },
@@ -9555,10 +9630,10 @@
       "odds": null,
       "original_odds": null,
       "status": "Нет данных",
-      "analysis": "Контроль 17:32 МСК: официальный материал КХЛ подтверждает календарь и кадровый контекст, но текущие счёт и период не опубликованы в проверенном источнике. odds=null; результат не присвоен.",
-      "source_name": "КХЛ — официальное превью",
-      "source_url": "https://en.khl.ru/news/2026/11/01/567942.html",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: расписание подтверждено, но источник показывает «-:-» без текущего счёта и периода. odds=null; результат не присвоен.",
+      "source_name": "Спорт-Экспресс — календарь КХЛ",
+      "source_url": "https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-1-noyabrya-2026-traktor-cska-torpedo-spartak-dinamo-mn-dinamo-m-2469602/",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9584,10 +9659,10 @@
       "odds": null,
       "original_odds": null,
       "status": "Нет данных",
-      "analysis": "Контроль 17:32 МСК: официальный материал КХЛ подтверждает календарь и кадровый контекст, но текущие счёт и период не опубликованы в проверенном источнике. odds=null; результат не присвоен.",
-      "source_name": "КХЛ — официальное превью",
-      "source_url": "https://en.khl.ru/news/2026/11/01/567942.html",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: расписание подтверждено, но источник показывает «-:-» без текущего счёта и периода. odds=null; результат не присвоен.",
+      "source_name": "Спорт-Экспресс — календарь КХЛ",
+      "source_url": "https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-1-noyabrya-2026-traktor-cska-torpedo-spartak-dinamo-mn-dinamo-m-2469602/",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9613,10 +9688,10 @@
       "odds": null,
       "original_odds": null,
       "status": "Нет данных",
-      "analysis": "Контроль 17:32 МСК: официальный материал КХЛ подтверждает календарь и кадровый контекст, но текущие счёт и период не опубликованы в проверенном источнике. odds=null; результат не присвоен.",
-      "source_name": "КХЛ — официальное превью",
-      "source_url": "https://en.khl.ru/news/2026/11/01/567942.html",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: расписание подтверждено, но источник показывает «-:-» без текущего счёта и периода. odds=null; результат не присвоен.",
+      "source_name": "Спорт-Экспресс — календарь КХЛ",
+      "source_url": "https://www.sport-express.net/hockey/khl/news/khl-raspisanie-rezultaty-i-video-golov-1-noyabrya-2026-traktor-cska-torpedo-spartak-dinamo-mn-dinamo-m-2469602/",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
@@ -9642,27 +9717,31 @@
       "odds": null,
       "original_odds": null,
       "status": "Идёт",
-      "analysis": "Контроль 17:32 МСК: Eurosport подтверждает 0:1 на 29′; Кике Салас 19′, жёлтая карточка Габриэля Суазо 27′. Точная текущая LIVE-цена ТМ 3,5 не найдена; odds=null, без p/EV/суммы.",
-      "source_name": "Eurosport — LIVE",
-      "source_url": "https://www.eurosport.de/fussball/la-liga/2026-2027/live-fc-getafe-fc-sevilla_mtc21891452/live-commentary.shtml",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: LIVE-табло Балтбета показывает 0:1 на 68′; Кике Салас забил на 19′. Прямая карточка события открывается без читаемой цены ТМ 3,5; odds=null.",
+      "source_name": "Балтбет — LIVE-табло",
+      "source_url": "https://baltbet.ru/soccer/spain/la-liga/getafe-sevilla-id-31727927",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
       "forecast_result": null,
       "price_history": [],
-      "selection_reason": "«Севилья» ведёт 1:0 на 29′, но точная текущая LIVE-цена ТМ 3,5 не подтверждена; событие остаётся наблюдением.",
-      "risk_note": "LIVE-счёт подтверждён, но нет прямой цены точного рынка.",
+      "selection_reason": "«Севилья» ведёт 1:0 на 68′; ТМ 3,5 остаётся наблюдением, потому что прямая карточка не подтверждает цену рынка.",
+      "risk_note": "LIVE-счёт и минута есть, но точная цена рынка не читается.",
       "selection_sources": [
         {
-          "name": "Eurosport — LIVE",
-          "url": "https://www.eurosport.de/fussball/la-liga/2026-2027/live-fc-getafe-fc-sevilla_mtc21891452/live-commentary.shtml"
+          "name": "Балтбет — карточка LIVE",
+          "url": "https://baltbet.ru/soccer/spain/la-liga/getafe-sevilla-id-31727927"
+        },
+        {
+          "name": "Sportschau — события матча",
+          "url": "https://www.sportschau.de/live-und-ergebnisse/fussball/spanien-primera-division/ma12188107/getafe-cf_sevilla-fc/liveticker"
         }
       ],
       "live_watch": true,
-      "live_checked_at": "2026-11-01T19:32:32+05:00",
+      "live_checked_at": "2026-11-01T19:56:59+05:00",
       "live_score": "0:1",
-      "live_minute": "29′",
+      "live_minute": "68′",
       "live_cards": "Габриэль Суазо — жёлтая карточка, 27′"
     },
     {
@@ -9676,31 +9755,31 @@
       "odds": null,
       "original_odds": null,
       "status": "Идёт",
-      "analysis": "Контроль 17:32 МСК: текущий счёт 0:0 подтверждён LIVE-страницей; точная минута и цена ТБ 1,5 не подтверждены. Sky Sport подтверждает составы. odds=null.",
-      "source_name": "CanliGaste — LIVE",
-      "source_url": "https://www.canligaste.com/canli-lazio-cagliari-maci-basladi/940534/",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: Sporting Life подтверждает 0:1 на 32′, Нзола 20′ после передачи Фадеры; владение 74%–26%, удары 3–3, в створ 2–1. Прямая цена ТБ 1,5 не подтверждена; odds=null.",
+      "source_name": "Sporting Life — LIVE",
+      "source_url": "https://www.sportinglife.com/football/live/230117/lazio-vs-cagliari/stats",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
       "forecast_result": null,
       "price_history": [],
-      "selection_reason": "При 0:0 матч наблюдается по ТБ 1,5, но минута и прямая LIVE-цена рынка не подтверждены.",
-      "risk_note": "Нет подтверждённой минуты и прямой LIVE-цены.",
+      "selection_reason": "«Кальяри» ведёт 1:0 при xG 0,64 против 0,22; ТБ 1,5 наблюдается, но прямой цены точного рынка нет.",
+      "risk_note": "Один гол уже есть, но минута/статистика быстро меняются, а цена не подтверждена.",
       "selection_sources": [
         {
-          "name": "CanliGaste — LIVE",
-          "url": "https://www.canligaste.com/canli-lazio-cagliari-maci-basladi/940534/"
+          "name": "Sporting Life — LIVE и статистика",
+          "url": "https://www.sportinglife.com/football/live/230117/lazio-vs-cagliari/stats"
         },
         {
-          "name": "Sky Sport Italia — составы",
+          "name": "Sky Sport — составы",
           "url": "https://sport.sky.it/calcio/serie-a/partite/2026/giornata-10/lazio-cagliari/risultato-gol"
         }
       ],
       "live_watch": true,
-      "live_checked_at": "2026-11-01T19:32:32+05:00",
-      "live_score": "0:0",
-      "live_minute": null
+      "live_checked_at": "2026-11-01T19:56:59+05:00",
+      "live_score": "0:1",
+      "live_minute": "32′"
     },
     {
       "id": "cycle-2026-11-01-europe-live-watch-3",
@@ -9713,27 +9792,31 @@
       "odds": null,
       "original_odds": null,
       "status": "Идёт",
-      "analysis": "Контроль 17:32 МСК: la Repubblica показывает 0:0 и LIVE-карточку; точная минута и цена ТМ 3,5 не подтверждены. odds=null.",
-      "source_name": "la Repubblica — LIVE",
-      "source_url": "https://www.repubblica.it/sport/dirette/calcio/serie-a-2026/diretta-frosinone-torino-g2638215/",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: LIVE-табло Балтбета показывает 0:0 на 28′. Прямая карточка не отдала читаемую цену ТМ 3,5; odds=null.",
+      "source_name": "Балтбет — LIVE-табло",
+      "source_url": "https://baltbet.ru/soccer/italy/serie-a/frosinone-torino-id-31798280",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
       "forecast_result": null,
       "price_history": [],
-      "selection_reason": "Счёт 0:0 соответствует наблюдаемому ТМ 3,5, но минута, статистика и прямая цена рынка не подтверждены.",
-      "risk_note": "Нет подтверждённой минуты и прямой LIVE-цены.",
+      "selection_reason": "При 0:0 на 28′ ТМ 3,5 остаётся наблюдением, но спортивное преимущество и прямая цена не подтверждены.",
+      "risk_note": "Нет читаемой прямой LIVE-цены и расширенной статистики.",
       "selection_sources": [
         {
-          "name": "la Repubblica — LIVE",
-          "url": "https://www.repubblica.it/sport/dirette/calcio/serie-a-2026/diretta-frosinone-torino-g2638215/"
+          "name": "Балтбет — карточка LIVE",
+          "url": "https://baltbet.ru/soccer/italy/serie-a/frosinone-torino-id-31798280"
+        },
+        {
+          "name": "Canlı Gaste — LIVE-счёт",
+          "url": "https://www.canligaste.com/canli-frosinone-torino-maci-kadro-dizilis-h2h-canli-anlatim-ve-canli-skor-1-kasim-2026/940533/"
         }
       ],
       "live_watch": true,
-      "live_checked_at": "2026-11-01T19:32:32+05:00",
+      "live_checked_at": "2026-11-01T19:56:59+05:00",
       "live_score": "0:0",
-      "live_minute": null
+      "live_minute": "28′"
     },
     {
       "id": "cycle-2026-11-01-europe-live-watch-4",
@@ -9746,27 +9829,31 @@
       "odds": null,
       "original_odds": null,
       "status": "Идёт",
-      "analysis": "Контроль 17:32 МСК: Sportschau показывает 0:0 после запланированного старта. Точная минута и LIVE-цена ТБ 1,5 не подтверждены; odds=null.",
-      "source_name": "Sportschau — LIVE",
-      "source_url": "https://www.sportschau.de/live-und-ergebnisse/dn2026-11-01",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: LIVE-табло Балтбета показывает 0:0 на 30′. Прямая карточка не отдала читаемую цену ТБ 1,5; odds=null.",
+      "source_name": "Балтбет — LIVE-табло",
+      "source_url": "https://baltbet.ru/soccer/france/ligue-1/strasbourg-auxerre-id-31727862",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
       "forecast_result": null,
       "price_history": [],
-      "selection_reason": "При счёте 0:0 рассматривается ТБ 1,5, но спортивное преимущество и прямая LIVE-цена не установлены.",
-      "risk_note": "Нет минуты, расширенной статистики и прямой цены.",
+      "selection_reason": "При 0:0 на 30′ ТБ 1,5 рассматривается, но нет проверенного преимущества и прямой цены рынка.",
+      "risk_note": "Нет читаемой прямой LIVE-цены и расширенной статистики.",
       "selection_sources": [
         {
-          "name": "Sportschau — LIVE",
-          "url": "https://www.sportschau.de/live-und-ergebnisse/dn2026-11-01"
+          "name": "Балтбет — карточка LIVE",
+          "url": "https://baltbet.ru/soccer/france/ligue-1/strasbourg-auxerre-id-31727862"
+        },
+        {
+          "name": "Sky Sports — карточка матча",
+          "url": "https://www.skysports.com/football/strasbourg-vs-auxerre/557076"
         }
       ],
       "live_watch": true,
-      "live_checked_at": "2026-11-01T19:32:32+05:00",
+      "live_checked_at": "2026-11-01T19:56:59+05:00",
       "live_score": "0:0",
-      "live_minute": null
+      "live_minute": "30′"
     },
     {
       "id": "cycle-2026-11-01-europe-live-watch-5",
@@ -9779,27 +9866,27 @@
       "odds": null,
       "original_odds": null,
       "status": "Идёт",
-      "analysis": "Контроль 17:32 МСК: Sportschau показывает 0:0 после старта 17:30 МСК. Точная минута и LIVE-цена ТМ 3,5 не подтверждены; odds=null.",
-      "source_name": "Sportschau — LIVE",
-      "source_url": "https://www.sportschau.de/live-und-ergebnisse/dn2026-11-01",
-      "checked_at": "2026-11-01T19:32:32+05:00",
+      "analysis": "Контроль 17:56 МСК: Sky подтверждает 1:0 на 23′; Хаберер забил на 10′. Кёльн ещё не нанёс удара к 21′. Точная цена ТМ 3,5 не подтверждена; odds=null.",
+      "source_name": "Sky Sport Deutschland — LIVE",
+      "source_url": "https://sport.sky.de/fussball/union-berlin-vs-koeln/live/563372",
+      "checked_at": "2026-11-01T19:56:59+05:00",
       "score": null,
       "winner": null,
       "regulation_score": null,
       "forecast_result": null,
       "price_history": [],
-      "selection_reason": "Матч начался при счёте 0:0; ТМ 3,5 остаётся только наблюдением без подтверждённой минуты и цены.",
-      "risk_note": "Матч только начался; нет прямой LIVE-цены рынка.",
+      "selection_reason": "«Унион» ведёт 1:0 и компактно защищается, а «Кёльн» к 21′ не нанёс удара; ТМ 3,5 остаётся наблюдением без цены.",
+      "risk_note": "Ранний гол меняет сценарий, но прямой цены рынка нет.",
       "selection_sources": [
         {
-          "name": "Sportschau — LIVE",
-          "url": "https://www.sportschau.de/live-und-ergebnisse/dn2026-11-01"
+          "name": "Sky Sport Deutschland — LIVE",
+          "url": "https://sport.sky.de/fussball/union-berlin-vs-koeln/live/563372"
         }
       ],
       "live_watch": true,
-      "live_checked_at": "2026-11-01T19:32:32+05:00",
-      "live_score": "0:0",
-      "live_minute": null
+      "live_checked_at": "2026-11-01T19:56:59+05:00",
+      "live_score": "1:0",
+      "live_minute": "23′"
     },
     {
       "id": "cycle-2026-11-01-como-venezia-live-under35-watch",
