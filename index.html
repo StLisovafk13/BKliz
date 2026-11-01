@@ -40,6 +40,7 @@
   </aside>
   <div class="main-content">
     <p id="message" role="status"></p>
+    <section class="panel live-football-panel" aria-labelledby="live-football-title"><div class="panel-heading"><div><p class="eyebrow">ОТДЕЛЬНЫЙ МОНИТОРИНГ</p><h2 id="live-football-title">LIVE-футбол · Европа</h2></div><button type="button" id="live-football-refresh">Обновить ↻</button></div><p class="live-football-caption">Статус берётся из последнего опубликованного отчёта, не из прямого потока матчей. Без подтверждённого счёта или коэффициента — не готовая ставка. <span id="live-football-updated"></span></p><div id="live-football-rows" class="live-football-grid"></div></section>
     <section class="panel events-panel"><div class="panel-heading table-heading"><div><p class="eyebrow">ЖУРНАЛ АНАЛИТИКА</p><h2>Таблица событий</h2></div><span class="table-hint">Даты · коэффициенты · прогнозы · результаты</span></div><div class="outcome-toolbar"><div class="outcome-counters" aria-label="Количество по итогу прогноза"><button class="outcome-card won" data-outcome="won" aria-pressed="false"><span>Сбылось</span><strong id="won-count">0</strong></button><button class="outcome-card lost" data-outcome="lost" aria-pressed="false"><span>Не сбылось</span><strong id="lost-count">0</strong></button><button class="outcome-card unsettled" data-outcome="unsettled" aria-pressed="false"><span>Без итога</span><strong id="unsettled-count">0</strong></button></div></div><section class="table-wrap"><table><thead><tr><th>Дата</th><th>Событие / прогноз</th><th>Коэфф.</th><th>Сумма, ₽</th><th>Выплата / итог</th><th>Результат</th></tr></thead><tbody id="rows"></tbody></table><p id="empty" hidden>В этом отчёте нет событий, подходящих под фильтры.</p></section></section>
     <footer class="site-footer">
       <details class="footer-disclosure bank-disclosure">
@@ -69,5 +70,5 @@
 </main>
 <script type="module" src="app.js?v=event-layout-20261020"></script>
 <script type="module" src="roulette.js?v=roulette-20261020"></script>
-</body>
+<script type="module" src="live-football.js?v=20261101"></script></body>
 </html>
