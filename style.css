@@ -137,3 +137,6 @@ main{width:100%;padding:22px 24px}
 .table-wrap table .event-sources .event-checked{display:inline;font-size:10px;margin:0;color:var(--muted)}
 .event-row:has(+.event-context-row:hover),.event-context-row:hover{background:#fbfcfb}
 @media(max-width:650px){.event-context p{font-size:12px}.event-context{padding:10px}.table-wrap table .event-context-row>td{padding:0 10px 12px}}
+
+/* LIVE-футбол: отдельный блок */
+.live-football-panel{margin-top:18px;overflow:hidden}.live-football-caption{padding:12px 20px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}.live-football-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;padding:0 18px 18px}.live-event{padding:14px;border:1px solid var(--line);border-radius:9px;background:#fbfcfb}.live-event-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.live-event-head strong{font-size:12px}.live-status{font-size:10px;white-space:nowrap;color:var(--green)}.live-meta,.live-facts,.live-market{font-size:11px;line-height:1.5;margin:8px 0}.live-meta,.live-event small{color:var(--muted)}.live-sources{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.live-sources a{font-size:10px;text-decoration:underline}.live-empty{padding:16px;color:var(--muted)}
